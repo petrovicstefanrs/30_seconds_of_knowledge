@@ -1,0 +1,33 @@
+.sok-MarkdownSyntaxHighlighter {
+	position: relative;
+}
+
+.sok-MarkdownSyntaxHighlighter .sok-Button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: -15px;
+	right: -15px;
+	width: 40px;
+	height: 40px;
+	min-width: unset;
+	max-width: unset;
+	border-radius: 50%;
+	border: none;
+	background: var(--color__white);
+}
+
+.sok-MarkdownSyntaxHighlighter .sok-Button:hover {
+	transform: scale(1.2);
+}
+
+.sok-MarkdownSyntaxHighlighter .sok-Button > .sok-Button-icon {
+	max-height: 20px;
+	margin: 0;
+	width: auto;
+}
+
+.sok-MarkdownSyntaxHighlighter pre {
+	margin-top: 32px !important;
+}

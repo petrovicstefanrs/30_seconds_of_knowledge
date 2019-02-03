@@ -1,0 +1,36 @@
+{
+  "name": "30 Seconds of Knowledge",
+  "short_name": "30 SoK",
+  "manifest_version": 2,
+  "version": "0.0.2",
+  "version_name": "0.0.2 alpha",
+
+  "description": "Google Chrome Extension that lets you gain new developer skills, every time you open a New Tab",
+  "icons": {
+	"32": "icon_32.png",
+	"64": "icon_64.png",
+	"128": "icon_128.png",
+	"256": "icon_256.png"
+  },
+
+  "permissions": [
+	"storage",
+	"clipboardWrite"
+  ],
+
+  "browser_action": {
+	"default_popup": "popup.html",
+	"default_icon": "icon_32.png"
+  },
+
+  "options_page": "options.html",
+
+  "background": {
+    "page": "background.html"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "newtab.html"
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

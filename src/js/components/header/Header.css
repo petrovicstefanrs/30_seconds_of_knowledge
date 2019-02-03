@@ -1,0 +1,40 @@
+.sok-Header {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: linear-gradient(to top, var(--color__gray--dark) 0%,rgb(20, 20, 26) 100%);
+}
+
+.sok-Header > a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sok-Header-logo {
+	width: 150px;
+	height: auto;
+}
+
+.sok-Header .sok-Button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	left: 36px;
+	top: 36px;
+	position: fixed;
+	min-width: unset;
+	width: 36px;
+	height: 36px;
+	background: transparent;
+}
+
+.sok-Header .sok-Button > img {
+	width: 36px;
+	height: 36px;
+	margin: 0;
+}

@@ -1,0 +1,29 @@
+.sok-MarkdownCodepenPrefill-codepenButton {
+	height: var(--button__height);
+	min-width: var(--button__width--min);
+	max-width: var(--button__width--max);
+	background: var(--color__white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	font-weight: 500;
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 3px;
+	border: none;
+	color: var(--color__gray--dark);
+}
+
+.sok-MarkdownCodepenPrefill-codepenButton:hover,
+.sok-MarkdownCodepenPrefill-codepenButton:focus,
+.sok-MarkdownCodepenPrefill-codepenButton:active {
+	outline: none;
+	box-shadow: var(--button__drop-shadow);
+	transform: scale(1.1);
+}
+
+.sok-MarkdownCodepenPrefill-codepenButton > img {
+	margin-right: 6px;
+}

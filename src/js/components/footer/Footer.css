@@ -1,0 +1,20 @@
+.sok-Footer {
+	padding-top: 36px;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: linear-gradient(to bottom, var(--color__gray--dark) 0%,rgb(20, 20, 26) 100%);
+}
+
+.sok-Footer .sok-Footer-outLink {
+	margin-bottom: 8px;
+}
+
+.sok-Footer .sok-Footer-outLink > a {
+	color: var(--color__orange__light);
+	font-weight: 900;
+}

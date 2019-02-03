@@ -1,0 +1,40 @@
+.sok-Chip {
+	width: auto;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2.5px 5px;
+	font-weight: 900;
+	transition: all 0.3s ease-in-out;
+}
+
+.sok-Chip.sok-Chip-javascript {
+	color: var(--font__color--black);
+	background: var(--color__lang__js);
+}
+
+.sok-Chip.sok-Chip-react {
+	color: var(--font__color--white);
+	background: var(--color__lang__react);
+}
+
+.sok-Chip.sok-Chip-python {
+	color: var(--font__color--black);
+	background: var(--color__lang__python);
+}
+
+.sok-Chip.sok-Chip-interview {
+	color: var(--font__color--white);
+	background: var(--color__lang__interview);
+}
+
+.sok-Chip.sok-Chip-php {
+	color: var(--font__color--black);
+	background: var(--color__lang__php);
+}
+
+.sok-Chip.sok-Chip-css {
+	color: var(--font__color--black);
+	background: var(--color__lang__css);
+}

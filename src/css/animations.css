@@ -1,0 +1,38 @@
+/* Toast Animations */
+
+@keyframes slideInUp {
+	from {
+		transform: translate3d(0, 100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+/* Loader Animations */
+
+@keyframes pulse_1 {
+	0% {
+		transform: translate3d(0, 0, 0) scale(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0) scale(1.5);
+		opacity: 0;
+	}
+}
+
+@keyframes pulse_2 {
+	0% {
+		transform: translate3d(0, 0, 0) scale(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+		opacity: 0;
+	}
+}

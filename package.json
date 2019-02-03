@@ -1,0 +1,49 @@
+{
+  "name": "30_seconds_of_knowledge",
+  "version": "0.0.2",
+  "description": "Google Chrome Extension that lets you gain new developer skills, every time you open a New Tab",
+  "scripts": {
+    "build": "node utils/build.js",
+    "start": "node utils/webserver.js"
+  },
+  "dependencies": {
+    "highlight.js": "^9.13.1",
+    "react": "^16.7.0",
+    "react-codepen-prefill": "^0.1.1",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.7.0",
+    "react-markdown": "^4.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "8.0.5",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "2.1.0",
+    "file-loader": "3.0.1",
+    "fs-extra": "7.0.1",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "prettier-stylelint": "^0.4.2",
+    "react-hot-loader": "^4.6.3",
+    "style-loader": "^0.23.1",
+    "webpack": "4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "3.1.14",
+    "write-file-webpack-plugin": "4.5.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }
+}

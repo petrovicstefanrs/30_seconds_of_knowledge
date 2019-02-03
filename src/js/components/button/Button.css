@@ -1,0 +1,44 @@
+.sok-Button {
+	height: var(--button__height);
+	min-width: var(--button__width--min);
+	max-width: var(--button__width--max);
+	background: var(--color__white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	border: none;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 1em;
+	font-weight: 500;
+	color: var(--color__gray--dark);
+}
+
+.sok-Button:hover {
+	box-shadow: var(--button__drop-shadow);
+	transform: scale(1.1);
+}
+
+.sok-Button-left {
+	flex-direction: row;
+}
+
+.sok-Button-right {
+	flex-direction: row-reverse;
+}
+
+.sok-Button-left > .sok-Button-icon {
+	margin-right: 10px;
+}
+
+.sok-Button-right > .sok-Button-icon {
+	margin-left: 10px;
+}
+
+.sok-Button-disabled {
+	cursor: not-allowed;
+	background: var(--color__gray);
+	border-color: var(--color__gray--light);
+}

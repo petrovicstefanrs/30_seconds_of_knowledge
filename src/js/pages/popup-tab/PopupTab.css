@@ -1,0 +1,13 @@
+.sok-PopupTab {
+	width: 300px;
+	margin: 0;
+	padding: 0;
+}
+
+.sok-PopupTab .sok-OptionsPicker {
+	justify-content: flex-start;
+	width: 250px;
+	margin: 0 auto;
+	padding: 16px 0 32px;
+	font-size: 0.8em;
+}
