@@ -1,4 +1,4 @@
-<p align="center"><img width=400 src="https://raw.githubusercontent.com/petrovicstefanrs/30_seconds_of_knowledge/master/misc/Promo_Marquee.jpg"/></a></p>
+<p align="center"><img width=900 src="https://raw.githubusercontent.com/petrovicstefanrs/30_seconds_of_knowledge/master/misc/Promo_Marquee.jpg"/></a></p>
 
 ------
 
