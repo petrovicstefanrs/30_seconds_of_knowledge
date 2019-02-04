@@ -8,7 +8,7 @@
 	align-items: center;
 }
 
-.sok-Header .sok-Header-logo{
+.sok-Header .sok-Header-logo {
 	width: 150px;
 	height: auto;
 	animation: var(--animation__slide_in--down);
@@ -78,7 +78,7 @@
 
 .sok-ChromeButton > img {
 	height: 40px;
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 /* Separator */
@@ -137,4 +137,45 @@
 
 .sok-Categories .sok-Categories-interview {
 	background: var(--color__lang__interview);
+}
+
+/* Footer */
+
+.sok-Footer {
+	padding-top: 36px;
+	width: 100%;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: linear-gradient(to bottom, var(--color__gray--dark) 0%,rgb(20, 20, 26) 100%);
+}
+
+.sok-Footer .sok-Footer-outLink {
+	margin-bottom: 8px;
+}
+
+.sok-Footer .sok-Footer-outLink > a {
+	color: var(--color__orange__light);
+	font-weight: 900;
+}
+
+.sok-Footer .sok-Footer-attributions {
+	display: flex;
+	align-items: center;
+	height: 32px;
+	margin-bottom: 32px;
+}
+
+.sok-Footer .sok-Footer-attributions > a {
+	width: 24px;
+	height: 24px;
+	margin: 0 5px;
+}
+
+.sok-Footer .sok-Footer-attributions > a > img {
+	width: 24px;
+	height: 24px;
 }
