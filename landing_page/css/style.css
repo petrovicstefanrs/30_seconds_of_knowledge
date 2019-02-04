@@ -1,0 +1,140 @@
+/* Header */
+
+.sok-Header {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sok-Header .sok-Header-logo{
+	width: 150px;
+	height: auto;
+	animation: var(--animation__slide_in--down);
+}
+
+/* Content */
+
+.sok-Content {
+	width: 100%;
+	padding: 30px 0 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sok-Content .sok-Content-tagline {
+	text-align: center;
+	font-size: var(--font__size--big);
+}
+
+/* Features */
+
+.sok-Features {
+	max-width: 800px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 30px 40px 40px;
+}
+
+.sok-Features-item {
+	width: 200px;
+	height: 200px;
+	margin: 0 10px;
+	text-align: center;
+	background: var(--color__gray);
+	box-shadow: var(--drop-shadow__regular);
+	transition: all 0.3s ease-in-out;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+.sok-Features-item:hover {
+	box-shadow: var(--drop-shadow__inverse);
+}
+
+/* ChromeButton */
+
+.sok-ChromeButton {
+	width: 200px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	background: var(--color__orange__light);
+	color: var(--color__gray--dark);
+	font-weight: 700;
+}
+
+.sok-ChromeButton:hover {
+	box-shadow: var(--drop-shadow__inverse);
+}
+
+.sok-ChromeButton > img {
+	height: 40px;
+    margin-right: 10px;
+}
+
+/* Separator */
+
+.sok-Separator {
+	background: linear-gradient(to left, rgba(246,4,0,1) 0%,rgba(254,160,79,1) 100%);
+	width: 100vw;
+	height: 2px;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+
+/* Categories */
+
+.sok-Categories {
+	max-width: 800px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px 40px 0;
+}
+
+.sok-Categories > * {
+	margin: 10px;
+	text-align: center;
+	box-shadow: var(--drop-shadow__regular);
+	border-radius: 3px;
+	padding: 10px;
+}
+
+.sok-Categories .sok-Categories-js {
+	background: var(--color__lang__js);
+	color: var(--color__gray--dark);
+}
+
+.sok-Categories .sok-Categories-css {
+	background: var(--color__lang__css);
+}
+
+.sok-Categories .sok-Categories-react {
+	background: var(--color__lang__react);
+}
+
+.sok-Categories .sok-Categories-php {
+	color: var(--color__gray--dark);
+	background: var(--color__lang__php);
+}
+
+.sok-Categories .sok-Categories-python {
+	color: var(--color__gray--dark);
+	background: var(--color__lang__python);
+}
+
+.sok-Categories .sok-Categories-interview {
+	background: var(--color__lang__interview);
+}
