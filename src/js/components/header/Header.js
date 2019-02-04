@@ -11,7 +11,7 @@ import './Header.css';
 
 const CLASS = 'sok-Header';
 
-const WEBSITE_URL = 'https://30secondsofknowladge.petrovicstefan.rs';
+const WEBSITE_URL = 'https://30secondsofknowledge.petrovicstefan.rs';
 
 const Header = ({className = '', renderOptionsBtn = true, ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
