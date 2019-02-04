@@ -12,7 +12,7 @@
 
 # 30 Seconds of Knowledge (Chrome Extension)
 
-You can checkout the ***live version*** of this project [here](https://ratefolio.petrovicstefan.rs).
+You can download the ***Chrome Extension*** [here](https://30secondsofknowledge.petrovicstefan.rs/).
 
 ------
 
