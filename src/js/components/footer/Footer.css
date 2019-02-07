@@ -35,4 +35,9 @@
 .sok-Footer .sok-Footer-attributions > a > img {
 	width: 24px;
 	height: 24px;
+	transition: transform 0.2s ease-in-out;
+}
+
+.sok-Footer .sok-Footer-attributions > a > img:hover {
+	transform: scale(0.8);
 }

@@ -67,6 +67,9 @@
 	--animation__pulse--1: pulse_1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
 	--animation__pulse--2: pulse_2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
 
+	--animation__slide_in--left: slide_in_blurred_left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	--animation__slide_in--right: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
 	/* stylelint-enable */
 }
 

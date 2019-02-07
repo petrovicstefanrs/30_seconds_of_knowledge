@@ -1,3 +1,11 @@
+/* Container */
+
+.sok-Container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 /* Header */
 
 .sok-Header {
@@ -23,6 +31,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-grow: 1;
 }
 
 .sok-Content .sok-Content-tagline {
@@ -45,7 +54,7 @@
 .sok-Features-item {
 	width: 200px;
 	height: 200px;
-	margin: 0 10px;
+	margin: 10px;
 	text-align: center;
 	background: var(--color__gray);
 	box-shadow: var(--drop-shadow__regular);
@@ -178,4 +187,23 @@
 .sok-Footer .sok-Footer-attributions > a > img {
 	width: 24px;
 	height: 24px;
+}
+
+/* Produc tHunt Ribbon */
+
+.sok-ProductHuntRibbon {
+	z-index: 9999;
+	position: fixed;
+	bottom: 36px;
+	right: 36px;
+	overflow: hidden;
+	border-radius: 3px;
+	backface-visibility: hidden;
+	width: 200px;
+	height: 48px;
+}
+
+.sok-ProductHuntRibbon > img {
+	width: 200px;
+	height: auto;
 }

@@ -13,7 +13,6 @@ var alias = {};
 var secretsPath = path.join(__dirname, 'secrets.' + env.NODE_ENV + '.js');
 
 var fileExtensions = [
-	'md',
 	'jpg',
 	'jpeg',
 	'png',
@@ -51,6 +50,11 @@ var options = {
 			{
 				test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
 				loader: 'file-loader?name=[name].[ext]',
+				exclude: /node_modules/,
+			},
+			{
+				test: /\.md$/,
+				loader: 'file-loader?name=[hash][name].[ext]',
 				exclude: /node_modules/,
 			},
 			{

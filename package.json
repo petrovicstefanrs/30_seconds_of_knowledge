@@ -1,6 +1,6 @@
 {
   "name": "30_seconds_of_knowledge",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Google Chrome Extension that lets you gain new developer skills, every time you open a New Tab",
   "scripts": {
     "build": "node utils/build.js",
