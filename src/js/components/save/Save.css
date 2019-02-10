@@ -12,3 +12,7 @@
 .sok-Save-button {
 	cursor: pointer;
 }
+
+.sok-Save-button:hover {
+	color: var(--font__color--secondary);
+}
