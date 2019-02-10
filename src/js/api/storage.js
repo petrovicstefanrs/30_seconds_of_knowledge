@@ -105,3 +105,9 @@ export const openSaved = () => {
 
 	window.open(getURL('saved.html'), '_blank');
 };
+
+export const openView = index => {
+	const {getURL} = chrome.runtime;
+
+	window.open(getURL('view.html#' + index), '_self');
+};

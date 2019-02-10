@@ -7,7 +7,7 @@ import Footer from '../../components/footer';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
 import trashIconSrc from '../../../assets/images/icons/trash.svg';
-import {restoreSnippetsFromStorage, saveSnippetToStorage} from '../../api/storage';
+import {restoreSnippetsFromStorage, saveSnippetToStorage, openView} from '../../api/storage';
 
 import './savedTab.css';
 
@@ -52,8 +52,6 @@ class SavedTab extends Component {
 		return <Chip value={lang} />;
 	};
 
-	handleSnippetClick = () => {};
-
 	handleSnippetDelete = async snippet => {
 		const {snippets} = this.state;
 		_.remove(snippets, item => item.title === snippet.title);
@@ -73,7 +71,7 @@ class SavedTab extends Component {
 		const snippetsItems = snippets.map((snippet, index) => {
 			return (
 				<div key={index} className={`${CLASS}-item`}>
-					<div className={`${CLASS}-title`} onClick={() => this.handleSnippetClick(snippet)}>
+					<div className={`${CLASS}-title`} onClick={() => openView(index)}>
 						{snippet.title}
 					</div>
 					{this.renderLangChip(snippet.language)}

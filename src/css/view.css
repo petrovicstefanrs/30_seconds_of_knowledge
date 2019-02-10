@@ -1,0 +1,9 @@
+.sok-ViewTab {
+	width: 100%;
+	height: 100%;
+}
+
+.sok-ViewTab .sok-MarkdownRenderer {
+	max-width: 500px;
+	width: 500px;
+}
