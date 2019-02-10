@@ -65,7 +65,7 @@ export const restoreFromStorage = () => {
 
 export const saveSnippetToStorage = snippets => {
 	const saveSnippet = new Promise(resolve => {
-		chrome.storage.sync.set({snippets}, () => {
+		chrome.storage.local.set({snippets}, () => {
 			resolve(true);
 		});
 	});
@@ -81,7 +81,7 @@ export const saveSnippetToStorage = snippets => {
 
 export const restoreSnippetsFromStorage = () => {
 	const getSnippets = new Promise(resolve => {
-		chrome.storage.sync.get(['snippets'], ({snippets}) => {
+		chrome.storage.local.get(['snippets'], ({snippets}) => {
 			resolve(snippets || []);
 		});
 	});
