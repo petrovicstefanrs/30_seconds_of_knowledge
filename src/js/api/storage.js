@@ -67,3 +67,9 @@ export const openExtensionOptions = () => {
 
 	openOptionsPage ? openOptionsPage() : window.open(getURL('options.html'), '_blank');
 };
+
+export const openSaved = () => {
+	const {getURL} = chrome.runtime;
+
+	window.open(getURL('saved.html'), '_blank');
+};

@@ -44,7 +44,7 @@ class NewTab extends Component {
 			return null;
 		}
 
-		return <MarkdownRenderer lang={language} source={this.state.snippet} />;
+		return <MarkdownRenderer lang={language} source={snippet} />;
 	};
 
 	renderSpinner = () => {
