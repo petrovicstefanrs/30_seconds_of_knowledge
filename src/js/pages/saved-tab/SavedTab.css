@@ -3,3 +3,9 @@
 	min-height: 100vh;
 	height: 100%;
 }
+
+.sok-SavedTab .sok-SavedTab-contentContainer {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 200px);
+}

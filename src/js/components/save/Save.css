@@ -1,0 +1,14 @@
+.sok-Save {
+	width: auto;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2.5px 5px;
+	font-weight: 900;
+	transition: all 0.3s ease-in-out;
+}
+
+.sok-Save-button {
+	cursor: pointer;
+}

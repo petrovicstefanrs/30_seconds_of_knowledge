@@ -5,6 +5,7 @@ import MarkdownRenderer from '../../components/markdown-renderer';
 import Header from '../../components/header';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
+import Save from '../../components/save';
 import Footer from '../../components/footer';
 
 import {fetchRandomSnippet} from '../../api/snippets';
@@ -67,13 +68,26 @@ class NewTab extends Component {
 		return <Chip value={language} />;
 	};
 
+	renderSave = () => {
+		const {language, snippet} = this.state;
+
+		if (!snippet) {
+			return null;
+		}
+
+		return <Save language={language} snippet={snippet} />;
+	};
+
 	render() {
 		return (
 			<div className={CLASS}>
 				{this.renderSpinner()}
 				<Header />
 				<span className={`${CLASS}-contentContainer`}>
-					{this.renderLangChip()}
+					<span className={`${CLASS}-contentHeader`}>
+						{this.renderLangChip()}
+						{this.renderSave()}
+					</span>
 					{this.renderSnippet()}
 				</span>
 				<Footer />

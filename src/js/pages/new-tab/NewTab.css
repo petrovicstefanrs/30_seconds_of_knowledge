@@ -19,6 +19,8 @@
 	min-height: calc(100vh - 200px);
 }
 
-.sok-NewTab .sok-NewTab-contentContainer > .sok-Chip {
-	align-self: flex-start;
+.sok-NewTab .sok-NewTab-contentContainer .sok-NewTab-contentHeader {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }

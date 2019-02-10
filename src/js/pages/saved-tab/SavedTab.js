@@ -13,6 +13,7 @@ class SavedTab extends Component {
 		return (
 			<div className={CLASS}>
 				<Header renderOptionsBtn={false} />
+				<span className={`${CLASS}-contentContainer`}> </span>
 				<Footer />
 			</div>
 		);
