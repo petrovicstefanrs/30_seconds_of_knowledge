@@ -113,7 +113,7 @@ export const getSnippetsFromLibrary = library => {
 export const fetchRandomSnippet = async () => {
 	const appOptions = await restoreFromStorage();
 	const enabledLibraries = Object.keys(SNIPPET_LIBRARIES).filter(val => {
-		return appOptions[val];
+		return appOptions.libs[val];
 	});
 
 	const randomLibrary = randArrayItem(enabledLibraries);

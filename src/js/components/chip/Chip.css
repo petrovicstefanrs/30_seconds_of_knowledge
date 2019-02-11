@@ -10,31 +10,31 @@
 }
 
 .sok-Chip.sok-Chip-javascript {
-	color: var(--font__color--black);
+	color: #21212a;
 	background: var(--color__lang__js);
 }
 
 .sok-Chip.sok-Chip-react {
-	color: var(--font__color--white);
+	color: #ffffff;
 	background: var(--color__lang__react);
 }
 
 .sok-Chip.sok-Chip-python {
-	color: var(--font__color--black);
+	color: #21212a;
 	background: var(--color__lang__python);
 }
 
 .sok-Chip.sok-Chip-interview {
-	color: var(--font__color--white);
+	color: #ffffff;
 	background: var(--color__lang__interview);
 }
 
 .sok-Chip.sok-Chip-php {
-	color: var(--font__color--black);
+	color: #21212a;
 	background: var(--color__lang__php);
 }
 
 .sok-Chip.sok-Chip-css {
-	color: var(--font__color--black);
+	color: #21212a;
 	background: var(--color__lang__css);
 }

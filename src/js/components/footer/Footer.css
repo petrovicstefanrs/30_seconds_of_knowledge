@@ -7,7 +7,7 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	background: linear-gradient(to bottom, var(--color__gray--dark) 0%,rgb(20, 20, 26) 100%);
+	background: var(--color__footer__gradient)
 }
 
 .sok-Footer .sok-Footer-outLink {

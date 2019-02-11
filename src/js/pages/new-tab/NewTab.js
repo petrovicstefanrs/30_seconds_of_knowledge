@@ -8,10 +8,16 @@ import Chip from '../../components/chip';
 import Footer from '../../components/footer';
 
 import {fetchRandomSnippet} from '../../api/snippets';
+import {restoreFromStorage} from '../../api/storage';
 
 import './NewTab.css';
 
 const CLASS = 'sok-NewTab';
+
+export const THEMES_VARIANTS = {
+	dark: 'dark',
+	light: 'light',
+};
 
 class NewTab extends Component {
 	constructor(props) {
@@ -24,8 +30,20 @@ class NewTab extends Component {
 	}
 
 	componentDidMount() {
+		this.setColorScheme();
 		this.fetchSnippet();
 	}
+
+	setColorScheme = async () => {
+		const options = await restoreFromStorage();
+		const {theme} = options;
+
+		if (theme === THEMES_VARIANTS.light) {
+			require('../../../css/themes/light.css');
+		} else {
+			require('../../../css/themes/dark.css');
+		}
+	};
 
 	fetchSnippet = async () => {
 		const data = await fetchRandomSnippet();

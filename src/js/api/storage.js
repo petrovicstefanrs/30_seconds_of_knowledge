@@ -5,12 +5,15 @@
 
 const createDefaultOptions = () => {
 	let options = {
-		javascript: true,
-		react: true,
-		python: true,
-		interview: true,
-		php: true,
-		css: true,
+		libs: {
+			javascript: true,
+			react: true,
+			python: true,
+			interview: true,
+			php: true,
+			css: true,
+		},
+		theme: 'light'
 	};
 
 	return options;

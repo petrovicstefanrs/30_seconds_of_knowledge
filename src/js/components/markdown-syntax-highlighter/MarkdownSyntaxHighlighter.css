@@ -26,6 +26,7 @@
 	max-height: 20px;
 	margin: 0;
 	width: auto;
+	filter: var(--filter__button--icon);
 }
 
 .sok-MarkdownSyntaxHighlighter pre {
