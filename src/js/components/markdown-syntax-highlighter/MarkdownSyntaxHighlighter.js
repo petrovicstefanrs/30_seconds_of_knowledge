@@ -4,11 +4,12 @@ import hljs from 'highlight.js';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import Button from '../button/Button';
-import Toaster, { TOAST_ACTIONS } from '../toaster/Toaster';
+import Toaster, {TOAST_ACTIONS} from '../toaster/Toaster';
+import {restoreFromStorage} from '../../api/storage';
+import {THEMES_VARIANTS} from '../../lib/consts';
 
 import copyIcon from '../../../assets/images/icons/copy.svg';
 
-import 'highlight.js/styles/monokai.css';
 import './MarkdownSyntaxHighlighter.css';
 
 const CLASS = 'sok-MarkdownSyntaxHighlighter';
@@ -35,18 +36,31 @@ class MarkdownSyntaxHighlighter extends Component {
 	}
 
 	componentDidMount() {
-		this.highlightCode();
+		this.setCodeBlockTheme(this.highlightCode);
 	}
 
 	componentDidUpdate() {
 		this.highlightCode();
 	}
 
+	setCodeBlockTheme = async callback => {
+		const options = await restoreFromStorage();
+		const {theme} = options;
+
+		if (theme === THEMES_VARIANTS.light) {
+			require('highlight.js/styles/vs.css');
+		} else {
+			require('highlight.js/styles/monokai.css');
+		}
+
+		callback && callback();
+	};
+
 	highlightCode = () => {
 		hljs.highlightBlock(this.codeEl.current);
 	};
 
-	toogleCopyToast = (action) => {
+	toogleCopyToast = action => {
 		const isActive = action === TOAST_ACTIONS.show ? true : false;
 
 		this.setState({
@@ -69,12 +83,15 @@ class MarkdownSyntaxHighlighter extends Component {
 					<Button icon={copyIcon} onClick={() => this.toogleCopyToast(TOAST_ACTIONS.show)} />
 				</CopyToClipboard>
 				{toastActive && (
-					<Toaster toast="Copied to Clipboard" onDismiss={() => this.toogleCopyToast(TOAST_ACTIONS.hide)} noButton={true} />
+					<Toaster
+						toast="Copied to Clipboard"
+						onDismiss={() => this.toogleCopyToast(TOAST_ACTIONS.hide)}
+						noButton={true}
+					/>
 				)}
 			</div>
 		);
 	}
 }
-
 
 export default MarkdownSyntaxHighlighter;

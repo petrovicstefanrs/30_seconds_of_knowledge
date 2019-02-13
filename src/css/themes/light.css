@@ -1,0 +1,22 @@
+/* Light Theme
+ * Names will be deceptive because the colors are inverted
+ */
+
+:root {
+	--color__white: #0e0f0f;
+	--color__white--dark: #202123;
+	--color__gray: #353740;
+	--color__gray--light: #ebebeb;
+	--color__gray--dark: #ffffff;
+	--color__orange: #ce0e00;
+	--color__orange--light: #fe1605;
+
+	--color__header__gradient: linear-gradient(to top, var(--color__gray--dark) 0%,var(--color__gray--light) 100%);
+	--color__footer__gradient: linear-gradient(to bottom, var(--color__gray--dark) 0%,var(--color__gray--light) 100%);
+
+	--filter__button--icon: invert(100%);
+
+	--bg__code--block: var(--color__gray--light);
+
+	--color__border: var(--color__gray);
+}

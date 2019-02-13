@@ -9,13 +9,9 @@
 
 	/* Colors */
 
-	--color__white: #f0f0f7;
-	--color__white--dark: #b7b7cd;
-	--color__gray: #353740;
-	--color__gray--light: #5e5d66;
-	--color__gray--dark: #21212a;
-	--color__orange: #fe1605;
-	--color__orange__light: #fea04f;
+	/*
+	 * Colors are inherited from themes
+	 */
 
 	--color__lang__js: #F0DB4E;
 	--color__lang__react: #009bb7;
@@ -26,13 +22,13 @@
 
 	--color__primary: var(--color__gray);
 	--color__secondary: var(--color__orange);
-	--color__secondary__light: var(--color__orange__light);
+	--color__secondary--light: var(--color__orange--light);
 
 	/* Body */
 
 	--bg__color: var(--color__gray--dark);
-	--drop-shadow__regular: 10px 0 37.6px 2.4px rgba(0, 0, 0, 0.2);
-	--drop-shadow__inverse: -10px 0 37.6px 2.4px rgba(0, 0, 0, 0.2);
+	--drop-shadow__regular: 10px 0 37.6px 2.4px rgba(0, 0, 0, 0.1);
+	--drop-shadow__inverse: -10px 0 37.6px 2.4px rgba(0, 0, 0, 0.1);
 
 	/* Fonts */
 
@@ -52,11 +48,21 @@
 	--button__height: 32px;
 	--button__width--min: 144px;
 	--button__width--max: calc(var(--button__width--min)*2);
-	--button__drop-shadow: 0 10px 20px 2px rgba(0,0,0,0.3);
+	--button__drop-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
+	--filter__button--icon: none;
 
 	/* Toaster */
 
-	--toaster__bg: var(--color__gray--light);
+	--toaster__bg: var(--color__white);
+	--toaster__font: var(--color__gray--dark);
+
+	/* CodeBlock */
+
+	--bg__code--block: var(--color__gray);
+
+	/* Border */
+
+	--color__border: var(--color__gray--light);
 
 	/* Animations */
 
@@ -69,6 +75,9 @@
 
 	--animation__slide_in--left: slide_in_blurred_left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 	--animation__slide_in--right: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+	--animation__fade_in: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	--animation__fade_out: fade-out 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
 	/* stylelint-enable */
 }

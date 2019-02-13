@@ -32,7 +32,7 @@
 	margin: auto;
 	height: 32px;
 	width: 32px;
-	border: 2px solid #FFF;
+	border: 2px solid var(--color__white);
 	border-radius: 50%;
 	opacity: 0;
 	animation: var(--animation__pulse--1);

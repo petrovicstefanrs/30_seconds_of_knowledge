@@ -1,5 +1,7 @@
 import React from 'react';
 
+import env from '../../../env';
+
 import ts_code_icon from '../../../assets/images/icons/30_code.png';
 import ts_css_icon from '../../../assets/images/icons/30_css.png';
 import ts_react_icon from '../../../assets/images/icons/30_react.png';
@@ -15,7 +17,7 @@ const Footer = ({className = '', ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
 		<span className={CLASS + '-outLink'}>
 			Visit my{' '}
-			<a href="https://www.petrovicstefan.rs/" target="_blank" title="Petrovic Stefan Portfolio">
+			<a href={env.developer_website_url} target="_blank" title="Petrovic Stefan Portfolio">
 				website
 			</a>{' '}
 			for more cool projects!

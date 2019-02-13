@@ -26,4 +26,5 @@
 
 .sok-MarkdownCodepenPrefill-codepenButton > img {
 	margin-right: 6px;
+	filter: var(--filter__button--icon);
 }
