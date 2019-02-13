@@ -76,7 +76,7 @@
 	justify-content: center;
 	align-items: center;
 	border-radius: 3px;
-	background: var(--color__orange__light);
+	background: var(--color__orange--light);
 	color: var(--color__gray--dark);
 	font-weight: 700;
 }
@@ -167,7 +167,7 @@
 }
 
 .sok-Footer .sok-Footer-outLink > a {
-	color: var(--color__orange__light);
+	color: var(--color__orange--light);
 	font-weight: 900;
 }
 
@@ -196,14 +196,9 @@
 	position: fixed;
 	bottom: 36px;
 	right: 36px;
-	overflow: hidden;
-	border-radius: 3px;
-	backface-visibility: hidden;
-	width: 200px;
-	height: 48px;
 }
 
-.sok-ProductHuntRibbon > img {
-	width: 200px;
-	height: auto;
+.sok-ProductHuntRibbon > a {
+	width: 250px;
+	height: 54px;
 }

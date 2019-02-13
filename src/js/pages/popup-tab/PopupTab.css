@@ -11,3 +11,10 @@
 	padding: 16px 0 32px;
 	font-size: 0.8em;
 }
+
+.sok-PopupTab .sok-Toaster {
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+	animation-duration: 0.5s;
+}

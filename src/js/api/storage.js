@@ -13,7 +13,8 @@ const createDefaultOptions = () => {
 			php: true,
 			css: true,
 		},
-		theme: 'light'
+		theme: 'dark',
+		beggar_counter: 0,
 	};
 
 	return options;

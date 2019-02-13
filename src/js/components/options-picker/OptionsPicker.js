@@ -5,9 +5,11 @@ import {hot} from 'react-hot-loader';
 import Button from '../button';
 import Spinner from '../spinner';
 import Chip from '../chip';
+import Separator from '../separator';
 import Toaster, {TOAST_ACTIONS} from '../toaster/Toaster';
 
 import {restoreFromStorage, saveToStorage} from '../../api/storage';
+import {THEMES_VARIANTS, THEMES_VARIANT_NAMES} from '../../lib/consts';
 
 import checkUnchecked from '../../../assets/images/icons/square.svg';
 import checkChecked from '../../../assets/images/icons/check-square.svg';
@@ -39,15 +41,16 @@ class OptionsPicker extends Component {
 	}
 
 	initOptionsFromStorage = async () => {
-		let options = await restoreFromStorage();
+		const options = await restoreFromStorage();
 
 		this.setState({
-			options,
+			options: options,
 		});
 	};
 
 	saveOptionsToStorage = async () => {
 		const {options} = this.state;
+
 		if (!options) {
 			return null;
 		}
@@ -72,22 +75,64 @@ class OptionsPicker extends Component {
 	handleOptionClick = lang => {
 		const {options} = this.state;
 
-		let newOptions = Object.assign({}, options, {[lang]: !options[lang]});
+		const newOptions = Object.assign({}, options);
+		newOptions.libs[lang] = !options.libs[lang];
 
 		this.setState({
 			options: newOptions,
 		});
 	};
 
-	renderOptions = () => {
+	handleThemeSwitch = () => {
+		const {options} = this.state;
+
+		const newOptions = Object.assign({}, options);
+		newOptions.theme =
+			options.theme === THEMES_VARIANTS.dark ? THEMES_VARIANTS.light : THEMES_VARIANTS.dark;
+
+		this.setState({
+			options: newOptions,
+		});
+	};
+
+	renderThemeOptions = () => {
 		const {options} = this.state;
 
 		if (!options) {
-			return this.renderSpinner();
+			return null;
 		}
 
-		const optionItems = Object.keys(options).map(key => {
-			const checkedClass = options[key] ? `${CLASS}-item-checked` : `${CLASS}-item-unChecked`;
+		const {theme} = options;
+		const checkedClass =
+			theme === THEMES_VARIANTS.dark
+				? `${CLASS}-themeSwitch-checked`
+				: `${CLASS}-themeSwitch-unChecked`;
+
+		return (
+			<React.Fragment>
+				<h2>Dark/Light Theme</h2>
+				<span className={`${CLASS}-themeSwitch-holder`}>
+					<span
+						className={`${CLASS}-themeSwitch ${checkedClass}`}
+						onClick={() => this.handleThemeSwitch()}
+					/>
+					Theme: {THEMES_VARIANT_NAMES[theme]}
+				</span>
+			</React.Fragment>
+		);
+	};
+
+	renderLangOptions = () => {
+		const {options} = this.state;
+
+		if (!options) {
+			return null;
+		}
+
+		const {libs} = options;
+
+		const optionItems = Object.keys(libs).map(key => {
+			const checkedClass = libs[key] ? `${CLASS}-item-checked` : `${CLASS}-item-unChecked`;
 
 			return (
 				<span
@@ -95,7 +140,7 @@ class OptionsPicker extends Component {
 					className={`${CLASS}-item ${checkedClass}`}
 					onClick={() => this.handleOptionClick(key)}
 				>
-					<img src={options[key] ? checkChecked : checkUnchecked} /> {this.renderLangChip(key)}
+					<img src={libs[key] ? checkChecked : checkUnchecked} /> {this.renderLangChip(key)}
 				</span>
 			);
 		});
@@ -104,7 +149,6 @@ class OptionsPicker extends Component {
 			<React.Fragment>
 				<h2>Enable/Disable Snippets</h2>
 				{optionItems}
-				<Button text="Save" onClick={this.saveOptionsToStorage} />
 			</React.Fragment>
 		);
 	};
@@ -125,20 +169,46 @@ class OptionsPicker extends Component {
 		});
 	};
 
-	render() {
+	renderToaster = () => {
 		const {noToast} = this.props;
 		const {toastActive} = this.state;
 
 		return (
+			toastActive &&
+			!noToast && (
+				<Toaster
+					toast={
+						<React.Fragment>
+							Options Saved!
+							<br />
+							<br />
+							Changes will be visible next time you open a new tab...
+						</React.Fragment>
+					}
+					onDismiss={() => this.toogleSaveToast(TOAST_ACTIONS.hide)}
+					noButton={true}
+					duration={5000}
+				/>
+			)
+		);
+	};
+
+	render() {
+		const {options} = this.state;
+
+		if (!options) {
+			return this.renderSpinner();
+		}
+
+		return (
 			<div className={CLASS}>
-				<div className={`${CLASS}-itemsContainer`}>{this.renderOptions()}</div>
-				{toastActive && !noToast && (
-					<Toaster
-						toast="Options Saved"
-						onDismiss={() => this.toogleSaveToast(TOAST_ACTIONS.hide)}
-						noButton={true}
-					/>
-				)}
+				<div className={`${CLASS}-itemsContainer`}>
+					{this.renderLangOptions()}
+					<Separator />
+					{this.renderThemeOptions()}
+					<Button text="Save" onClick={this.saveOptionsToStorage} />
+				</div>
+				{this.renderToaster()}
 			</div>
 		);
 	}

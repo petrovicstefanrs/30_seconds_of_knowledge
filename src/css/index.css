@@ -22,7 +22,7 @@
 
 	--color__primary: var(--color__gray);
 	--color__secondary: var(--color__orange);
-	--color__secondary__light: var(--color__orange__light);
+	--color__secondary--light: var(--color__orange--light);
 
 	/* Body */
 
@@ -56,6 +56,14 @@
 	--toaster__bg: var(--color__white);
 	--toaster__font: var(--color__gray--dark);
 
+	/* CodeBlock */
+
+	--bg__code--block: var(--color__gray);
+
+	/* Border */
+
+	--color__border: var(--color__gray--light);
+
 	/* Animations */
 
 	--animation__slide_in--up: slideInUp 1s;
@@ -67,6 +75,9 @@
 
 	--animation__slide_in--left: slide_in_blurred_left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 	--animation__slide_in--right: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+
+	--animation__fade_in: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	--animation__fade_out: fade-out 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
 	/* stylelint-enable */
 }

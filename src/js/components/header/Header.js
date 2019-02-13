@@ -3,7 +3,8 @@ import React from 'react';
 import Button from '../button/Button';
 
 import {openExtensionOptions} from '../../api/storage';
-import {THEMES_VARIANTS} from '../../pages/new-tab/NewTab';
+import {THEMES_VARIANTS} from '../../lib/consts';
+import env from '../../../env';
 
 import logoSrc from '../../../assets/images/logo.png';
 import logoSrcDark from '../../../assets/images/logo_dark.png';
@@ -14,8 +15,8 @@ import './Header.css';
 
 const CLASS = 'sok-Header';
 
-const WEBSITE_URL = 'https://30secondsofknowledge.petrovicstefan.rs';
-const DONATION_URL = 'https://www.paypal.me/petrovicstefan/1';
+const WEBSITE_URL = env.extension_website_url;
+const DONATION_URL = env.donation_url;
 
 const Header = ({className = '', renderOptionsBtn = true, theme, ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
