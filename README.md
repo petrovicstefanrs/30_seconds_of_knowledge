@@ -28,14 +28,22 @@ This Chrome Extension is built with **React** and snippets are provided by other
 - [30 seconds of php](https://github.com/appzcoder/30-seconds-of-php-code)
 - [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
 
-**STACK:**
+------
+
+###### Stack
 
 - React
 - Google Chrome Extension API
 
 ------
 
-###### Available Languages
+###### Inspiration
+
+Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code) !
+
+------
+
+###### Available Snippet Libraries
 
 - JavaScript
 - CSS
@@ -46,22 +54,32 @@ This Chrome Extension is built with **React** and snippets are provided by other
 
 ------
 
-###### Inspiration
+###### Done at the Moment 
 
-Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code) !
-
-------
-
-###### Contributions
-
-All contributions are welcome, but will be reviewed before merging to ensure the same coding style is enforced throughout the codebase. You can check the next section to see what stuff needs some work.
+- [x] **Make an MVP (Chrome only)**
+- [x] **Make a Landing Page for the Extension**
+- [x] **Publish to Product Hunt**
+- [x] **Make Light Theme for the Extension**
+- [x] **Add Donation Options**
 
 ------
 
 ###### Future Plans
 
-- [ ] Switch to submodules for snippets
-- [ ] Add more languages
+- [ ] Write Documentation for Contributors
+- [ ] Find a way to automate Snippet updates ( Submodules ? )
+- [ ] Add more Snippet Languages
+- [ ] Add Save/Favourite Feature
+- [ ] Port to Firefox
+- [ ] Port to Safari
+
+------
+
+###### Contributions
+
+**WIP**
+
+All contributions are welcome, but will be reviewed before merging to ensure the same coding style is enforced throughout the codebase. You can check the next section to see what stuff needs some work.
 
 ------
 
