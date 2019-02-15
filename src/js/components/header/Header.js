@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from '../button/Button';
 
-import {openExtensionOptions} from '../../api/storage';
+import {openExtensionOptions, openSaved} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
 import env from '../../../env';
 
@@ -10,6 +10,7 @@ import logoSrc from '../../../assets/images/logo.png';
 import logoSrcDark from '../../../assets/images/logo_dark.png';
 import settingsIconSrc from '../../../assets/images/icons/settings.svg';
 import donationsIconSrc from '../../../assets/images/icons/donation.svg';
+import saveIconSrc from '../../../assets/images/icons/save-list.svg';
 
 import './Header.css';
 
@@ -26,6 +27,9 @@ const Header = ({className = '', renderOptionsBtn = true, theme, ...props}) => (
 				icon={settingsIconSrc}
 				onClick={openExtensionOptions}
 			/>
+		)}
+		{renderOptionsBtn && (
+			<Button className={CLASS + '-save'} icon={saveIconSrc} onClick={openSaved} />
 		)}
 		<a href={WEBSITE_URL} target="_blank">
 			<img

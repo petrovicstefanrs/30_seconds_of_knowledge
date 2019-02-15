@@ -4,10 +4,12 @@
   "description": "Google Chrome Extension that lets you gain new developer skills, every time you open a New Tab",
   "scripts": {
     "build": "node utils/build.js",
-    "start": "node utils/webserver.js"
+    "start": "node utils/webserver.js",
+    "test": "eslint src/"
   },
   "dependencies": {
     "highlight.js": "^9.13.1",
+    "lodash": "^4.17.11",
     "react": "^16.7.0",
     "react-codepen-prefill": "^0.1.1",
     "react-copy-to-clipboard": "^5.0.1",
@@ -18,11 +20,18 @@
     "@babel/core": "^7.1.5",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "8.0.5",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "2.1.0",
+    "eslint": "^5.14.0",
+    "eslint-config-react-app": "^3.0.7",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "file-loader": "3.0.1",
     "fs-extra": "7.0.1",
     "html-loader": "0.5.5",

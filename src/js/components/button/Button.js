@@ -15,7 +15,7 @@ const BUTTON_TYPES = {
 	link: 'a',
 };
 
-const Button = ({text, icon, iconPos, onClick, href, disabled}) => {
+const Button = ({text, icon, iconPos, onClick, href, disabled, className}) => {
 	const handleClick = () => {
 		onClick && !disabled && onClick();
 	};
@@ -25,7 +25,11 @@ const Button = ({text, icon, iconPos, onClick, href, disabled}) => {
 	const disabledClass = disabled ? ` ${CLASS}-disabled` : '';
 
 	return (
-		<Type className={CLASS + positionClass + disabledClass} onClick={handleClick} href={href}>
+		<Type
+			className={CLASS + positionClass + disabledClass + ' ' + className}
+			onClick={handleClick}
+			href={href}
+		>
 			{icon && <img className={CLASS + '-icon'} src={icon} />}
 			<span className={CLASS + '-text'}>{text}</span>
 		</Type>

@@ -42,7 +42,7 @@
 	align-items: center;
 	border-radius: 3px;
 	background: var(--color__white);
-	left: 60px;
+	left: 110px;
 	display: none;
 	font-size: var(--font__size--small);
 }
@@ -102,4 +102,22 @@
 	width: 36px;
 	height: 36px;
 	margin: 0;
+}
+
+.sok-Header .sok-Header-save {
+	left: 85px;
+}
+
+.sok-Header .sok-Header-save:after {
+	content: 'Saved Snippets';
+	position: absolute;
+	width: 108px;
+	height: 36px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	background: var(--color__white);
+	left: 60px;
+	display: none;
+	font-size: var(--font__size--small);
 }

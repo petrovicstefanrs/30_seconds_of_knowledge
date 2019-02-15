@@ -17,7 +17,7 @@ const createDefaultOptions = () => {
 		beggar_counter: 0,
 	};
 
-	return options;
+	return {options};
 };
 
 /**
@@ -37,7 +37,7 @@ export const DEFAULT_EXTENSION_OPTIONS = createDefaultOptions();
 
 export const saveToStorage = options => {
 	const setOptions = new Promise(resolve => {
-		chrome.storage.sync.set(options, () => {
+		chrome.storage.sync.set({options}, () => {
 			resolve(true);
 		});
 	});
@@ -53,12 +53,44 @@ export const saveToStorage = options => {
 
 export const restoreFromStorage = () => {
 	const getOptions = new Promise(resolve => {
-		chrome.storage.sync.get(DEFAULT_EXTENSION_OPTIONS, options => {
+		chrome.storage.sync.get(DEFAULT_EXTENSION_OPTIONS, ({options}) => {
 			resolve(options);
 		});
 	});
 
 	return getOptions;
+};
+
+/**
+ * Function that saves snippets to chrome storage and syncs them over devices
+ * @function saveSnippetToStorage
+ * @return {Promise} saveSnippet - Promise that will save snippet to storage and return true once resolved
+ */
+
+export const saveSnippetToStorage = snippets => {
+	const saveSnippet = new Promise(resolve => {
+		chrome.storage.local.set({snippets}, () => {
+			resolve(true);
+		});
+	});
+
+	return saveSnippet;
+};
+
+/**
+ * Function that gets saved snippets from chrome sync storage
+ * @function restoreSnippetsFromStorage
+ * @return {Promise} getSnippets - Promise that will return Snippets from storage when resolved
+ */
+
+export const restoreSnippetsFromStorage = () => {
+	const getSnippets = new Promise(resolve => {
+		chrome.storage.local.get(['snippets'], ({snippets}) => {
+			resolve(snippets || []);
+		});
+	});
+
+	return getSnippets;
 };
 
 /**
@@ -70,4 +102,16 @@ export const openExtensionOptions = () => {
 	const {openOptionsPage, getURL} = chrome.runtime;
 
 	openOptionsPage ? openOptionsPage() : window.open(getURL('options.html'), '_blank');
+};
+
+export const openSaved = () => {
+	const {getURL} = chrome.runtime;
+
+	window.open(getURL('saved.html'), '_blank');
+};
+
+export const openView = index => {
+	const {getURL} = chrome.runtime;
+
+	window.open(getURL('view.html#' + index), '_self');
 };
