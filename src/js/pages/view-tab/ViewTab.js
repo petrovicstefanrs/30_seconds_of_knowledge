@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, {Component} from 'react';
 import {hot} from 'react-hot-loader';
 
@@ -6,10 +5,9 @@ import MarkdownRenderer from '../../components/markdown-renderer';
 import Header from '../../components/header';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
-import Save from '../../components/save';
 import Footer from '../../components/footer';
 
-import {restoreFromStorage, saveToStorage, restoreSnippetsFromStorage} from '../../api/storage';
+import {restoreFromStorage, restoreSnippetsFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
 
 import './ViewTab.css';

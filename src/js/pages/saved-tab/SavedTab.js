@@ -10,7 +10,6 @@ import trashIconSrc from '../../../assets/images/icons/trash.svg';
 import trashIconLightSrc from '../../../assets/images/icons/trash-light.svg';
 import {
 	restoreFromStorage,
-	saveToStorage,
 	restoreSnippetsFromStorage,
 	saveSnippetToStorage,
 	openView,

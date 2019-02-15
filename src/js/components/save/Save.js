@@ -77,9 +77,8 @@ class Save extends React.Component {
 	};
 
 	render() {
-		const {noToast, snippet} = this.props;
+		const {noToast} = this.props;
 		const {toastActive, saved} = this.state;
-		const title = snippet.split('\n')[0].split('### ')[1];
 
 		return (
 			<div className={CLASS}>
