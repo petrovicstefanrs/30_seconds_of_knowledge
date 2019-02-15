@@ -9,7 +9,8 @@ import Chip from '../../components/chip';
 import Save from '../../components/save';
 import Footer from '../../components/footer';
 
-import {restoreSnippetsFromStorage} from '../../api/storage';
+import {restoreFromStorage, saveToStorage, restoreSnippetsFromStorage} from '../../api/storage';
+import {THEMES_VARIANTS} from '../../lib/consts';
 
 import './ViewTab.css';
 
@@ -22,10 +23,12 @@ class ViewTab extends Component {
 		this.state = {
 			snippet: null,
 			language: null,
+			theme: THEMES_VARIANTS.dark,
 		};
 	}
 
 	componentDidMount() {
+		this.setColorScheme();
 		this.fetchSnippet();
 	}
 
@@ -40,6 +43,21 @@ class ViewTab extends Component {
 		this.setState({
 			snippet,
 			language,
+		});
+	};
+
+	setColorScheme = async () => {
+		const options = await restoreFromStorage();
+		const {theme} = options;
+
+		if (theme === THEMES_VARIANTS.light) {
+			require('../../../css/themes/light.css');
+		} else {
+			require('../../../css/themes/dark.css');
+		}
+
+		this.setState({
+			theme,
 		});
 	};
 
@@ -74,10 +92,11 @@ class ViewTab extends Component {
 	};
 
 	render() {
+		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
 				{this.renderSpinner()}
-				<Header renderOptionsBtn={false} />
+				<Header theme={theme} renderOptionsBtn={false} />
 				<span className={`${CLASS}-contentContainer`}>
 					<span className={`${CLASS}-contentHeader`}>{this.renderLangChip()}</span>
 					{this.renderSnippet()}

@@ -7,7 +7,15 @@ import Footer from '../../components/footer';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
 import trashIconSrc from '../../../assets/images/icons/trash.svg';
-import {restoreSnippetsFromStorage, saveSnippetToStorage, openView} from '../../api/storage';
+import trashIconLightSrc from '../../../assets/images/icons/trash-light.svg';
+import {
+	restoreFromStorage,
+	saveToStorage,
+	restoreSnippetsFromStorage,
+	saveSnippetToStorage,
+	openView,
+} from '../../api/storage';
+import {THEMES_VARIANTS} from '../../lib/consts';
 
 import './savedTab.css';
 
@@ -19,10 +27,12 @@ class SavedTab extends Component {
 
 		this.state = {
 			snippets: null,
+			theme: THEMES_VARIANTS.dark,
 		};
 	}
 
 	componentDidMount() {
+		this.setColorScheme();
 		this.initSnippetsFromStorage();
 	}
 
@@ -31,6 +41,21 @@ class SavedTab extends Component {
 
 		this.setState({
 			snippets,
+		});
+	};
+
+	setColorScheme = async () => {
+		const options = await restoreFromStorage();
+		const {theme} = options;
+
+		if (theme === THEMES_VARIANTS.light) {
+			require('../../../css/themes/light.css');
+		} else {
+			require('../../../css/themes/dark.css');
+		}
+
+		this.setState({
+			theme,
 		});
 	};
 
@@ -62,7 +87,7 @@ class SavedTab extends Component {
 	};
 
 	renderSnippets = () => {
-		const {snippets} = this.state;
+		const {snippets, theme} = this.state;
 
 		if (!snippets) {
 			return this.renderSpinner();
@@ -76,7 +101,10 @@ class SavedTab extends Component {
 					</div>
 					{this.renderLangChip(snippet.language)}
 					<div className={`${CLASS}-delete`} onClick={() => this.handleSnippetDelete(snippet)}>
-						<img src={trashIconSrc} alt="trash button" />
+						<img
+							src={theme === THEMES_VARIANTS.dark ? trashIconSrc : trashIconLightSrc}
+							alt="trash button"
+						/>
 					</div>
 				</div>
 			);
@@ -91,9 +119,10 @@ class SavedTab extends Component {
 	};
 
 	render() {
+		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
-				<Header renderOptionsBtn={false} />
+				<Header theme={theme} renderOptionsBtn={false} />
 				<div className={`${CLASS}-contentContainer`}>{this.renderSnippets()}</div>
 				<Footer />
 			</div>
