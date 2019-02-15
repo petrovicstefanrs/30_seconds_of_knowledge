@@ -37,7 +37,8 @@
 		"_": true,
 		"Promise": true,
 		"Primus": true,
-		"google": true
+		"google": true,
+		"chrome": true
 	},
 	"rules": {
 		"camelcase": "off",
