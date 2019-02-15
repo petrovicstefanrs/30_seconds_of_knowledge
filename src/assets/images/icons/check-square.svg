@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f0f0f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#SVGID_1_)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="24" y2="0" >
+	<stop  offset="0" style="stop-color: #f60400"/>
+	<stop  offset="0" style="stop-color: #ff2300"/>
+	<stop  offset="0.3" style="stop-color: #ff4100"/>
+	<stop  offset="0.6" style="stop-color: #ff732a"/>
+	<stop  offset="0.8" style="stop-color: #ff953e"/>
+	<stop  offset="1" style="stop-color: #ff9f42"/>
+</linearGradient>
+<polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>

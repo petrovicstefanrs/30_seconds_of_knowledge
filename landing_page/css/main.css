@@ -13,7 +13,7 @@
 	--color__gray--light: #5e5d66;
 	--color__gray--dark: #21212a;
 	--color__orange: #fe1605;
-	--color__orange__light: #fea04f;
+	--color__orange--light: #fea04f;
 
 	--color__lang__js: #F0DB4E;
 	--color__lang__react: #009bb7;
@@ -24,7 +24,7 @@
 
 	--color__primary: var(--color__gray);
 	--color__secondary: var(--color__orange);
-	--color__secondary__light: var(--color__orange__light);
+	--color__secondary--light: var(--color__orange--light);
 
 	/* Body */
 
@@ -84,5 +84,5 @@ h3 {
 
 strong {
 	font-weight: 700;
-	color: var(--color__orange__light);
+	color: var(--color__orange--light);
 }

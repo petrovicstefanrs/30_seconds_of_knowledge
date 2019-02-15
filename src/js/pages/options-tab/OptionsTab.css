@@ -5,6 +5,6 @@
 }
 
 .sok-OptionsTab .sok-OptionsPicker {
-	height: calc(100vh - 200px);
+	min-height: calc(100vh - 200px);
 	margin: 0 auto;
 }

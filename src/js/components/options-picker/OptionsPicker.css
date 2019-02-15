@@ -7,13 +7,13 @@
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > h2 {
-	color: var(--color__orange__light);
+	color: var(--color__orange--light);
 	text-transform: uppercase;
 	margin-bottom: 32px;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > .sok-Button {
-	background: var(--color__orange__light);
+	background: var(--color__orange--light);
 	font-weight: 900;
 	font-size: 1em;
 	margin-top: 32px;
@@ -34,6 +34,45 @@
 
 .sok-OptionsPicker .sok-OptionsPicker-item-unChecked .sok-Chip {
 	background: var(--color__gray--light);
-	color: var(--color__orange__light);
+	color: var(--color__orange--light);
 	text-decoration: line-through;
+}
+
+.sok-OptionsPicker .sok-OptionsPicker-themeSwitch-holder {
+	display: flex;
+	align-items: center;
+	font-weight: 900;
+}
+
+.sok-OptionsPicker .sok-OptionsPicker-themeSwitch {
+	height: 25px;
+	width: 50px;
+	display: inline-block;
+	border: 2px solid var(--color__orange--light);
+	border-radius: 25px;
+	margin-right: 10px;
+	font-weight: 900;
+	cursor: pointer;
+	position: relative;
+}
+
+.sok-OptionsPicker .sok-OptionsPicker-themeSwitch:before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	background: linear-gradient(to left, var(--color__orange--light), var(--color__orange));
+	position: absolute;
+	border-radius: 50%;
+	top: 3px;
+	bottom: 3px;
+	left: 3px;
+	transition: all 0.3s ease-in-out;
+}
+
+.sok-OptionsPicker .sok-OptionsPicker-themeSwitch-checked:before {
+	margin-left: 0;
+}
+
+.sok-OptionsPicker .sok-OptionsPicker-themeSwitch-unChecked:before {
+	margin-left: 25px;
 }
