@@ -62,6 +62,7 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 - [x] **Make Light Theme for the Extension**
 - [x] **Add Donation Options**
 - [x] **Add Save/Favourite Feature**
+- [x] **Release v1.0.0**
 
 ------
 
