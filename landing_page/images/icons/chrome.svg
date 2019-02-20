@@ -3,12 +3,12 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="258" x2="512" y2="258" gradientTransform="matrix(1 0 0 -1 0 514)">
-	<stop  offset="0" style="stop-color:#21212a"/>
-	<stop  offset="0.021" style="stop-color:#21212a"/>
-	<stop  offset="0.293" style="stop-color:#21212a"/>
-	<stop  offset="0.554" style="stop-color:#21212a"/>
-	<stop  offset="0.796" style="stop-color:#21212a"/>
-	<stop  offset="1" style="stop-color:#21212a"/>
+	<stop  offset="0" style="stop-color:#ffffff"/>
+	<stop  offset="0.021" style="stop-color:#ffffff"/>
+	<stop  offset="0.293" style="stop-color:#ffffff"/>
+	<stop  offset="0.554" style="stop-color:#ffffff"/>
+	<stop  offset="0.796" style="stop-color:#ffffff"/>
+	<stop  offset="1" style="stop-color:#ffffff"/>
 </linearGradient>
 <path style="fill:url(#SVGID_1_);" d="M437.02,74.98C388.667,26.629,324.38,0,256,0S123.333,26.629,74.98,74.98
 	C26.629,123.333,0,187.62,0,256s26.629,132.667,74.98,181.02C123.333,485.371,187.62,512,256,512

@@ -45,7 +45,7 @@ var options = {
 			},
 			{
 				test: /\.md$/,
-				loader: 'file-loader?name=[hash][name].[ext]',
+				loader: 'file-loader?name=[path][name].[ext]',
 				exclude: /node_modules/,
 			},
 			{

@@ -2,8 +2,8 @@
   "name": "30 Seconds of Knowledge",
   "short_name": "30 SoK",
   "manifest_version": 2,
-  "version": "0.2.0",
-  "version_name": "0.2.0 beta",
+  "version": "1.0.0",
+  "version_name": "1.0.0",
   "description": "Google Chrome Extension that lets you gain new developer skills, every time you open a New Tab",
   "icons": {
     "32": "icon_32.png",
@@ -26,5 +26,6 @@
   "chrome_url_overrides" : {
     "newtab": "newtab.html"
   },
+  "offline_enabled": true,
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

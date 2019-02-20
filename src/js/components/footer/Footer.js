@@ -13,7 +13,7 @@ import './Footer.css';
 
 const CLASS = 'sok-Footer';
 
-const Footer = ({className = '', ...props}) => (
+const Footer = ({className = '', enableAttributions = false, ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
 		<span className={CLASS + '-outLink'}>
 			Visit my{' '}
@@ -22,27 +22,29 @@ const Footer = ({className = '', ...props}) => (
 			</a>{' '}
 			for more cool projects!
 		</span>
-		<span className={CLASS + '-attributions'}>
-			Powered By:{' '}
-			<a targe="_blank" href="https://30secondsofcode.org/">
-				<img src={ts_code_icon} alt="30 Seconds of Code Logo" />
-			</a>
-			<a targe="_blank" href="https://30-seconds.github.io/30-seconds-of-css/">
-				<img src={ts_css_icon} alt="30 Seconds of CSS Logo" />
-			</a>
-			<a targe="_blank" href="https://github.com/30-seconds/30-seconds-of-react">
-				<img src={ts_react_icon} alt="30 Seconds of React Logo" />
-			</a>
-			<a targe="_blank" href="https://30secondsofinterviews.org/">
-				<img src={ts_interview_icon} alt="30 Seconds of Interviews Logo" />
-			</a>
-			<a targe="_blank" href="http://python.kriadmin.me/">
-				<img src={ts_python_icon} alt="30 Seconds of Python Logo" />
-			</a>
-			<a targe="_blank" href="https://github.com/appzcoder/30-seconds-of-php-code">
-				<img src={ts_php_icon} alt="30 Seconds of PHP Logo" />
-			</a>
-		</span>
+		{enableAttributions && (
+			<span className={CLASS + '-attributions'}>
+				Powered By:{' '}
+				<a targe="_blank" href="https://30secondsofcode.org/">
+					<img src={ts_code_icon} alt="30 Seconds of Code Logo" />
+				</a>
+				<a targe="_blank" href="https://30-seconds.github.io/30-seconds-of-css/">
+					<img src={ts_css_icon} alt="30 Seconds of CSS Logo" />
+				</a>
+				<a targe="_blank" href="https://github.com/30-seconds/30-seconds-of-react">
+					<img src={ts_react_icon} alt="30 Seconds of React Logo" />
+				</a>
+				<a targe="_blank" href="https://30secondsofinterviews.org/">
+					<img src={ts_interview_icon} alt="30 Seconds of Interviews Logo" />
+				</a>
+				<a targe="_blank" href="http://python.kriadmin.me/">
+					<img src={ts_python_icon} alt="30 Seconds of Python Logo" />
+				</a>
+				<a targe="_blank" href="https://github.com/appzcoder/30-seconds-of-php-code">
+					<img src={ts_php_icon} alt="30 Seconds of PHP Logo" />
+				</a>
+			</span>
+		)}
 	</div>
 );
 

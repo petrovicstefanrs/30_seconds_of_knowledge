@@ -5,16 +5,17 @@ import MarkdownRenderer from '../../components/markdown-renderer';
 import Header from '../../components/header';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
-import Save from '../../components/save';
+import SaveButton from '../../components/save-button';
 import Footer from '../../components/footer';
 import DonationBeggar from '../../components/donation-beggar';
+import ControllsOverlay from '../../components/controlls-overlay';
 
+import env from '../../../env';
 import {fetchRandomSnippet} from '../../api/snippets';
 import {restoreFromStorage, saveToStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
 
 import './NewTab.css';
-import env from '../../../env';
 
 const CLASS = 'sok-NewTab';
 
@@ -69,11 +70,13 @@ class NewTab extends Component {
 
 	fetchSnippet = async () => {
 		const data = await fetchRandomSnippet();
-		const {snippet, language} = data;
+		const {snippet, language, snippet_src, snippet_title} = data;
 
 		this.setState({
 			snippet,
 			language,
+			snippet_src,
+			snippet_title,
 		});
 	};
 
@@ -108,18 +111,23 @@ class NewTab extends Component {
 	};
 
 	renderSave = () => {
-		const {language, snippet} = this.state;
+		const {language, snippet_src, snippet_title} = this.state;
 
-		if (!snippet) {
+		if (!snippet_src) {
 			return null;
 		}
 
-		return <Save language={language} snippet={snippet} />;
+		const data = {
+			language,
+			snippet_src,
+			snippet_title,
+		};
+
+		return <SaveButton data={data} />;
 	};
 
 	renderDonationBeggar = () => {
 		const {beggar_counter} = this.state;
-		console.log(beggar_counter);
 
 		const shouldRender =
 			beggar_counter !== 0 && beggar_counter % env.donation_beggar.trigger_count === 0;
@@ -135,6 +143,7 @@ class NewTab extends Component {
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
+				<ControllsOverlay />
 				{this.renderSpinner()}
 				{this.renderDonationBeggar()}
 				<Header theme={theme} />

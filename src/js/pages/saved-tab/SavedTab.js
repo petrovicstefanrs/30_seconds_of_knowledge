@@ -6,12 +6,15 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
+import ControllsOverlay from '../../components/controlls-overlay';
+
 import trashIconSrc from '../../../assets/images/icons/trash.svg';
-import trashIconLightSrc from '../../../assets/images/icons/trash-light.svg';
+import emptyIconSrc from '../../../assets/images/icons/empty.svg';
+
 import {
 	restoreFromStorage,
 	restoreSnippetsFromStorage,
-	saveSnippetToStorage,
+	saveSnippetsToStorage,
 	openView,
 } from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
@@ -78,51 +81,59 @@ class SavedTab extends Component {
 
 	handleSnippetDelete = async snippet => {
 		const {snippets} = this.state;
-		_.remove(snippets, item => item.title === snippet.title);
+		_.remove(snippets, item => {
+			return item.src === snippet.src;
+		});
 
-		await saveSnippetToStorage(snippets);
+		await saveSnippetsToStorage(snippets);
 
 		this.setState({snippets});
 	};
 
 	renderSnippets = () => {
-		const {snippets, theme} = this.state;
+		const {snippets} = this.state;
 
 		if (!snippets) {
 			return this.renderSpinner();
 		}
 
+		if (!snippets.length) {
+			return (
+				<div className={`${CLASS}-empty`}>
+					<img src={emptyIconSrc} alt="Empty Saved Snippets Library" />
+					<span>Oh, there are no saved snippets here, only Ghosts...</span>
+					<span>Come back once you've saved some!</span>
+				</div>
+			);
+		}
+
 		const snippetsItems = snippets.map((snippet, index) => {
 			return (
 				<div key={index} className={`${CLASS}-item`}>
-					<div className={`${CLASS}-title`} onClick={() => openView(index)}>
+					<div className={`${CLASS}-item-title`} onClick={() => openView(index)}>
 						{snippet.title}
 					</div>
 					{this.renderLangChip(snippet.language)}
-					<div className={`${CLASS}-delete`} onClick={() => this.handleSnippetDelete(snippet)}>
-						<img
-							src={theme === THEMES_VARIANTS.dark ? trashIconSrc : trashIconLightSrc}
-							alt="trash button"
-						/>
+					<div className={`${CLASS}-item-delete`} onClick={() => this.handleSnippetDelete(snippet)}>
+						<img src={trashIconSrc} alt="Trash Button" />
 					</div>
 				</div>
 			);
 		});
 
-		return (
-			<React.Fragment>
-				<h2>Saved Snippets</h2>
-				{snippetsItems}
-			</React.Fragment>
-		);
+		return snippetsItems;
 	};
 
 	render() {
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
-				<Header theme={theme} renderOptionsBtn={false} />
-				<div className={`${CLASS}-contentContainer`}>{this.renderSnippets()}</div>
+				<ControllsOverlay renderSaves={false} renderBack={true} />
+				<Header theme={theme} />
+				<div className={`${CLASS}-contentContainer`}>
+					<h2>Saved Snippets</h2>
+					{this.renderSnippets()}
+				</div>
 				<Footer />
 			</div>
 		);

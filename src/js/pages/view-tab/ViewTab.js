@@ -6,9 +6,11 @@ import Header from '../../components/header';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
 import Footer from '../../components/footer';
+import ControllsOverlay from '../../components/controlls-overlay';
 
 import {restoreFromStorage, restoreSnippetsFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
+import {fetchSnippet} from '../../api/snippets';
 
 import './ViewTab.css';
 
@@ -32,11 +34,16 @@ class ViewTab extends Component {
 
 	fetchSnippet = async () => {
 		const index = location.hash.split('#')[1];
-		if (!index) return null;
+		if (!index) {
+			return null;
+		}
 
 		let snippets = await restoreSnippetsFromStorage();
 
-		const {snippet, language} = snippets[index];
+		const {src, language} = snippets[index];
+
+		const snippetData = await fetchSnippet(src, language);
+		const {snippet} = snippetData;
 
 		this.setState({
 			snippet,
@@ -93,8 +100,9 @@ class ViewTab extends Component {
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
+				<ControllsOverlay renderBack={true} />
 				{this.renderSpinner()}
-				<Header theme={theme} renderOptionsBtn={false} />
+				<Header theme={theme} />
 				<span className={`${CLASS}-contentContainer`}>
 					<span className={`${CLASS}-contentHeader`}>{this.renderLangChip()}</span>
 					{this.renderSnippet()}

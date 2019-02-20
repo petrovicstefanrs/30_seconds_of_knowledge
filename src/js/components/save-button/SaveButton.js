@@ -2,17 +2,16 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Toaster, {TOAST_ACTIONS} from '../toaster/Toaster';
-import {restoreSnippetsFromStorage, saveSnippetToStorage} from '../../api/storage';
+import {restoreSnippetsFromStorage, saveSnippetsToStorage} from '../../api/storage';
 
-import './Save.css';
+import './SaveButton.css';
 
-const CLASS = 'sok-Save';
+const CLASS = 'sok-SaveButton';
 
-class Save extends React.Component {
+class SaveButton extends Component {
 	static propTypes = {
 		noToast: PropTypes.bool,
-		language: PropTypes.string,
-		snippet: PropTypes.string,
+		data: PropTypes.object,
 	};
 
 	static defaultProps = {
@@ -33,10 +32,12 @@ class Save extends React.Component {
 	}
 
 	getSnippetsFromStorage = async () => {
-		const {snippet} = this.props;
-		const title = snippet.split('\n')[0].split('### ')[1];
+		const {data} = this.props;
+		const {snippet_src} = data;
 
-		const saved = !!_.find(await restoreSnippetsFromStorage(), ['title', title]);
+		const savedSnippets = await restoreSnippetsFromStorage();
+
+		const saved = !!_.find(savedSnippets, ['src', snippet_src]);
 
 		this.setState({
 			saved,
@@ -44,23 +45,27 @@ class Save extends React.Component {
 	};
 
 	saveSnippetToStorage = async () => {
-		const {language, snippet} = this.props;
+		const {saved} = this.state;
+		const {data} = this.props;
+		const {snippet_src, snippet_title, language} = data;
 
-		if (!snippet) {
+		if (!snippet_src || saved) {
 			return null;
 		}
 
-		const title = snippet.split('\n')[0].split('### ')[1];
 		const snippetToSave = {
-			title,
+			src: snippet_src,
+			title: snippet_title,
 			language,
-			snippet,
 		};
 
-		const snippets = await restoreSnippetsFromStorage();
-		if (!_.find(snippets, ['title', title])) snippets.push(snippetToSave);
+		const savedSnippets = await restoreSnippetsFromStorage();
 
-		let isSaved = await saveSnippetToStorage(snippets);
+		if (!_.find(savedSnippets, ['src', snippet_src])) {
+			savedSnippets.push(snippetToSave);
+		}
+
+		let isSaved = await saveSnippetsToStorage(savedSnippets);
 
 		this.setState({
 			toastActive: isSaved,
@@ -80,13 +85,15 @@ class Save extends React.Component {
 		const {noToast} = this.props;
 		const {toastActive, saved} = this.state;
 
+		const disabledClass = saved ? `${CLASS}-disabled` : '';
+
 		return (
-			<div className={CLASS}>
-				{!saved && (
+			<React.Fragment>
+				<div className={`${CLASS} ${disabledClass}`}>
 					<div className={`${CLASS}-button`} onClick={this.saveSnippetToStorage}>
-						Save
+						{saved ? 'Saved' : 'Save'}
 					</div>
-				)}
+				</div>
 				{toastActive && !noToast && (
 					<Toaster
 						toast="Saved"
@@ -94,9 +101,9 @@ class Save extends React.Component {
 						noButton={true}
 					/>
 				)}
-			</div>
+			</React.Fragment>
 		);
 	}
 }
 
-export default Save;
+export default SaveButton;

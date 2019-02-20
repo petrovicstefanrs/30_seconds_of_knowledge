@@ -36,6 +36,7 @@
 	--font__color--dark: var(--color__white--dark);
 	--font__color--black: var(--color__gray--dark);
 	--font__color--secondary: var(--color__orange);
+	--font__color--secondary--light: var(--color__orange--light);
 
 	--font__size--base: 12px;
 	--font__size--tiny: 8px;

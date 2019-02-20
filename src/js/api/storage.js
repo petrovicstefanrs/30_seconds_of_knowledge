@@ -30,6 +30,14 @@ const createDefaultOptions = () => {
 export const DEFAULT_EXTENSION_OPTIONS = createDefaultOptions();
 
 /**
+ * Default saved snippets
+ * @const DEFAULT_SAVED_SNIPPETS
+ * @readonly
+ */
+
+export const DEFAULT_SAVED_SNIPPETS = ['snippets'];
+
+/**
  * Function that saves extension options to chrome storage and syncs them over devices
  * @function saveToStorage
  * @return {Promise} setOptions - Promise that will set options to storage and return true once resolved
@@ -67,7 +75,7 @@ export const restoreFromStorage = () => {
  * @return {Promise} saveSnippet - Promise that will save snippet to storage and return true once resolved
  */
 
-export const saveSnippetToStorage = snippets => {
+export const saveSnippetsToStorage = snippets => {
 	const saveSnippet = new Promise(resolve => {
 		chrome.storage.local.set({snippets}, () => {
 			resolve(true);
@@ -85,7 +93,7 @@ export const saveSnippetToStorage = snippets => {
 
 export const restoreSnippetsFromStorage = () => {
 	const getSnippets = new Promise(resolve => {
-		chrome.storage.local.get(['snippets'], ({snippets}) => {
+		chrome.storage.local.get(DEFAULT_SAVED_SNIPPETS, ({snippets}) => {
 			resolve(snippets || []);
 		});
 	});
@@ -104,14 +112,35 @@ export const openExtensionOptions = () => {
 	openOptionsPage ? openOptionsPage() : window.open(getURL('options.html'), '_blank');
 };
 
+/**
+ * Function that opens saved snippets page.
+ * @function openExtensionOptions
+ */
+
 export const openSaved = () => {
 	const {getURL} = chrome.runtime;
 
-	window.open(getURL('saved.html'), '_blank');
+	window.open(getURL('saved.html'), '_self');
 };
+
+/**
+ * Function that opens a specific saved snippet page.
+ * @function openView
+ */
 
 export const openView = index => {
 	const {getURL} = chrome.runtime;
 
 	window.open(getURL('view.html#' + index), '_self');
+};
+
+/**
+ * Function that opens a random snippet page.
+ * @function openExtensionOptions
+ */
+
+export const openRandomSnippet = () => {
+	const {getURL} = chrome.runtime;
+
+	window.open(getURL('newtab.html'), '_self');
 };
