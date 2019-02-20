@@ -85,7 +85,7 @@ All contributions are welcome, but will be reviewed before merging to ensure the
 
 ###### Contributors
 
-A big thankyou to these wonderfull people!
+A big thank you to these wonderfull people!
 
 |Avatar|Name|Github Profile|
 |---|---|---|
