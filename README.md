@@ -61,6 +61,7 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 - [x] **Publish to Product Hunt**
 - [x] **Make Light Theme for the Extension**
 - [x] **Add Donation Options**
+- [x] **Add Save/Favourite Feature**
 
 ------
 
@@ -69,7 +70,6 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 - [ ] Write Documentation for Contributors
 - [ ] Find a way to automate Snippet updates ( Submodules ? )
 - [ ] Add more Snippet Languages
-- [ ] Add Save/Favourite Feature
 - [ ] Port to Firefox
 - [ ] Port to Safari
 
@@ -83,3 +83,10 @@ All contributions are welcome, but will be reviewed before merging to ensure the
 
 ------
 
+###### Contributors
+
+A big thankyou to these wonderfull people!
+
+|Avatar|Name|Github Profile|
+|---|---|---|
+|<img src="https://avatars0.githubusercontent.com/u/522352?s=460&v=4" width="50px" height="50px"/>|Ahmad Santarissy|[Visit](https://github.com/asantarissy)|
