@@ -120,17 +120,60 @@ export const fetchRandomSnippet = async () => {
 	const snippetSources = getSnippetsFromLibrary(randomLibrary);
 	const randomSnippet = randArrayItem(snippetSources);
 
-	return await fetch(randomSnippet)
+	return await fetchSnippet(randomSnippet, randomLibrary);
+	// return await fetch(randomSnippet)
+	// 	.then(res => res.text())
+	// 	.then(res => {
+	// 		const snippet = res;
+	// 		const language = randomLibrary;
+	// 		const language_label = SNIPPET_LIBRARY_LABELS[language];
+	// 		const snippet_title = randomSnippet.slice(
+	// 			randomSnippet.lastIndexOf('/') + 1,
+	// 			randomSnippet.indexOf('.md')
+	// 		);
+
+	// 		return {
+	// 			snippet,
+	// 			language,
+	// 			language_label,
+	// 			snippet_src: randomSnippet,
+	// 			snippet_title,
+	// 		};
+	// 	})
+	// 	.catch(err => console.error(err));
+};
+
+/**
+ * Function that returnes a promisse that Fetches and returns a specific snippet from a specific library of snippets
+ * @function fetchSnippet
+ * @returns {Promisse} Returns a prommise that when resolved provides snippet, language, language label, snippet_src & snippet_title
+ */
+
+export const fetchSnippet = async (snippetSrc, language) => {
+	if (!snippetSrc) {
+		console.error(`Snippet Soruce must be defined!`);
+	}
+
+	if (!language) {
+		console.error(`Snippet Language must be defined!`);
+	}
+
+	return await fetch(snippetSrc)
 		.then(res => res.text())
 		.then(res => {
 			const snippet = res;
-			const language = randomLibrary;
 			const language_label = SNIPPET_LIBRARY_LABELS[language];
+			const snippet_title = snippetSrc.slice(
+				snippetSrc.lastIndexOf('/') + 1,
+				snippetSrc.indexOf('.md')
+			);
 
 			return {
 				snippet,
 				language,
 				language_label,
+				snippet_src: snippetSrc,
+				snippet_title,
 			};
 		})
 		.catch(err => console.error(err));

@@ -43,7 +43,7 @@ class OptionsTab extends Component {
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
-				<Header renderOptionsBtn={false} theme={theme} />
+				<Header theme={theme} />
 				<OptionsPicker />
 				<Footer />
 			</div>

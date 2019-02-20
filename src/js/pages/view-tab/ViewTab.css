@@ -1,4 +1,4 @@
-.sok-NewTab {
+.sok-ViewTab {
 	width: 100%;
 	height: 100%;
 	min-height: 100vh;
@@ -8,18 +8,18 @@
 	align-items: center;
 }
 
-.sok-NewTab .sok-Header {
+.sok-ViewTab .sok-Header {
 	z-index: 9999;
 }
 
-.sok-NewTab .sok-NewTab-contentContainer {
+.sok-ViewTab .sok-ViewTab-contentContainer {
 	display: flex;
 	flex-direction: column;
 	width: 500px;
 	min-height: calc(100vh - 200px);
 }
 
-.sok-NewTab .sok-NewTab-contentContainer .sok-NewTab-contentHeader {
+.sok-ViewTab .sok-ViewTab-contentContainer .sok-ViewTab-contentHeader {
 	display: flex;
 	width: 100%;
 	justify-content: space-between;

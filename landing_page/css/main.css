@@ -7,7 +7,7 @@
 
 	/* Colors */
 
-	--color__white: #f0f0f7;
+	--color__white: #ffffff;
 	--color__white--dark: #b7b7cd;
 	--color__gray: #353740;
 	--color__gray--light: #5e5d66;
@@ -15,35 +15,9 @@
 	--color__orange: #fe1605;
 	--color__orange--light: #fea04f;
 
-	--color__lang__js: #F0DB4E;
-	--color__lang__react: #009bb7;
-	--color__lang__python: linear-gradient(135deg, #56a9ec 0%,#56a9ec 50%,#ffe05d 50%,#ffe05d 100%);
-	--color__lang__interview: #5100ff;
-	--color__lang__php: #AEB2D5;
-	--color__lang__css: #2CAAE1;
-
-	--color__primary: var(--color__gray);
-	--color__secondary: var(--color__orange);
-	--color__secondary--light: var(--color__orange--light);
-
 	/* Body */
 
-	--bg__color: var(--color__gray--dark);
-	--drop-shadow__regular: 10px 0 37.6px 2.4px rgba(0, 0, 0, 0.3);
-	--drop-shadow__inverse: -10px 0 37.6px 2.4px rgba(0, 0, 0, 0.3);
-
-	/* Fonts */
-
-	--font__color--primary: var(--color__white);
-	--font__color--dark: var(--color__white--dark);
-	--font__color--black: var(--color__gray--dark);
-	--font__color--secondary: var(--color__orange);
-
-	--font__size--base: 12px;
-	--font__size--tiny: 8px;
-	--font__size--small: 10px;
-	--font__size--big: 16px;
-	--font__size--giant: 32px;
+	--drop-shadow__regular: 1px 1px 16px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Global */
@@ -59,10 +33,9 @@ body {
 	font-family: 'Roboto Mono', 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: var(--bg__color);
+	background-image: linear-gradient(-225deg, rgb(227, 253, 245, 0.5) 0%, rgb(255, 230, 250, 0.5) 100%);
 	font-weight: 500;
-	font-size: var(--font__size--base);
-	color: var(--font__color--primary);
+	font-size: 12px;
 }
 
 code {
@@ -71,7 +44,6 @@ code {
 
 a {
 	text-decoration: none;
-	color: var(--font__color--primary);
 }
 
 h1 {
@@ -83,6 +55,6 @@ h3 {
 }
 
 strong {
-	font-weight: 700;
-	color: var(--color__orange--light);
+	font-weight: 900;
+	color: var(--color__orange);
 }

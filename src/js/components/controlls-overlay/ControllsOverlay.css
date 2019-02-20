@@ -1,0 +1,129 @@
+.sok-ControllsOverlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
+	pointer-events: none;
+}
+
+.sok-ControllsOverlay .sok-Button {
+	position: fixed;
+	width: 36px;
+	height: 36px;
+	background: transparent;
+	min-width: unset;
+	pointer-events: all;
+	border-radius: 50%;
+}
+
+.sok-ControllsOverlay .sok-Button:after {
+	position: absolute;
+	width: 108px;
+	height: 36px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	background: var(--color__white);
+	display: none;
+	font-size: var(--font__size--small);
+}
+
+.sok-ControllsOverlay .sok-Button:hover:after {
+	display: flex;
+}
+
+.sok-ControllsOverlay .sok-Button > img {
+	width: 36px;
+	height: 36px;
+	margin: 0;
+}
+
+/* Settings Button */
+
+.sok-ControllsOverlay .sok-ControllsOverlay-settings {
+	top: 36px;
+	left: 36px;
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-settings:after {
+	content: 'Settings';
+	left: 72px;
+	animation: var(--animation__slide_in--left);
+}
+
+/* Settings Button */
+
+.sok-ControllsOverlay .sok-ControllsOverlay-back {
+	top: 36px;
+	left: 36px;
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-back:after {
+	content: 'Back to Random';
+	left: 72px;
+	animation: var(--animation__slide_in--left);
+}
+
+/* Save Button */
+
+.sok-ControllsOverlay .sok-ControllsOverlay-save {
+	left: 36px;
+	bottom: 36px;
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-save:after {
+	content: 'Saved Snippets';
+	left: 72px;
+	animation: var(--animation__slide_in--left);
+}
+
+/* Donation Button */
+
+.sok-ControllsOverlay .sok-ControllsOverlay-donation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	right: 36px;
+	top: 36px;
+	position: fixed;
+	min-width: unset;
+	width: 36px;
+	height: 36px;
+	background: transparent;
+	transition: all 0.3s ease-in-out;
+	pointer-events: all;
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-donation:after {
+	content: 'Buy Me A Coffee';
+	position: absolute;
+	width: 108px;
+	height: 36px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	background: var(--color__white);
+	right: 72px;
+	display: none;
+	color: var(--color__gray--dark);
+	font-size: var(--font__size--small);
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-donation:hover:after {
+	display: flex;
+	animation: var(--animation__slide_in--right);
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-donation:hover {
+	box-shadow: var(--button__drop-shadow);
+	transform: scale(1.1);
+}
+
+.sok-ControllsOverlay .sok-ControllsOverlay-donation > img {
+	width: 36px;
+	height: 36px;
+	margin: 0;
+}

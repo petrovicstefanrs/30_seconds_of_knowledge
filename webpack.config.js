@@ -12,18 +12,7 @@ var alias = {};
 
 var secretsPath = path.join(__dirname, 'secrets.' + env.NODE_ENV + '.js');
 
-var fileExtensions = [
-	'jpg',
-	'jpeg',
-	'png',
-	'gif',
-	'eot',
-	'otf',
-	'svg',
-	'ttf',
-	'woff',
-	'woff2',
-];
+var fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
 
 if (fileSystem.existsSync(secretsPath)) {
 	alias['secrets'] = secretsPath;
@@ -33,6 +22,8 @@ var options = {
 	mode: process.env.NODE_ENV || 'development',
 	entry: {
 		popup: path.join(__dirname, 'src', 'js', 'popup.js'),
+		saved: path.join(__dirname, 'src', 'js', 'saved.js'),
+		view: path.join(__dirname, 'src', 'js', 'view.js'),
 		options: path.join(__dirname, 'src', 'js', 'options.js'),
 		background: path.join(__dirname, 'src', 'js', 'background.js'),
 		newtab: path.join(__dirname, 'src', 'js', 'newtab.js'),
@@ -54,7 +45,7 @@ var options = {
 			},
 			{
 				test: /\.md$/,
-				loader: 'file-loader?name=[hash][name].[ext]',
+				loader: 'file-loader?name=[path][name].[ext]',
 				exclude: /node_modules/,
 			},
 			{
@@ -71,9 +62,7 @@ var options = {
 	},
 	resolve: {
 		alias: alias,
-		extensions: fileExtensions
-			.map((extension) => '.' + extension)
-			.concat(['.jsx', '.js', '.css']),
+		extensions: fileExtensions.map(extension => '.' + extension).concat(['.jsx', '.js', '.css']),
 	},
 	plugins: [
 		// clean the build folder
@@ -104,6 +93,16 @@ var options = {
 			template: path.join(__dirname, 'src', 'options.html'),
 			filename: 'options.html',
 			chunks: ['options'],
+		}),
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, 'src', 'saved.html'),
+			filename: 'saved.html',
+			chunks: ['saved'],
+		}),
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, 'src', 'view.html'),
+			filename: 'view.html',
+			chunks: ['view'],
 		}),
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'src', 'background.html'),

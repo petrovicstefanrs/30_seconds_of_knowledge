@@ -5,21 +5,18 @@ import MarkdownRenderer from '../../components/markdown-renderer';
 import Header from '../../components/header';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
-import SaveButton from '../../components/save-button';
 import Footer from '../../components/footer';
-import DonationBeggar from '../../components/donation-beggar';
 import ControllsOverlay from '../../components/controlls-overlay';
 
-import env from '../../../env';
-import {fetchRandomSnippet} from '../../api/snippets';
-import {restoreFromStorage, saveToStorage} from '../../api/storage';
+import {restoreFromStorage, restoreSnippetsFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
+import {fetchSnippet} from '../../api/snippets';
 
-import './NewTab.css';
+import './ViewTab.css';
 
-const CLASS = 'sok-NewTab';
+const CLASS = 'sok-ViewTab';
 
-class NewTab extends Component {
+class ViewTab extends Component {
 	constructor(props) {
 		super(props);
 
@@ -27,29 +24,30 @@ class NewTab extends Component {
 			snippet: null,
 			language: null,
 			theme: THEMES_VARIANTS.dark,
-			beggar_counter: 0,
 		};
 	}
 
 	componentDidMount() {
 		this.setColorScheme();
-		this.setBeggarCounter();
 		this.fetchSnippet();
 	}
 
-	setBeggarCounter = async () => {
-		const options = await restoreFromStorage();
-		const {beggar_counter} = options;
+	fetchSnippet = async () => {
+		const index = location.hash.split('#')[1];
+		if (!index) {
+			return null;
+		}
 
-		const newBeggarCounter = beggar_counter + 1;
-		const newOptions = Object.assign({}, options, {
-			beggar_counter: newBeggarCounter,
-		});
+		let snippets = await restoreSnippetsFromStorage();
 
-		saveToStorage(newOptions);
+		const {src, language} = snippets[index];
+
+		const snippetData = await fetchSnippet(src, language);
+		const {snippet} = snippetData;
 
 		this.setState({
-			beggar_counter: newBeggarCounter,
+			snippet,
+			language,
 		});
 	};
 
@@ -65,18 +63,6 @@ class NewTab extends Component {
 
 		this.setState({
 			theme,
-		});
-	};
-
-	fetchSnippet = async () => {
-		const data = await fetchRandomSnippet();
-		const {snippet, language, snippet_src, snippet_title} = data;
-
-		this.setState({
-			snippet,
-			language,
-			snippet_src,
-			snippet_title,
 		});
 	};
 
@@ -110,48 +96,15 @@ class NewTab extends Component {
 		return <Chip value={language} />;
 	};
 
-	renderSave = () => {
-		const {language, snippet_src, snippet_title} = this.state;
-
-		if (!snippet_src) {
-			return null;
-		}
-
-		const data = {
-			language,
-			snippet_src,
-			snippet_title,
-		};
-
-		return <SaveButton data={data} />;
-	};
-
-	renderDonationBeggar = () => {
-		const {beggar_counter} = this.state;
-
-		const shouldRender =
-			beggar_counter !== 0 && beggar_counter % env.donation_beggar.trigger_count === 0;
-
-		if (!shouldRender) {
-			return null;
-		}
-
-		return <DonationBeggar />;
-	};
-
 	render() {
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
-				<ControllsOverlay />
+				<ControllsOverlay renderBack={true} />
 				{this.renderSpinner()}
-				{this.renderDonationBeggar()}
 				<Header theme={theme} />
 				<span className={`${CLASS}-contentContainer`}>
-					<span className={`${CLASS}-contentHeader`}>
-						{this.renderLangChip()}
-						{this.renderSave()}
-					</span>
+					<span className={`${CLASS}-contentHeader`}>{this.renderLangChip()}</span>
 					{this.renderSnippet()}
 				</span>
 				<Footer />
@@ -160,4 +113,4 @@ class NewTab extends Component {
 	}
 }
 
-export default hot(module)(NewTab);
+export default hot(module)(ViewTab);
