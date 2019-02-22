@@ -1,4 +1,9 @@
-<p align="center"><img width=900 src="https://raw.githubusercontent.com/petrovicstefanrs/30_seconds_of_knowledge/master/press_pack/banners/Promo_Marquee.jpg"/></a></p>
+<p align="center">
+  <a href="https://30secondsofknowledge.com" target="_blank">
+	<img width=200 src="./misc/Logo_Dark.png"/>
+	<img width=200 src="./misc/Tagline_Dark.png"/>
+  </a>
+</p>
 
 ------
 
@@ -12,7 +17,7 @@
 
 # 30 Seconds of Knowledge (Chrome Extension)
 
-You can download the ***Chrome Extension*** [here](https://30secondsofknowledge.petrovicstefan.rs/).
+You can download the ***Chrome Extension*** [here](https://30secondsofknowledge.com/).
 
 ------
 
