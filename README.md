@@ -1,10 +1,10 @@
-<p align="center"><img width=900 src="https://raw.githubusercontent.com/petrovicstefanrs/30_seconds_of_knowledge/master/misc/Promo_Marquee.jpg"/></a></p>
+<p align="center"><img width=900 src="https://raw.githubusercontent.com/petrovicstefanrs/30_seconds_of_knowledge/master/press_pack/banners/Promo_Marquee.jpg"/></a></p>
 
 ------
 
 <p align="center">
-  Made with: 
-  <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" height=20 /> 
+  Made with:
+  <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" height=20 />
   <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fdtafalonso%2Fandroid-lollipop%2F512%2FChrome-icon.png&f=1" height=20/>
 </p>
 
@@ -20,13 +20,7 @@ You can download the ***Chrome Extension*** [here](https://30secondsofknowledge.
 
 Gain **new developer skills** every time you open a **New Tab**! Choose which programming languages you want to get better at, in extension options, and **get smarter every time** you open a **New Tab**. All you need is **30 seconds** to read and understand **snippets** of code and **improve your knowledge**. Saw something useful? Just **copy/paste** it into your code and **you're golden**!
 
-This Chrome Extension is built with **React** and snippets are provided by other Open-Source Projects:
-- [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code)
-- [30 seconds of css](https://github.com/30-seconds/30-seconds-of-css)
-- [30 seconds of interviews](https://github.com/30-seconds/30-seconds-of-interviews)
-- [30 seconds of react](https://github.com/30-seconds/30-seconds-of-react)
-- [30 seconds of php](https://github.com/appzcoder/30-seconds-of-php-code)
-- [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
+This Chrome Extension is built with **React** and Chrome Extension API.
 
 ------
 
@@ -54,7 +48,7 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 
 ------
 
-###### Done at the Moment 
+###### Done at the Moment
 
 - [x] **Make an MVP (Chrome only)**
 - [x] **Make a Landing Page for the Extension**
@@ -78,16 +72,33 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 
 ###### Contributions
 
-**WIP**
+All contributions are welcome, but will be reviewed before merging to ensure the same coding style is enforced throughout the codebase.
 
-All contributions are welcome, but will be reviewed before merging to ensure the same coding style is enforced throughout the codebase. You can check the next section to see what stuff needs some work.
+You can check the issues on this repo to see what stuff needs some work.
+
+The repo includes all the necessary configuration files to enforce coding style (e.g. **.eslintrc.json, prettier.config.js, etc...**).
+
+This project is using **Gitflow Workflow**, to be sure you know how to contribute and make **PRs**, please read more about Gitflow [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 
 ------
 
 ###### Contributors
 
-A big thank you to these wonderfull people!
+A big THANK YOU to these wonderfull people!
 
-|Avatar|Name|Github Profile|
-|---|---|---|
-|<img src="https://avatars0.githubusercontent.com/u/522352?s=460&v=4" width="50px" height="50px"/>|Ahmad Santarissy|[Visit](https://github.com/asantarissy)|
+| Avatar                                                                                              | Name               | Github Profile                                   | Website                                 |
+| --------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------ | --------------------------------------- |
+| <img src="https://avatars3.githubusercontent.com/u/43479428?s=200&v=4" width="50px" height="50px"/> | 30 Seconds Project | [Github Profile](https://github.com/30-seconds)  | [Website](https://30secondsofcode.org/) |
+| <img src="https://avatars0.githubusercontent.com/u/522352?s=460&v=4" width="50px" height="50px"/>   | Ahmad Santarissy   | [Github Profile](https://github.com/asantarissy) | [Website](https://ahmadsantarissy.com)  |
+
+------
+
+###### Attributions
+
+- Icons [www.flaticon.com](www.flaticon.com)
+- Javascript Snippets [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code)
+- CSS Snippets [30 seconds of css](https://github.com/30-seconds/30-seconds-of-css)
+- interview Snippets [30 seconds of interviews](https://github.com/30-seconds/30-seconds-of-interviews)
+- React Snippets [30 seconds of react](https://github.com/30-seconds/30-seconds-of-react)
+- PHP Snippets [30 seconds of php](https://github.com/appzcoder/30-seconds-of-php-code)
+- Python Snippets [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
