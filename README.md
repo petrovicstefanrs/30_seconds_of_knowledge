@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://30secondsofknowledge.com" target="_blank">
-	<img width=200 src="./misc/Logo_Dark.png"/>
-	<img width=200 src="./misc/Tagline_Dark.png"/>
+	<img width=200 src="./media/Logo_Dark.png"/>
+	<img width=200 src="./media/Tagline_Dark.png"/>
   </a>
 </p>
 
