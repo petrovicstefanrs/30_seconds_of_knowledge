@@ -27,6 +27,7 @@ This Chrome Extension is built with **React** and snippets are provided by other
 - [30 seconds of react](https://github.com/30-seconds/30-seconds-of-react)
 - [30 seconds of php](https://github.com/appzcoder/30-seconds-of-php-code)
 - [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
+- [30 seconds of ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby)
 
 ------
 
@@ -51,6 +52,7 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 - React
 - PHP
 - Python
+- Ruby
 
 ------
 
