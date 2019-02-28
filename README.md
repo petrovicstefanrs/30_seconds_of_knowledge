@@ -53,23 +53,35 @@ Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/3
 
 ------
 
-###### Done at the Moment
+###### PLAN
 
-- [x] **Make an MVP (Chrome only)**
-- [x] **Make a Landing Page for the Extension**
+**MVP Phase:**
+
+- [x] **Finish MVP (Chrome only)**
+- [x] **Temporary Landing Page**
 - [x] **Publish to Product Hunt**
-- [x] **Make Light Theme for the Extension**
-- [x] **Add Donation Options**
-- [x] **Add Save/Favourite Feature**
+- [x] **Soft Release MVP**
+
+**V1.0.0 Phase:**
+
+- [x] **Light/Dark Themes - Feature**
+- [x] **Donation Options - Feature**
+- [x] **Save/Favourite - Feature**
 - [x] **Release v1.0.0**
 
-------
+**V1.1.0 Phase:**
 
-###### Future Plans
+- [x] **Release Official Website**
+- [x] **Mailing/Newsletter List**
+- [x] **Social Media Coverage | Facebook, LinkedIn, Instagram, Twitter**
+- [x] **Merch Shop**
+- [x] **Privacy Policy & TOS**
+- [ ] More Snippet Languages - Feature
+- [ ] Release v1.1.0
+
+**Other/Ideas:**
 
 - [ ] Write Documentation for Contributors
-- [ ] Find a way to automate Snippet updates ( Submodules ? )
-- [ ] Add more Snippet Languages
 - [ ] Port to Firefox
 - [ ] Port to Safari
 
