@@ -19,7 +19,7 @@ import {
 } from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
 
-import './savedTab.css';
+import './SavedTab.css';
 
 const CLASS = 'sok-SavedTab';
 
