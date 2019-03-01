@@ -43,7 +43,7 @@ class DonationBeggar extends Component {
 					<Button text="X" onClick={this.hideBeggar} />
 					<h2>HI THERE!</h2>
 					<span className={CLASS + '-message'}>
-						You seam to be enjoying <strong>30 Seconds of Knowledge</strong>!
+						You seem to be enjoying <strong>30 Seconds of Knowledge</strong>!
 						<br />
 						{env.donation_beggar.beggar_message}
 					</span>
