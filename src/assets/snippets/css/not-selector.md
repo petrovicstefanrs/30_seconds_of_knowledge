@@ -1,6 +1,6 @@
 ### :not selector
 
-The `:not` psuedo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.
+The `:not` pseudo selector is useful for styling a group of elements, while leaving the last (or specified) element unstyled.
 
 #### HTML
 
