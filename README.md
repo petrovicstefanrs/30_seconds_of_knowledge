@@ -38,7 +38,7 @@ This Chrome Extension is built with **React** and Chrome Extension API.
 
 ###### Inspiration
 
-Inspired by the phenomenaal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code) !
+Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code) !
 
 ------
 
