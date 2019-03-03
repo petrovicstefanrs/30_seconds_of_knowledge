@@ -8,6 +8,7 @@ import ts_react_icon from '../../../assets/images/icons/30_react.png';
 import ts_interview_icon from '../../../assets/images/icons/30_interview.png';
 import ts_python_icon from '../../../assets/images/icons/30_python.png';
 import ts_php_icon from '../../../assets/images/icons/30_php.png';
+import ts_ruby_icon from '../../../assets/images/icons/30_ruby.png';
 
 import './Footer.css';
 
@@ -42,6 +43,9 @@ const Footer = ({className = '', enableAttributions = false, ...props}) => (
 				</a>
 				<a targe="_blank" href="https://github.com/appzcoder/30-seconds-of-php-code">
 					<img src={ts_php_icon} alt="30 Seconds of PHP Logo" />
+				</a>
+				<a targe="_blank" href="https://github.com/florianjosefreheis/30-seconds-of-ruby">
+					<img src={ts_ruby_icon} alt="30 Seconds of Ruby Logo" />
 				</a>
 			</span>
 		)}

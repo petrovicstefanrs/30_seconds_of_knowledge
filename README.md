@@ -50,6 +50,7 @@ Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30
 - React
 - PHP
 - Python
+- Ruby
 
 ------
 

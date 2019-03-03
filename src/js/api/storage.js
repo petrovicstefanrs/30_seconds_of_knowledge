@@ -12,6 +12,7 @@ const createDefaultOptions = () => {
 			interview: true,
 			php: true,
 			css: true,
+			ruby: true,
 		},
 		theme: 'dark',
 		beggar_counter: 0,
