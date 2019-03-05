@@ -8,97 +8,52 @@
 	pointer-events: none;
 }
 
-.sok-ControllsOverlay .sok-Button {
-	position: fixed;
-	width: 36px;
-	height: 36px;
-	background: transparent;
-	min-width: unset;
-	pointer-events: all;
-	border-radius: 50%;
-}
-
-.sok-ControllsOverlay .sok-Button:after {
+.sok-ControllsOverlay-menu {
 	position: absolute;
-	width: 108px;
-	height: 36px;
-	justify-content: center;
-	align-items: center;
-	border-radius: 3px;
-	background: var(--color__white);
-	display: none;
-	font-size: var(--font__size--small);
-}
-
-.sok-ControllsOverlay .sok-Button:hover:after {
-	display: flex;
-}
-
-.sok-ControllsOverlay .sok-Button > img {
-	width: 36px;
-	height: 36px;
-	margin: 0;
-}
-
-/* Settings Button */
-
-.sok-ControllsOverlay .sok-ControllsOverlay-settings {
-	top: 36px;
-	left: 36px;
-}
-
-.sok-ControllsOverlay .sok-ControllsOverlay-settings:after {
-	content: 'Settings';
-	left: 72px;
-	animation: var(--animation__slide_in--left);
-}
-
-/* Settings Button */
-
-.sok-ControllsOverlay .sok-ControllsOverlay-back {
-	top: 36px;
-	left: 36px;
-}
-
-.sok-ControllsOverlay .sok-ControllsOverlay-back:after {
-	content: 'Back to Random';
-	left: 72px;
-	animation: var(--animation__slide_in--left);
-}
-
-/* Save Button */
-
-.sok-ControllsOverlay .sok-ControllsOverlay-save {
-	left: 36px;
 	bottom: 36px;
-}
-
-.sok-ControllsOverlay .sok-ControllsOverlay-save:after {
-	content: 'Saved Snippets';
-	left: 72px;
-	animation: var(--animation__slide_in--left);
-}
-
-/* Donation Button */
-
-.sok-ControllsOverlay .sok-ControllsOverlay-donation {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
 	right: 36px;
-	top: 36px;
-	position: fixed;
-	min-width: unset;
-	width: 36px;
-	height: 36px;
-	background: transparent;
-	transition: all 0.3s ease-in-out;
-	pointer-events: all;
+	font-size: 16px;
+	z-index: 1;
 }
 
-.sok-ControllsOverlay .sok-ControllsOverlay-donation:after {
-	content: 'Buy Me A Coffee';
+.sok-ControllsOverlay-menu .sok-SokIcon {
+	width: 16px;
+	height: 16px;
+}
+
+.sok-ControllsOverlay-menu .sok-ControllsOverlay-menu-items {
+	background: var(--color__white);
+	border-radius: 24px 24px 0 0;
+	padding-bottom: 24px;
+	margin-bottom: -24px;
+	box-shadow: var(--drop-shadow__regular);
+	transform: scaleY(0);
+	opacity: 0;
+	transform-origin: 0% 100%;
+}
+
+.sok-ControllsOverlay-menu-opened .sok-ControllsOverlay-menu-items {
+	animation: var(--animation__menu_open);
+}
+
+.sok-ControllsOverlay-menu-closed .sok-ControllsOverlay-menu-items {
+	animation: var(--animation__menu_close);
+}
+
+.sok-ControllsOverlay-menu .sok-ControllsOverlay-menu-items .sok-ControllsOverlay-menu-item {
+	margin-bottom: 16px;
+}
+
+.sok-ControllsOverlay .sok-Button {
+	width: 48px;
+	height: 48px;
+	min-width: unset;
+	pointer-events: all;
+	border-radius: 50%;
+	position: relative;
+}
+
+.sok-ControllsOverlay-menu-item:after {
 	position: absolute;
 	width: 108px;
 	height: 36px;
@@ -106,24 +61,13 @@
 	align-items: center;
 	border-radius: 3px;
 	background: var(--color__white);
-	right: 72px;
 	display: none;
-	color: var(--color__gray--dark);
 	font-size: var(--font__size--small);
 }
 
-.sok-ControllsOverlay .sok-ControllsOverlay-donation:hover:after {
+.sok-ControllsOverlay-menu-item:hover:after {
+	content: attr(data-name);
 	display: flex;
+	left: -144px;
 	animation: var(--animation__slide_in--right);
-}
-
-.sok-ControllsOverlay .sok-ControllsOverlay-donation:hover {
-	box-shadow: var(--button__drop-shadow);
-	transform: scale(1.1);
-}
-
-.sok-ControllsOverlay .sok-ControllsOverlay-donation > img {
-	width: 36px;
-	height: 36px;
-	margin: 0;
 }

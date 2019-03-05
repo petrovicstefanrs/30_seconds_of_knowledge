@@ -8,7 +8,9 @@
 	align-items: center;
 	text-decoration: none;
 	border: none;
-	transition: all 0.3s ease-in-out;
+	transition: transform, box-shadow;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
 	cursor: pointer;
 	border-radius: 3px;
 	font-size: 1em;
@@ -29,12 +31,12 @@
 	flex-direction: row-reverse;
 }
 
-.sok-Button-left > .sok-Button-icon {
-	margin-right: 10px;
+.sok-Button-left > .sok-Button-text {
+	margin-left: 10px;
 }
 
-.sok-Button-right > .sok-Button-icon {
-	margin-left: 10px;
+.sok-Button-right > .sok-Button-text {
+	margin-right: 10px;
 }
 
 .sok-Button-disabled {

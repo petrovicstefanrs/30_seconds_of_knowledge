@@ -17,7 +17,7 @@ For a given hash it will return an array of the values associated with the given
   irb> fruits = { 'orange' => '$2.00', 'apple' => '$3.00', 'grapes' => '$2.50' }
    => => {"orange"=>"$2.00", "apple"=>"$3.00", "grapes"=>"$2.50"}
   irb> fruits.values_at('orange')
-   => ["$2.00"] 
+   => ["$2.00"]
 ```
 
  ##### Additional links

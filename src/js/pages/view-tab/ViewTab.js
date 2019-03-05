@@ -11,6 +11,7 @@ import ControllsOverlay from '../../components/controlls-overlay';
 import {restoreFromStorage, restoreSnippetsFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
 import {fetchSnippet} from '../../api/snippets';
+import {scrollToTop} from '../../lib/util';
 
 import './ViewTab.css';
 
@@ -97,6 +98,8 @@ class ViewTab extends Component {
 	};
 
 	render() {
+		scrollToTop();
+
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>

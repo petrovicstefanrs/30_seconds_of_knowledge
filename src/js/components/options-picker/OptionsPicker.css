@@ -1,22 +1,22 @@
 .sok-OptionsPicker {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	width: 500px;
+	width: var(--content__width--max);
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > h2 {
 	color: var(--color__orange--light);
 	text-transform: uppercase;
-	margin-bottom: 32px;
+	margin-bottom: 16px;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > .sok-Button {
 	background: var(--color__orange--light);
 	font-weight: 900;
 	font-size: 1em;
-	margin-top: 32px;
+	margin-top: 16px;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-item {
@@ -75,4 +75,8 @@
 
 .sok-OptionsPicker .sok-OptionsPicker-themeSwitch-unChecked:before {
 	margin-left: 25px;
+}
+
+.sok-OptionsPicker .sok-Separator {
+	margin: 16px 0;
 }

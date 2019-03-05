@@ -13,7 +13,7 @@ irb> user.fetch(:first_name)
  => "Dummy"
 irb> user.fetch(:email)
 KeyError: key not found: :email
-  from (irb):5:in `fetch'
+  from (irb):5:in `fetch`
 irb> user.fetch(:email, 'no email added')
  => "no email added"
 irb> user.fetch(:email){ |e| "no #{e} added"}

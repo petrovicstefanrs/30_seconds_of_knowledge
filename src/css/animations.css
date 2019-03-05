@@ -1,6 +1,17 @@
 /* Toast Animations */
 
-@keyframes slideInUp {
+@keyframes slide-in-up {
+	from {
+		transform: translate3d(-50%, 100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@keyframes slide-in-up-regular {
 	from {
 		transform: translate3d(0, 100%, 0);
 		visibility: visible;
@@ -13,7 +24,7 @@
 
 /* Loader Animations */
 
-@keyframes pulse_1 {
+@keyframes pulse-1 {
 	0% {
 		transform: translate3d(0, 0, 0) scale(0);
 		opacity: 1;
@@ -25,7 +36,7 @@
 	}
 }
 
-@keyframes pulse_2 {
+@keyframes pulse-2 {
 	0% {
 		transform: translate3d(0, 0, 0) scale(0);
 		opacity: 1;
@@ -39,7 +50,7 @@
 
 /* Popover animations */
 
-@keyframes slide_in_blurred_left {
+@keyframes slide-in-blurred-left {
 	0% {
 		transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
 		transform-origin: 100% 50%;
@@ -90,5 +101,35 @@
 
 	100% {
 		opacity: 0;
+	}
+}
+
+/* Menu animations */
+
+@keyframes menu-open {
+	0% {
+		transform: scaleY(0);
+		opacity: 0;
+		transform-origin: 0% 100%;
+	}
+
+	100% {
+		transform: scaleY(1);
+		opacity: 1;
+		transform-origin: 0% 100%;
+	}
+}
+
+@keyframes menu-close {
+	0% {
+		transform: initial;
+		opacity: 1;
+		transform-origin: 0% 100%;
+	}
+
+	100% {
+		transform: scaleY(0);
+		opacity: 0;
+		transform-origin: 0% 100%;
 	}
 }

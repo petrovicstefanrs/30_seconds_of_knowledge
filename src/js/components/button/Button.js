@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Button.css';
+import SokIcon from '../sok-icon/SokIcon';
 
 const CLASS = 'sok-Button';
 
@@ -15,7 +16,17 @@ const BUTTON_TYPES = {
 	link: 'a',
 };
 
-const Button = ({text, icon, iconPos, onClick, href, disabled, className}) => {
+const Button = ({
+	text,
+	icon,
+	iconPos,
+	onClick,
+	href,
+	target = '_blank',
+	disabled,
+	className = '',
+	...props,
+}) => {
 	const handleClick = () => {
 		onClick && !disabled && onClick();
 	};
@@ -23,15 +34,22 @@ const Button = ({text, icon, iconPos, onClick, href, disabled, className}) => {
 	const Type = href ? BUTTON_TYPES.link : BUTTON_TYPES.button;
 	const positionClass = ` ${CLASS}-${iconPos}`;
 	const disabledClass = disabled ? ` ${CLASS}-disabled` : '';
+	const styleMargin = !icon ? {margin: 0} : {};
 
 	return (
 		<Type
 			className={CLASS + positionClass + disabledClass + ' ' + className}
 			onClick={handleClick}
 			href={href}
+			target={target}
+			{...props}
 		>
-			{icon && <img className={CLASS + '-icon'} src={icon} />}
-			<span className={CLASS + '-text'}>{text}</span>
+			{icon && <SokIcon className={CLASS + '-icon'} icon={icon} />}
+			{text && (
+				<span style={styleMargin} className={CLASS + '-text'}>
+					{text}
+				</span>
+			)}
 		</Type>
 	);
 };

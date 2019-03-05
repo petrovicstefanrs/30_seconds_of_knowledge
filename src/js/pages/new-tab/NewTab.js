@@ -14,6 +14,7 @@ import env from '../../../env';
 import {fetchRandomSnippet} from '../../api/snippets';
 import {restoreFromStorage, saveToStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
+import {scrollToTop} from '../../lib/util';
 
 import './NewTab.css';
 
@@ -140,6 +141,8 @@ class NewTab extends Component {
 	};
 
 	render() {
+		scrollToTop();
+
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>

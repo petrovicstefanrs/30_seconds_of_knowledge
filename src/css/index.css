@@ -1,6 +1,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
 
+@import '../assets/fonts/sok-icons/styles.css';
 @import 'animations.css';
 
 /* Variables */
@@ -68,20 +69,28 @@
 
 	/* Animations */
 
-	--animation__slide_in--up: slideInUp 1s;
+	--animation__slide_in--up: slide-in-up 1s;
+	--animation__slide_in--up__regular: slide-in-up-regular 1s;
 
 	/* stylelint-disable */
 
-	--animation__pulse--1: pulse_1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
-	--animation__pulse--2: pulse_2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
+	--animation__pulse--1: pulse-1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+	--animation__pulse--2: pulse-2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
 
-	--animation__slide_in--left: slide_in_blurred_left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	--animation__slide_in--left: slide-in-blurred-left 0.1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 	--animation__slide_in--right: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 
 	--animation__fade_in: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	--animation__fade_out: fade-out 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
+	--animation__menu_open: menu-open 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+	--animation__menu_close: menu-close 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+
 	/* stylelint-enable */
+
+	/* Content */
+
+	--content__width--max: 640px;
 }
 
 /* Global */

@@ -108,9 +108,9 @@ export const restoreSnippetsFromStorage = () => {
  */
 
 export const openExtensionOptions = () => {
-	const {openOptionsPage, getURL} = chrome.runtime;
+	const {getURL} = chrome.runtime;
 
-	openOptionsPage ? openOptionsPage() : window.open(getURL('options.html'), '_blank');
+	window.open(getURL('options.html'), '_self');
 };
 
 /**
@@ -140,8 +140,9 @@ export const openView = index => {
  * @function openExtensionOptions
  */
 
-export const openRandomSnippet = () => {
+export const openRandomSnippet = (newTab = false) => {
 	const {getURL} = chrome.runtime;
 
-	window.open(getURL('newtab.html'), '_self');
+	const target = newTab ? '_blank' : '_self';
+	window.open(getURL('newtab.html'), target);
 };

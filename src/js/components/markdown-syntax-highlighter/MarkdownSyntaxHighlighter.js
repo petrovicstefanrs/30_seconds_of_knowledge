@@ -7,8 +7,7 @@ import Button from '../button/Button';
 import Toaster, {TOAST_ACTIONS} from '../toaster/Toaster';
 import {restoreFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
-
-import copyIcon from '../../../assets/images/icons/copy.svg';
+import { SOK_ICONS } from '../sok-icon/sok_icons_reference';
 
 import './MarkdownSyntaxHighlighter.css';
 
@@ -80,7 +79,7 @@ class MarkdownSyntaxHighlighter extends Component {
 					</code>
 				</pre>
 				<CopyToClipboard text={value}>
-					<Button icon={copyIcon} onClick={() => this.toogleCopyToast(TOAST_ACTIONS.show)} />
+					<Button icon={SOK_ICONS.copy} onClick={() => this.toogleCopyToast(TOAST_ACTIONS.show)} />
 				</CopyToClipboard>
 				{toastActive && (
 					<Toaster

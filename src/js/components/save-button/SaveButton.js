@@ -1,8 +1,12 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+
+import Button from '../button';
 import Toaster, {TOAST_ACTIONS} from '../toaster/Toaster';
+
 import {restoreSnippetsFromStorage, saveSnippetsToStorage} from '../../api/storage';
+import {SOK_ICONS} from '../sok-icon/sok_icons_reference';
 
 import './SaveButton.css';
 
@@ -90,9 +94,11 @@ class SaveButton extends Component {
 		return (
 			<React.Fragment>
 				<div className={`${CLASS} ${disabledClass}`}>
-					<div className={`${CLASS}-button`} onClick={this.saveSnippetToStorage}>
-						{saved ? 'Saved' : 'Save'}
-					</div>
+					<Button
+						className={`${CLASS}-button`}
+						icon={SOK_ICONS.bookmark}
+						onClick={this.saveSnippetToStorage}
+					/>
 				</div>
 				{toastActive && !noToast && (
 					<Toaster

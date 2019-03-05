@@ -8,7 +8,7 @@ import Chip from '../chip';
 import Separator from '../separator';
 import Toaster, {TOAST_ACTIONS} from '../toaster/Toaster';
 
-import {restoreFromStorage, saveToStorage} from '../../api/storage';
+import {restoreFromStorage, saveToStorage, openRandomSnippet} from '../../api/storage';
 import {THEMES_VARIANTS, THEMES_VARIANT_NAMES} from '../../lib/consts';
 
 import checkUnchecked from '../../../assets/images/icons/square.svg';
@@ -193,8 +193,19 @@ class OptionsPicker extends Component {
 		);
 	};
 
+	renderOpenRandom = () => {
+		return (
+			<React.Fragment>
+				<h2>Surprise me</h2>
+				<Button text="Open Random Snippet" onClick={() => openRandomSnippet(true)} />
+				<Separator />
+			</React.Fragment>
+		);
+	};
+
 	render() {
 		const {options} = this.state;
+		const {withOpenRandom} = this.props;
 
 		if (!options) {
 			return this.renderSpinner();
@@ -203,8 +214,8 @@ class OptionsPicker extends Component {
 		return (
 			<div className={CLASS}>
 				<div className={`${CLASS}-itemsContainer`}>
+					{withOpenRandom && this.renderOpenRandom()}
 					{this.renderLangOptions()}
-					<Separator />
 					{this.renderThemeOptions()}
 					<Button text="Save" onClick={this.saveOptionsToStorage} />
 				</div>

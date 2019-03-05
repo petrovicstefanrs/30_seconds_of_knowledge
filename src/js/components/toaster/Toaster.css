@@ -5,11 +5,13 @@
 	z-index: 9999;
 	display: flex;
 	justify-content: center;
-	min-width: 200px;
-	min-height: 40px;
+	min-width: 240px;
+	min-height: 48px;
 	position: fixed;
-	right: 10px;
-	bottom: 10px;
+	align-self: center;
+	bottom: 36px;
+	transform: translateX(-50%);
+	left: 50%;
 	margin-top: auto;
 	background: var(--toaster__bg);
 	color: var(--toaster__font);

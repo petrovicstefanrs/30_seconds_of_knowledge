@@ -18,6 +18,7 @@ import {
 	openView,
 } from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
+import {scrollToTop} from '../../lib/util';
 
 import './SavedTab.css';
 
@@ -125,6 +126,8 @@ class SavedTab extends Component {
 	};
 
 	render() {
+		scrollToTop();
+
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
