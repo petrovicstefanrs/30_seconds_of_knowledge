@@ -38,15 +38,27 @@ export const SNIPPET_LIBRARY_LABELS = {
 
 /**
  * Available snippet code extraction regex
+ * Used for prepopulating fields on Codepen
  * @const SNIPPET_CODE_REGEX
  * @readonly
  * @enum {string}
  */
 
+/** TODO: Leaving this here in hope that one day J
+ * avascript will be able to lookbehind and see (Yes it's a pun, don't judge...)
+ * Until then using the sligthly more complex regex bellow
+ *
+ * const SNIPPET_CODE_REGEX = {
+ * 	html: new RegExp(/(?<=\`\`\`html)(.*?)(?=\`\`\`)/, 'gsm'),
+ * 	css: new RegExp(/(?<=\`\`\`css)(.*?)(?=\`\`\`)/, 'gsm'),
+ * 	js: new RegExp(/(?<=\`\`\`js)(.*?)(?=\`\`\`)/, 'gsm'),
+ * };
+ */
+
 const SNIPPET_CODE_REGEX = {
-	html: new RegExp(/(?<=\`\`\`html)(.*?)(?=\`\`\`)/, 'gsm'),
-	css: new RegExp(/(?<=\`\`\`css)(.*?)(?=\`\`\`)/, 'gsm'),
-	js: new RegExp(/(?<=\`\`\`js)(.*?)(?=\`\`\`)/, 'gsm'),
+	html: new RegExp(/(?:\`\`\`html)(?:\s*)([\s\S.]*?)(?=\`\`\`)/, 'gm'),
+	css: new RegExp(/(?:\`\`\`css)(?:\s*)([\s\S.]*?)(?=\`\`\`)/, 'gm'),
+	js: new RegExp(/(?:\`\`\`js)(?:\s*)([\s\S.]*?)(?=\`\`\`)/, 'gm'),
 };
 
 /**
@@ -127,26 +139,6 @@ export const fetchRandomSnippet = async () => {
 	const randomSnippet = randArrayItem(snippetSources);
 
 	return await fetchSnippet(randomSnippet, randomLibrary);
-	// return await fetch(randomSnippet)
-	// 	.then(res => res.text())
-	// 	.then(res => {
-	// 		const snippet = res;
-	// 		const language = randomLibrary;
-	// 		const language_label = SNIPPET_LIBRARY_LABELS[language];
-	// 		const snippet_title = randomSnippet.slice(
-	// 			randomSnippet.lastIndexOf('/') + 1,
-	// 			randomSnippet.indexOf('.md')
-	// 		);
-
-	// 		return {
-	// 			snippet,
-	// 			language,
-	// 			language_label,
-	// 			snippet_src: randomSnippet,
-	// 			snippet_title,
-	// 		};
-	// 	})
-	// 	.catch(err => console.error(err));
 };
 
 /**
@@ -197,7 +189,8 @@ export const extractCodeFromSnippet = (source, lang) => {
 	const CODE_REGEX = SNIPPET_CODE_REGEX[lang];
 
 	const codes = CODE_REGEX.exec(source);
-	const result = codes && codes.length ? codes[0] : '';
+	// The code is in the first capturing group so use codes[1]
+	const result = codes && codes.length ? codes[1] : '';
 
 	return result;
 };

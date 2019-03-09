@@ -40,11 +40,13 @@
 	--font__color--secondary: var(--color__orange);
 	--font__color--secondary--light: var(--color__orange--light);
 
-	--font__size--base: 12px;
-	--font__size--tiny: 8px;
-	--font__size--small: 10px;
-	--font__size--big: 16px;
-	--font__size--giant: 32px;
+	--font__size--xxs: 12px;
+	--font__size--xs: 14px;
+	--font__size--s: 16px;
+	--font__size--m: 18px;
+	--font__size--l: 20px;
+	--font__size--xl: 22px;
+	--font__size--xxl: 24px;
 
 	/* Buttons */
 
@@ -90,7 +92,8 @@
 
 	/* Content */
 
-	--content__width--max: 640px;
+	--content__width--max: 1024px;
+	--content__width: calc(100vw - 480px);
 }
 
 /* Global */
@@ -108,7 +111,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background: var(--bg__color);
 	font-weight: 500;
-	font-size: var(--font__size--base);
+	font-size: var(--font__size--xxs);
 	color: var(--font__color--primary);
 }
 
@@ -119,4 +122,34 @@ code {
 a {
 	text-decoration: none;
 	color: var(--font__color--primary);
+}
+
+/* Fontsizes */
+
+.sok-Fontsize-xxs {
+	font-size: var(--font__size--xxs);
+}
+
+.sok-Fontsize-xs {
+	font-size: var(--font__size--xs);
+}
+
+.sok-Fontsize-s {
+	font-size: var(--font__size--s);
+}
+
+.sok-Fontsize-m {
+	font-size: var(--font__size--m);
+}
+
+.sok-Fontsize-l {
+	font-size: var(--font__size--l);
+}
+
+.sok-Fontsize-xl {
+	font-size: var(--font__size--xl);
+}
+
+.sok-Fontsize-xxl {
+	font-size: var(--font__size--xxl);
 }

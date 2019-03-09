@@ -19,9 +19,6 @@ function compose(...$functions)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 $compose = compose(
     // add 2
@@ -35,5 +32,3 @@ $compose = compose(
 );
 $compose(3); // 20
 ```
-
-</details>

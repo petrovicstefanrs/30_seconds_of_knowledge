@@ -17,7 +17,7 @@ import {
 	saveSnippetsToStorage,
 	openView,
 } from '../../api/storage';
-import {THEMES_VARIANTS} from '../../lib/consts';
+import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 
 import './SavedTab.css';
@@ -35,7 +35,7 @@ class SavedTab extends Component {
 	}
 
 	componentDidMount() {
-		this.setColorScheme();
+		this.setColorSchemeAndFont();
 		this.initSnippetsFromStorage();
 	}
 
@@ -47,9 +47,9 @@ class SavedTab extends Component {
 		});
 	};
 
-	setColorScheme = async () => {
+	setColorSchemeAndFont = async () => {
 		const options = await restoreFromStorage();
-		const {theme} = options;
+		const {theme, font_size} = options;
 
 		if (theme === THEMES_VARIANTS.light) {
 			require('../../../css/themes/light.css');
@@ -59,6 +59,7 @@ class SavedTab extends Component {
 
 		this.setState({
 			theme,
+			font_size,
 		});
 	};
 
@@ -128,9 +129,9 @@ class SavedTab extends Component {
 	render() {
 		scrollToTop();
 
-		const {theme} = this.state;
+		const {theme, font_size} = this.state;
 		return (
-			<div className={CLASS}>
+			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>
 				<ControllsOverlay renderSaves={false} renderBack={true} />
 				<Header theme={theme} />
 				<div className={`${CLASS}-contentContainer`}>

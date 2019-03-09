@@ -20,9 +20,6 @@ function orderBy($items, $attr, $order)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 orderBy(
     [
@@ -34,5 +31,3 @@ orderBy(
     'desc'
 ); // [['id' => 3, 'name' => 'Khaja'], ['id' => 2, 'name' => 'Joy'], ['id' => 1, 'name' => 'Raja']]
 ```
-
-</details>

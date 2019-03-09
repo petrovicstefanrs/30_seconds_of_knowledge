@@ -62,7 +62,7 @@
 	border-radius: 3px;
 	background: var(--color__white);
 	display: none;
-	font-size: var(--font__size--small);
+	font-size: var(--font__size--xxs);
 }
 
 .sok-ControllsOverlay-menu-item:hover:after {

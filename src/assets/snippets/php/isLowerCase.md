@@ -9,12 +9,7 @@ function isLowerCase($string)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 isLowerCase('Morning shows the day!'); // false
 isLowerCase('hello'); // true
 ```
-
-</details>

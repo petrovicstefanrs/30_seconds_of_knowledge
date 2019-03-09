@@ -1,10 +1,13 @@
 {
   "name": "30_seconds_of_knowledge",
-  "version": "1.0.0",
-  "description": "Google Chrome Extension that lets you gain new developer skills, every time you open a New Tab",
+  "version": "1.1.0",
+  "description": "Web Extension that lets you gain new developer skills, every time you open a New Tab",
   "scripts": {
-    "build": "node utils/build.js",
+    "build:chromium": "TARGET=chromium node utils/build.js",
+    "build:gecko": "TARGET=gecko node utils/build.js",
     "start": "node utils/webserver.js",
+    "start:chromium": "TARGET=chromium node utils/webserver.js",
+    "start:gecko": "TARGET=gecko node utils/webserver.js",
     "test": "eslint src/"
   },
   "dependencies": {
@@ -23,6 +26,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "8.0.5",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "2.1.0",
@@ -52,7 +56,8 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties"
+	  "@babel/plugin-proposal-class-properties",
+	  "transform-inline-environment-variables"
     ]
   }
 }

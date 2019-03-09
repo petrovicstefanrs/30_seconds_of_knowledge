@@ -7,6 +7,8 @@
 
 # production
 /build
+/chromium_build
+/gecko_build
 
 # misc
 .DS_Store

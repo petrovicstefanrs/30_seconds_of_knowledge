@@ -24,10 +24,10 @@ class OptionsTab extends Component {
 	}
 
 	componentDidMount() {
-		this.setColorScheme();
+		this.setColorSchemeAndFont();
 	}
 
-	setColorScheme = async () => {
+	setColorSchemeAndFont = async () => {
 		const options = await restoreFromStorage();
 		const {theme} = options;
 

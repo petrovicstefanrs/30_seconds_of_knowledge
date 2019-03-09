@@ -3,8 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import MarkdownSyntaxHighlighter from '../markdown-syntax-highlighter';
 import MarkdownCodepenPrefill from '../markdown-codepen-prefill';
 
-import './MarkdownRenderer.css';
 import {SNIPPET_LIBRARIES} from '../../api/snippets';
+
+import './MarkdownRenderer.css';
 
 const CLASS = 'sok-MarkdownRenderer';
 const MarkdownRenderer = ({className = '', lang = null, source, ...props}) => {

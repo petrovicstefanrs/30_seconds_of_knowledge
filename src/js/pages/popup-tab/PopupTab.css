@@ -20,3 +20,7 @@
 	transform: translateX(0) !important;
 	animation-duration: 0.5s;
 }
+
+.sok-PopupTab .sok-OptionsPicker .sok-OptionsPicker-item {
+	width: 250px;
+}

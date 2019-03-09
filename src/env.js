@@ -6,8 +6,10 @@ const env = {
 	newsletter_url: 'http://eepurl.com/giRHzP',
 	donation_beggar: {
 		trigger_count: 1000, // Donation popup will appear every N times the New Tab was oppened
-		beggar_message: 'Help feed this developer\'s coffee addiction! Checkout our merch or consider making a small donation.',
+		beggar_message:
+			"Help feed this developer's coffee addiction! Checkout our merch or consider making a small donation.",
 	},
+	active_platform: process.env.TARGET,
 };
 
 export default env;

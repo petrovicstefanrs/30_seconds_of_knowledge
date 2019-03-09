@@ -9,11 +9,6 @@ function endsWith($haystack, $needle)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 endsWith('Hi, this is me', 'me'); // true
 ```
-
-</details>

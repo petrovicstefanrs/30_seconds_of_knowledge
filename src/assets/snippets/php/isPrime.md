@@ -15,11 +15,6 @@ function isPrime($number)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 isPrime(3); // true
 ```
-
-</details>
