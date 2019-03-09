@@ -113,12 +113,14 @@
 	box-shadow: none !important;
 }
 
-.sok-OptionsPicker-fontScale::-webkit-slider-thumb {
+.sok-OptionsPicker-fontScale::-webkit-slider-thumb,
+.sok-OptionsPicker-fontScale::-moz-range-thumb {
 	-webkit-appearance: none;
 	width: 15px;
 	height: 15px;
 	background: linear-gradient(to left, var(--color__orange--light), var(--color__orange));
 	border-radius: 50%;
+	border: none;
 }
 
 .sok-OptionsPicker-fontScale::-ms-track {

@@ -5,7 +5,8 @@ let webpack = require('webpack'),
 	CleanWebpackPlugin = require('clean-webpack-plugin'),
 	CopyWebpackPlugin = require('copy-webpack-plugin'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
-	WriteFilePlugin = require('write-file-webpack-plugin');
+	WriteFilePlugin = require('write-file-webpack-plugin'),
+	ZipPlugin = require('zip-webpack-plugin');
 
 const FILE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
 
@@ -148,6 +149,14 @@ let options = {
 
 if (env.NODE_ENV === 'development') {
 	options.devtool = 'cheap-module-eval-source-map';
+}
+
+if (env.NODE_ENV === 'production') {
+	options.plugins.push(new ZipPlugin({
+		path: __dirname,
+		filename: `${TARGET}_build`,
+		extension: 'zip',
+	}));
 }
 
 module.exports = options;
