@@ -1,8 +1,8 @@
 ### chunk
 
-Chunks an list into smaller lists of a specified size.
+Chunks a list into smaller lists of a specified size.
 
-Uses `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `lst`.
+Use `range` to create a list of desired size. Then use `map` on this list and fill it with splices of `lst`.
 
 ```python
 from math import ceil

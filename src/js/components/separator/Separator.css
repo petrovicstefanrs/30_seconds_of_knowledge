@@ -4,10 +4,10 @@
 
 .sok-Separator-horizontal {
 	height: 1px !important;
-	margin: 40px 0;
+	margin: 32px 0;
 }
 
 .sok-Separator-vertical {
 	width: 1px !important;
-	margin: 0 40px;
+	margin: 0 32px;
 }

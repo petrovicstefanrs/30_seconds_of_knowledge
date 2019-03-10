@@ -23,9 +23,6 @@ function curry($function)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 $curriedAdd = curry(
     function ($a, $b) {
@@ -36,5 +33,3 @@ $curriedAdd = curry(
 $add10 = $curriedAdd(10);
 var_dump($add10(15)); // 25
 ```
-
-</details>

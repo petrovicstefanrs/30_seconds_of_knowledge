@@ -3,7 +3,7 @@ import {hot} from 'react-hot-loader';
 
 import OptionsPicker from '../../components/options-picker';
 
-import {restoreFromStorage} from '../../api/storage';
+import {restoreFromStorage, openRandomSnippet} from '../../api/storage';
 import {THEMES_VARIANTS} from '../../lib/consts';
 
 import './PopupTab.css';
@@ -29,7 +29,7 @@ class PopupTab extends Component {
 	render() {
 		return (
 			<div className={CLASS}>
-				<OptionsPicker />
+				<OptionsPicker withOpenRandom={true} />
 			</div>
 		);
 	}

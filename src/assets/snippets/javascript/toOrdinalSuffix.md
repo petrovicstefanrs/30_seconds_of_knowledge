@@ -7,8 +7,8 @@ Find which ordinal pattern digits match.
 If digit is found in teens pattern, use teens ordinal.
 
 ```js
-const toOrdinalSuffix = num => {
-  const int = parseInt(num),
+const toOrdinalSuffix = numString => {
+  const int = parseInt(numString, 10),
     digits = [int % 10, int % 100],
     ordinals = ['st', 'nd', 'rd', 'th'],
     oPattern = [1, 2, 3, 4],

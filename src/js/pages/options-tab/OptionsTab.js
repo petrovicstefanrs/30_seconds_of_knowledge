@@ -4,8 +4,11 @@ import {hot} from 'react-hot-loader';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import OptionsPicker from '../../components/options-picker';
+import ControllsOverlay from '../../components/controlls-overlay';
+
 import {THEMES_VARIANTS} from '../../lib/consts';
 import {restoreFromStorage} from '../../api/storage';
+import {scrollToTop} from '../../lib/util';
 
 import './OptionsTab.css';
 
@@ -21,10 +24,10 @@ class OptionsTab extends Component {
 	}
 
 	componentDidMount() {
-		this.setColorScheme();
+		this.setColorSchemeAndFont();
 	}
 
-	setColorScheme = async () => {
+	setColorSchemeAndFont = async () => {
 		const options = await restoreFromStorage();
 		const {theme} = options;
 
@@ -40,9 +43,12 @@ class OptionsTab extends Component {
 	};
 
 	render() {
+		scrollToTop();
+
 		const {theme} = this.state;
 		return (
 			<div className={CLASS}>
+				<ControllsOverlay renderBack={true} renderSettings={false} />
 				<Header theme={theme} />
 				<OptionsPicker />
 				<Footer />

@@ -9,11 +9,6 @@ function startsWith($haystack, $needle)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 startsWith('Hi, this is me', 'Hi'); // true
 ```
-
-</details>

@@ -10,9 +10,6 @@ function pluck($items, $key)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 pluck([
     ['product_id' => 'prod-100', 'name' => 'Desk'],
@@ -20,5 +17,3 @@ pluck([
 ], 'name');
 // ['Desk', 'Chair']
 ```
-
-</details>

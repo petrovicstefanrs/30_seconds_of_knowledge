@@ -1,11 +1,12 @@
 .sok-Header {
 	width: 100%;
-	height: 100px;
+	height: 128px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	background: var(--color__header__gradient);
+	margin-bottom: 32px;
 }
 
 .sok-Header > a {
@@ -15,8 +16,8 @@
 }
 
 .sok-Header-logo {
-	width: 150px;
-	height: auto;
+	width: auto;
+	height: 32px;
 }
 
 .sok-Header .sok-Button {

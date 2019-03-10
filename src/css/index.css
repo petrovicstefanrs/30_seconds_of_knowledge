@@ -1,6 +1,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
 
+@import '../assets/fonts/sok-icons/styles.css';
 @import 'animations.css';
 
 /* Variables */
@@ -19,6 +20,7 @@
 	--color__lang__interview: #5100ff;
 	--color__lang__php: #AEB2D5;
 	--color__lang__css: #2CAAE1;
+	--color__lang__ruby: #B60D01;
 
 	--color__primary: var(--color__gray);
 	--color__secondary: var(--color__orange);
@@ -38,11 +40,13 @@
 	--font__color--secondary: var(--color__orange);
 	--font__color--secondary--light: var(--color__orange--light);
 
-	--font__size--base: 12px;
-	--font__size--tiny: 8px;
-	--font__size--small: 10px;
-	--font__size--big: 16px;
-	--font__size--giant: 32px;
+	--font__size--xxs: 12px;
+	--font__size--xs: 14px;
+	--font__size--s: 16px;
+	--font__size--m: 18px;
+	--font__size--l: 20px;
+	--font__size--xl: 22px;
+	--font__size--xxl: 24px;
 
 	/* Buttons */
 
@@ -67,20 +71,29 @@
 
 	/* Animations */
 
-	--animation__slide_in--up: slideInUp 1s;
+	--animation__slide_in--up: slide-in-up 1s;
+	--animation__slide_in--up__regular: slide-in-up-regular 1s;
 
 	/* stylelint-disable */
 
-	--animation__pulse--1: pulse_1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
-	--animation__pulse--2: pulse_2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
+	--animation__pulse--1: pulse-1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+	--animation__pulse--2: pulse-2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
 
-	--animation__slide_in--left: slide_in_blurred_left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	--animation__slide_in--left: slide-in-blurred-left 0.1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 	--animation__slide_in--right: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 
 	--animation__fade_in: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	--animation__fade_out: fade-out 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
+	--animation__menu_open: menu-open 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+	--animation__menu_close: menu-close 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+
 	/* stylelint-enable */
+
+	/* Content */
+
+	--content__width--max: 1024px;
+	--content__width: calc(100vw - 480px);
 }
 
 /* Global */
@@ -98,7 +111,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background: var(--bg__color);
 	font-weight: 500;
-	font-size: var(--font__size--base);
+	font-size: var(--font__size--xxs);
 	color: var(--font__color--primary);
 }
 
@@ -109,4 +122,34 @@ code {
 a {
 	text-decoration: none;
 	color: var(--font__color--primary);
+}
+
+/* Fontsizes */
+
+.sok-Fontsize-xxs {
+	font-size: var(--font__size--xxs);
+}
+
+.sok-Fontsize-xs {
+	font-size: var(--font__size--xs);
+}
+
+.sok-Fontsize-s {
+	font-size: var(--font__size--s);
+}
+
+.sok-Fontsize-m {
+	font-size: var(--font__size--m);
+}
+
+.sok-Fontsize-l {
+	font-size: var(--font__size--l);
+}
+
+.sok-Fontsize-xl {
+	font-size: var(--font__size--xl);
+}
+
+.sok-Fontsize-xxl {
+	font-size: var(--font__size--xxl);
 }

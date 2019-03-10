@@ -38,3 +38,8 @@
 	color: #21212a;
 	background: var(--color__lang__css);
 }
+
+.sok-Chip.sok-Chip-ruby {
+	color: #ffffff;
+	background: var(--color__lang__ruby);
+}

@@ -13,12 +13,7 @@ function gcd(...$numbers)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 gcd(8, 36); // 4
 gcd(12, 8, 32); // 4
 ```
-
-</details>

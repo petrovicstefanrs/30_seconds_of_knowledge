@@ -9,11 +9,6 @@ function firstStringBetween($haystack, $start, $end)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 firstStringBetween('This is a [custom] string', '[', ']'); // custom
 ```
-
-</details>

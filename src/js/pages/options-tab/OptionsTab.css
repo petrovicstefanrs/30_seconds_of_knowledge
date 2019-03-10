@@ -8,3 +8,11 @@
 	min-height: calc(100vh - 200px);
 	margin: 0 auto;
 }
+
+.sok-OptionsTab .sok-Header {
+	margin: 0;
+}
+
+.sok-OptionsTab .sok-Footer {
+	margin: 0;
+}

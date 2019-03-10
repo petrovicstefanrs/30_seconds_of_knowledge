@@ -1,6 +1,6 @@
 .sok-DonationBeggar {
-	width: 350px;
-	height: 400px;
+	width: 360px;
+	height: 416px;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -33,34 +33,12 @@
 	bottom: 0;
 	left: 0;
 	background: var(--color__white);
-	opacity: 0.3;
+	opacity: 0.8;
 	cursor: pointer;
 }
 
-.sok-DonationBeggar-button {
-	height: 50px;
-	min-width: var(--button__width--min);
-	max-width: var(--button__width--max);
-	background: var(--color__white);
-	border-radius: 3px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--color__gray--dark);
-	font-weight: 900;
-	margin-top: auto;
-	transition: all 0.3s ease-in-out;
-}
-
-.sok-DonationBeggar-button:hover {
-	box-shadow: var(--button__drop-shadow);
-	transform: scale(1.1);
-}
-
-.sok-DonationBeggar-button > img {
-	width: 36px;
-	height: 36px;
-	margin-right: 10px;
+.sok-DonationBeggar-message {
+	margin-bottom: auto;
 }
 
 .sok-DonationBeggar-message > strong {
@@ -82,9 +60,57 @@
 	font-weight: 900;
 	min-width: unset;
 	position: absolute;
-	right: 5px;
-	top: 5px;
-	width: 36px !important;
-	height: 36px !important;
+	font-size: 16px;
+	right: -8px;
+	top: -8px;
+	width: 48px !important;
+	height: 48px !important;
 	border-radius: 100%;
+}
+
+.sok-DonationBeggar > .sok-Button > .sok-SokIcon {
+	width: 16px;
+	height: 16px;
+}
+
+/* Buttons */
+
+.sok-DonationBeggar-buttons {
+	display: flex;
+}
+
+.sok-DonationBeggar-button {
+	height: 50px;
+	width: 50%;
+	min-width: var(--button__width--min);
+	max-width: var(--button__width--max);
+	background: var(--color__white);
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color__gray--dark);
+	font-weight: 900;
+	margin-top: 8px;
+	transition: all 0.3s ease-in-out;
+}
+
+.sok-DonationBeggar-button-primary:hover {
+	box-shadow: var(--button__drop-shadow);
+	transform: scale(1.1);
+}
+
+.sok-DonationBeggar-button > .sok-SokIcon {
+	font-size: 24px;
+	height: 26px;
+	margin-right: 12px;
+}
+
+.sok-DonationBeggar-button-secondary {
+	background: transparent !important;
+	color: var(--color__white--dark) !important;
+}
+
+.sok-DonationBeggar-button-secondary:hover {
+	text-decoration: underline dotted;
 }

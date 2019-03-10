@@ -1,24 +1,52 @@
-var webpack = require('webpack'),
+let webpack = require('webpack'),
 	path = require('path'),
 	fileSystem = require('fs'),
 	env = require('./utils/env'),
 	CleanWebpackPlugin = require('clean-webpack-plugin'),
 	CopyWebpackPlugin = require('copy-webpack-plugin'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
-	WriteFilePlugin = require('write-file-webpack-plugin');
+	WriteFilePlugin = require('write-file-webpack-plugin'),
+	ZipPlugin = require('zip-webpack-plugin');
 
-// load the secrets
-var alias = {};
+const FILE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
 
-var secretsPath = path.join(__dirname, 'secrets.' + env.NODE_ENV + '.js');
+// Build Target Constants
+const AVAILABLE_TARGETS = ['chromium', 'gecko'];
+const TARGET_SPECIFIC_MANIFEST = {
+	chromium: {
+		offline_enabled: true,
+	},
+	gecko: {
+		browser_specific_settings: {
+			gecko: {
+				id: '30secondsofknowledge@petrovicstefan.rs',
+				strict_min_version: '42.0',
+			},
+		},
+	},
+};
 
-var fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2'];
-
+// Load The Secrets
+let alias = {};
+let secretsPath = path.join(__dirname, 'secrets.' + env.NODE_ENV + '.js');
 if (fileSystem.existsSync(secretsPath)) {
 	alias['secrets'] = secretsPath;
 }
 
-var options = {
+// Load The Build Target and Validate
+const TARGET = process.env.TARGET;
+const targetValid =
+	TARGET &&
+	AVAILABLE_TARGETS.some(target => {
+		return target === TARGET;
+	});
+
+if (!targetValid) {
+	throw new Error(`Build target not defined! Must be one of: ['chromium', 'gecko']`);
+}
+
+// Webpack Options Object
+let options = {
 	mode: process.env.NODE_ENV || 'development',
 	entry: {
 		popup: path.join(__dirname, 'src', 'js', 'popup.js'),
@@ -29,7 +57,7 @@ var options = {
 		newtab: path.join(__dirname, 'src', 'js', 'newtab.js'),
 	},
 	output: {
-		path: path.join(__dirname, 'build'),
+		path: path.join(__dirname, `${TARGET}_build`),
 		filename: '[name].bundle.js',
 	},
 	module: {
@@ -39,7 +67,7 @@ var options = {
 				loader: 'style-loader!css-loader',
 			},
 			{
-				test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
+				test: new RegExp('.(' + FILE_EXTENSIONS.join('|') + ')$'),
 				loader: 'file-loader?name=[name].[ext]',
 				exclude: /node_modules/,
 			},
@@ -62,13 +90,13 @@ var options = {
 	},
 	resolve: {
 		alias: alias,
-		extensions: fileExtensions.map(extension => '.' + extension).concat(['.jsx', '.js', '.css']),
+		extensions: FILE_EXTENSIONS.map(extension => '.' + extension).concat(['.jsx', '.js', '.css']),
 	},
 	plugins: [
 		// clean the build folder
-		new CleanWebpackPlugin(['build']),
+		new CleanWebpackPlugin([`${TARGET}_build`]),
 		// expose and write the allowed env vars on the compiled bundle
-		new webpack.EnvironmentPlugin(['NODE_ENV']),
+		new webpack.EnvironmentPlugin({...process.env}),
 		new CopyWebpackPlugin([
 			{
 				from: 'src/manifest.json',
@@ -79,6 +107,7 @@ var options = {
 							description: process.env.npm_package_description,
 							version: process.env.npm_package_version,
 							...JSON.parse(content.toString()),
+							...TARGET_SPECIFIC_MANIFEST[TARGET],
 						})
 					);
 				},
@@ -120,6 +149,14 @@ var options = {
 
 if (env.NODE_ENV === 'development') {
 	options.devtool = 'cheap-module-eval-source-map';
+}
+
+if (env.NODE_ENV === 'production') {
+	options.plugins.push(new ZipPlugin({
+		path: __dirname,
+		filename: `${TARGET}_build`,
+		extension: 'zip',
+	}));
 }
 
 module.exports = options;

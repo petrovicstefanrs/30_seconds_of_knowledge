@@ -4,6 +4,5 @@
 }
 
 .sok-ViewTab .sok-MarkdownRenderer {
-	max-width: 500px;
-	width: 500px;
+	width: 100%;
 }

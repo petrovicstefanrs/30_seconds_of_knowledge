@@ -11,11 +11,6 @@ function decapitalize($string, $upperRest = false)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 decapitalize('FooBar'); // 'fooBar'
 ```
-
-</details>

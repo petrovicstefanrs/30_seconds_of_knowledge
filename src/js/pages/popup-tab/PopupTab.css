@@ -13,8 +13,14 @@
 }
 
 .sok-PopupTab .sok-Toaster {
+	animation: var(--animation__slide_in--up__regular) !important;
 	right: 10px;
 	bottom: 10px;
 	left: 10px;
+	transform: translateX(0) !important;
 	animation-duration: 0.5s;
+}
+
+.sok-PopupTab .sok-OptionsPicker .sok-OptionsPicker-item {
+	width: 250px;
 }

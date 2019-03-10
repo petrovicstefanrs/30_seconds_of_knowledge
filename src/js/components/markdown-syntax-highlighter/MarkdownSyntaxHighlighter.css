@@ -23,10 +23,11 @@
 }
 
 .sok-MarkdownSyntaxHighlighter .sok-Button > .sok-Button-icon {
-	max-height: 20px;
 	margin: 0;
-	width: auto;
-	filter: var(--filter__button--icon);
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .sok-MarkdownSyntaxHighlighter pre {

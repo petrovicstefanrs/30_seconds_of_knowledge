@@ -11,13 +11,8 @@ function approximatelyEqual($number1, $number2, $epsilon = 0.001)
 }
 ```
 
-<details>
-<summary>Examples</summary>
-
 ```php
 approximatelyEqual(10.0, 10.00001); // true
 
 approximatelyEqual(10.0, 10.01); // false
 ```
-
-</details>

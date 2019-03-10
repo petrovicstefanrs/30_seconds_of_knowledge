@@ -13,7 +13,8 @@ import ControllsOverlay from '../../components/controlls-overlay';
 import env from '../../../env';
 import {fetchRandomSnippet} from '../../api/snippets';
 import {restoreFromStorage, saveToStorage} from '../../api/storage';
-import {THEMES_VARIANTS} from '../../lib/consts';
+import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
+import {scrollToTop} from '../../lib/util';
 
 import './NewTab.css';
 
@@ -32,7 +33,7 @@ class NewTab extends Component {
 	}
 
 	componentDidMount() {
-		this.setColorScheme();
+		this.setColorSchemeAndFont();
 		this.setBeggarCounter();
 		this.fetchSnippet();
 	}
@@ -53,9 +54,9 @@ class NewTab extends Component {
 		});
 	};
 
-	setColorScheme = async () => {
+	setColorSchemeAndFont = async () => {
 		const options = await restoreFromStorage();
-		const {theme} = options;
+		const {theme, font_size} = options;
 
 		if (theme === THEMES_VARIANTS.light) {
 			require('../../../css/themes/light.css');
@@ -65,6 +66,7 @@ class NewTab extends Component {
 
 		this.setState({
 			theme,
+			font_size,
 		});
 	};
 
@@ -140,9 +142,11 @@ class NewTab extends Component {
 	};
 
 	render() {
-		const {theme} = this.state;
+		scrollToTop();
+
+		const {theme, font_size} = this.state;
 		return (
-			<div className={CLASS}>
+			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>
 				<ControllsOverlay />
 				{this.renderSpinner()}
 				{this.renderDonationBeggar()}

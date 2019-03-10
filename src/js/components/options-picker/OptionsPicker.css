@@ -1,35 +1,45 @@
 .sok-OptionsPicker {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	width: 500px;
+	width: 100%;
 }
+
+/* Other */
 
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > h2 {
 	color: var(--color__orange--light);
 	text-transform: uppercase;
-	margin-bottom: 32px;
+	margin-bottom: 16px;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > .sok-Button {
 	background: var(--color__orange--light);
 	font-weight: 900;
 	font-size: 1em;
-	margin-top: 32px;
+	margin-top: 16px;
 }
+
+.sok-OptionsPicker .sok-OptionsPicker-itemsContainer > .sok-Button > .sok-SokIcon {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+/* Language Picker */
 
 .sok-OptionsPicker .sok-OptionsPicker-item {
 	display: flex;
 	margin: 5px 0;
-	width: 250px;
+	width: 300px;
 	cursor: pointer;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-item > img {
-	width: 25px;
-	margin: 0 10px 0 0;
-	height: 25px;
+	width: 24px;
+	margin: 0 12px 0 0;
+	height: 24px;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-item-unChecked .sok-Chip {
@@ -38,6 +48,8 @@
 	text-decoration: line-through;
 }
 
+/* Theme Switcher */
+
 .sok-OptionsPicker .sok-OptionsPicker-themeSwitch-holder {
 	display: flex;
 	align-items: center;
@@ -45,12 +57,12 @@
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-themeSwitch {
-	height: 25px;
-	width: 50px;
+	height: 24px;
+	width: 48px;
 	display: inline-block;
 	border: 2px solid var(--color__orange--light);
-	border-radius: 25px;
-	margin-right: 10px;
+	border-radius: 24px;
+	margin-right: 12px;
 	font-weight: 900;
 	cursor: pointer;
 	position: relative;
@@ -74,5 +86,47 @@
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-themeSwitch-unChecked:before {
-	margin-left: 25px;
+	margin-left: 24px;
+}
+
+.sok-OptionsPicker .sok-Separator {
+	margin: 16px 0;
+}
+
+/* Fontsize Scale */
+
+.sok-OptionsPicker .sok-OptionsPicker-fontScale-holder {
+	display: flex;
+	align-items: center;
+	font-weight: 900;
+	height: 25px;
+}
+
+.sok-OptionsPicker-fontScale {
+	height: 2px;
+	margin-right: 12px;
+	width: 50%;
+	background-color: var(--color__orange--light);
+	cursor: pointer;
+	-webkit-appearance: none;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.sok-OptionsPicker-fontScale::-webkit-slider-thumb,
+.sok-OptionsPicker-fontScale::-moz-range-thumb {
+	-webkit-appearance: none;
+	width: 15px;
+	height: 15px;
+	background: linear-gradient(to left, var(--color__orange--light), var(--color__orange));
+	border-radius: 50%;
+	border: none;
+}
+
+.sok-OptionsPicker-fontScale::-ms-track {
+	width: 100%;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
 }

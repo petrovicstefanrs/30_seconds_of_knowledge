@@ -13,7 +13,8 @@
 .sok-SavedTab .sok-SavedTab-contentContainer {
 	display: flex;
 	flex-direction: column;
-	width: 500px;
+	width: var(--content__width);
+	max-width: var(--content__width--max);
 	min-height: calc(100vh - 200px);
 }
 

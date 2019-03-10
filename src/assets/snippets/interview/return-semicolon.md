@@ -11,7 +11,7 @@ function greet() {
 
 #### Answer
 
-Because of JavaScript's automatic semicolon insertion (ASI), the compiler places a semicolon after `return` keyword and therefore it returns `undefined` without an error being thrown.
+Because of JavaScript's automatic semicolon insertion (ASI), the compiler places a semicolon after the `return` keyword and therefore it returns `undefined` without an error being thrown.
 
 #### Good to hear
 
