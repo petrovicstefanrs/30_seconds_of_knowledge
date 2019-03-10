@@ -104,7 +104,7 @@ class SavedTab extends Component {
 			return item.src === snippet.src;
 		});
 
-		await blacklistSnippetsToStorage(blacklisted)
+		await blacklistSnippetsToStorage(blacklisted);
 
 		this.setState({blacklisted});
 	};
