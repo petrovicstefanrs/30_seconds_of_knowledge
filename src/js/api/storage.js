@@ -47,6 +47,14 @@ export const DEFAULT_EXTENSION_OPTIONS = createDefaultOptions();
 export const DEFAULT_SAVED_SNIPPETS = ['snippets'];
 
 /**
+ * Default blacklisted snippets
+ * @const DEFAULT_BLACKLISTED_SNIPPETS
+ * @readonly
+ */
+
+export const DEFAULT_BLACKLISTED_SNIPPETS = ['blacklisted'];
+
+/**
  * Function that saves extension options to browserObject storage and syncs them over devices
  * @function saveToStorage
  * @return {Promise} setOptions - Promise that will set options to storage and return true once resolved
@@ -108,6 +116,35 @@ export const restoreSnippetsFromStorage = () => {
 	});
 
 	return getSnippets;
+};
+
+/**
+ * Function that saves snippets blacklists to chrome storage and syncs them over devices
+ * @function blacklistSnippetsToStorage
+ * @return {Promise} blacklistSnippetsToStorage - Promise that will save a blacklisted snippet to storage and return
+ * true once resolved
+ */
+
+export const blacklistSnippetsToStorage = blacklisted => {
+	return new Promise(resolve => {
+		browserObject.storage.local.set({blacklisted}, () => {
+			resolve(true);
+		});
+	});
+};
+
+/**
+ * Function that gets blacklisted snippets from browserObject sync storage
+ * @function restoreBlacklistedSnippetFromStorage
+ * @return {Promise} getSnippets - Promise that will return a list of blacklisted snippets from storage when resolved
+ */
+
+export const restoreBlacklistedSnippetFromStorage = () => {
+	return new Promise(resolve => {
+		browserObject.storage.local.get(DEFAULT_BLACKLISTED_SNIPPETS, ({blacklisted}) => {
+			resolve(blacklisted || []);
+		});
+	});
 };
 
 /**

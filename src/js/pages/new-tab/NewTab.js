@@ -17,6 +17,7 @@ import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 
 import './NewTab.css';
+import BlacklistButton from "../../components/blacklist-button";
 
 const CLASS = 'sok-NewTab';
 
@@ -128,6 +129,22 @@ class NewTab extends Component {
 		return <SaveButton data={data} />;
 	};
 
+	renderBlacklist = () => {
+		const {language, snippet_src, snippet_title} = this.state;
+
+		if (!snippet_src) {
+			return null;
+		}
+
+		const data = {
+			language,
+			snippet_src,
+			snippet_title,
+		};
+
+		return <BlacklistButton data={data} />;
+	};
+
 	renderDonationBeggar = () => {
 		const {beggar_counter} = this.state;
 
@@ -154,7 +171,10 @@ class NewTab extends Component {
 				<span className={`${CLASS}-contentContainer`}>
 					<span className={`${CLASS}-contentHeader`}>
 						{this.renderLangChip()}
-						{this.renderSave()}
+						<div className={`${CLASS}-contentButtons`}>
+							{this.renderSave()}
+							{this.renderBlacklist()}
+						</div>
 					</span>
 					{this.renderSnippet()}
 				</span>

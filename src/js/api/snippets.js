@@ -1,5 +1,5 @@
 import {randArrayItem} from '../lib/random';
-import {restoreFromStorage} from './storage';
+import {restoreFromStorage, restoreBlacklistedSnippetFromStorage} from './storage';
 
 /**
  * Available snippet library types
@@ -133,13 +133,24 @@ export const fetchRandomSnippet = async () => {
 	const enabledLibraries = Object.keys(SNIPPET_LIBRARIES).filter(val => {
 		return appOptions.libs[val];
 	});
-
+	const blacklistedSnippets = await fetchBlacklistedSnippets();
 	const randomLibrary = randArrayItem(enabledLibraries);
-	const snippetSources = getSnippetsFromLibrary(randomLibrary);
+	const snippetSources = getSnippetsFromLibrary(randomLibrary)
+		.filter(src => !blacklistedSnippets.includes(src));
 	const randomSnippet = randArrayItem(snippetSources);
 
 	return await fetchSnippet(randomSnippet, randomLibrary);
 };
+
+/**
+ * Function that returnes a promisse that Fetches and returns the src of all blacklisted snippets
+ * @function fetchBlacklistedSnippets
+ * @returns {Promisse} Returns a prommise that when resolved provides a list of blacklisted snippets sources.
+ */
+
+export const fetchBlacklistedSnippets = async () =>
+	(await restoreBlacklistedSnippetFromStorage())
+		.map(snippet => snippet.src);
 
 /**
  * Function that returnes a promisse that Fetches and returns a specific snippet from a specific library of snippets
