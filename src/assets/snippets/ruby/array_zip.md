@@ -15,6 +15,10 @@ irb> last_names = ['Massy', 'Windmil']
  => ["Massy", "Windmil"]
 irb> first_names.zip(last_names)
  => [["George", "Massy"], ["Marcus", "Windmil"], ["Brian", nil]]
+irb> last_names.zip(first_names)
+ => [["Massy", "George"], ["Windmil", "Marcus"]]
+irb> ['Mr.', 'Sir', 'Father'].zip(first_names, last_names)
+ => [["Mr.", "George", "Massy"], ["Sir", "Marcus", "Windmil"], ["Father", "Brian", nil]]
 ```
 
 ##### Additional links
