@@ -31,5 +31,5 @@ The method above is basically shorthand for `numbers.count{|n| n.even?}`.
 
 ##### Additional links
 
-* [Ruby Doc - `Array#count`](https://ruby-doc.org/core-2.2.0/Array.html#method-i-count)
+* [Ruby Doc - Array#count](https://ruby-doc.org/core-2.2.0/Array.html#method-i-count)
 * [`Symbol#to_proc` Method](https://stackoverflow.com/questions/1217088/what-does-mapname-mean-in-ruby)
