@@ -1,6 +1,6 @@
 ### Adding uniq values to an array
 
-Let's say we wanna add a new element to an array but we want to make sure to keep each element uniq. One way to achive this would be:
+Let's say we wanna add a new element to an array but we want to make sure to keep each element uniq. One way to achieve this would be:
 
 ```bash
 irb> alphabet = ['a','b','c']
