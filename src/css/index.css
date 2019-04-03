@@ -20,7 +20,8 @@
 	--color__lang__interview: #5100ff;
 	--color__lang__php: #AEB2D5;
 	--color__lang__css: #2CAAE1;
-	--color__lang__ruby: #B60D01;
+  --color__lang__ruby: #B60D01;
+  --color__lang__ramda: #849;
 
 	--color__primary: var(--color__gray);
 	--color__secondary: var(--color__orange);
