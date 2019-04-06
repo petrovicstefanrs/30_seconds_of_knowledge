@@ -20,6 +20,7 @@ const createDefaultOptions = () => {
 			php: true,
 			css: true,
 			ruby: true,
+			ramda: true,
 		},
 		theme: 'dark',
 		font_size: 1,
