@@ -1,21 +1,20 @@
 ### variadicFunction
 
-Variadic functions allows you to capture a variable number of arguments to a function.
-
-The function accepts any number of variables to execute the code. It uses a for loop to iterate over the parameters.
+A variadic function is a function of indefinite arity, i.e., one which accepts a variable number of arguments.
+The example shows variadicSum function, that takes an indefinite number of integers and returns their sum.
 
 ```php
-function variadicFunction($operands)
+function variadicSum(...$nums)
 {
     $sum = 0;
-    foreach($operands as $singleOperand) {
-        $sum += $singleOperand;
+    foreach($nums as $num) {
+        $sum += $num;
     }
     return $sum;
 }
 ```
 
 ```php
-variadicFunction([1, 2]); // 3
-variadicFunction([1, 2, 3, 4]); // 10
+variadicSum(1, 2); // 3
+variadicSum(1, 2, 3, 4); // 10
 ```
