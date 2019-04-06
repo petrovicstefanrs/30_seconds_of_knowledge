@@ -54,6 +54,7 @@ let options = {
 		view: path.join(__dirname, 'src', 'js', 'view.js'),
 		options: path.join(__dirname, 'src', 'js', 'options.js'),
 		background: path.join(__dirname, 'src', 'js', 'background.js'),
+		jobsBoard: path.join(__dirname, 'src', 'js', 'jobsBoard.js'),
 		newtab: path.join(__dirname, 'src', 'js', 'newtab.js'),
 	},
 	output: {
@@ -142,6 +143,11 @@ let options = {
 			template: path.join(__dirname, 'src', 'newtab.html'),
 			filename: 'newtab.html',
 			chunks: ['newtab'],
+		}),
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, 'src', 'jobsBoard.html'),
+			filename: 'jobsBoard.html',
+			chunks: ['jobsBoard'],
 		}),
 		new WriteFilePlugin(),
 	],

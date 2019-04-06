@@ -1,0 +1,111 @@
+.sok-jobsBoard {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	flex-direction: column;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.sok-jobsBoard .sok-Header-jobsButton {
+	display: none;
+}
+
+.sok-jobsBoard .sok-Header {
+	z-index: 9999;
+}
+
+.sok-jobsBoard .sok-jobsBoard-contentContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: var(--content__width);
+	max-width: var(--content__width--max);
+	min-height: calc(100vh - 200px);
+}
+
+.sok-jobsBoard .sok-jobsBoard-contentContainer .sok-jobsBoard-contentHeader {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.sok-jobsBoard .job {
+	padding: 24px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: var(--bg__code--block);
+	border-radius: 3px;
+	min-width: 800px;
+	min-height: 120px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	transition: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.sok-jobsBoard .job:hover {
+	transform: scale(1.05);
+}
+
+.sok-jobsBoard .label {
+	min-width: 800px;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.sok-jobsBoard .reach {
+	font-size: 20px;
+}
+
+.sok-jobsBoard .postJobButton {
+	right: 100px;
+	padding: 10px;
+	margin: 40px;
+    color: #21212a;
+    background: var(--color__jobs_button);
+	cursor: pointer;
+}
+
+.sok-jobsBoard .job .companyLogo {
+	width: 100px;
+    height: 100px;
+    background: #63656d;
+    border-radius: 3px;
+    min-width: 100px;
+	margin-right: 20px;
+	background-size: cover;
+}
+
+.sok-jobsBoard .job .jobData {
+	width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sok-jobsBoard .job .jobTitle {
+	font-size: 20px;
+}
+
+.sok-jobsBoard .job .company {
+	font-size: 15px;
+}
+
+.sok-jobsBoard .job .skills {
+	display: flex;
+	margin-left: 20px;
+}
+
+.sok-jobsBoard .job .skills .skill {
+	padding: 10px;
+	background: #63656d;
+	margin-left: 10px;
+}
