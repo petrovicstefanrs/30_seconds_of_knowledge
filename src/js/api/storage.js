@@ -52,7 +52,7 @@ export const DEFAULT_SAVED_SNIPPETS = ['snippets'];
  * @readonly
  */
 
-export const DEFAULT_BLACKLISTED_SNIPPETS = ['blacklisted'];
+export const DEFAULT_BLACKLISTED_SNIPPETS = ['blacklisted_snippets'];
 
 /**
  * Function that saves extension options to browserObject storage and syncs them over devices
@@ -87,7 +87,7 @@ export const restoreFromStorage = () => {
 };
 
 /**
- * Function that saves snippets to chrome storage and syncs them over devices
+ * Function that saves snippets to browserObject sync storage
  * @function saveSnippetToStorage
  * @return {Promise} saveSnippet - Promise that will save snippet to storage and return true once resolved
  */
@@ -119,15 +119,15 @@ export const restoreSnippetsFromStorage = () => {
 };
 
 /**
- * Function that saves snippets blacklists to chrome storage and syncs them over devices
+ * Function that saves snippets blacklist to browserObject sync storage
  * @function blacklistSnippetsToStorage
  * @return {Promise} blacklistSnippetsToStorage - Promise that will save a blacklisted snippet to storage and return
  * true once resolved
  */
 
-export const blacklistSnippetsToStorage = blacklisted => {
+export const blacklistSnippetsToStorage = blacklisted_snippets => {
 	return new Promise(resolve => {
-		browserObject.storage.local.set({blacklisted}, () => {
+		browserObject.storage.local.set({blacklisted_snippets}, () => {
 			resolve(true);
 		});
 	});
@@ -141,8 +141,8 @@ export const blacklistSnippetsToStorage = blacklisted => {
 
 export const restoreBlacklistedSnippetFromStorage = () => {
 	return new Promise(resolve => {
-		browserObject.storage.local.get(DEFAULT_BLACKLISTED_SNIPPETS, ({blacklisted}) => {
-			resolve(blacklisted || []);
+		browserObject.storage.local.get(DEFAULT_BLACKLISTED_SNIPPETS, ({blacklisted_snippets}) => {
+			resolve(blacklisted_snippets || []);
 		});
 	});
 };
@@ -174,10 +174,10 @@ export const openSaved = () => {
  * @function openView
  */
 
-export const openView = index => {
+export const openView = (index, type = 'saved') => {
 	const {getURL} = browserObject.runtime;
 
-	window.open(getURL('view.html#' + index), '_self');
+	window.open(getURL('view.html#' + index + '#' + type), '_self');
 };
 
 /**

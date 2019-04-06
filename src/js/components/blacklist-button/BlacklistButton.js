@@ -44,7 +44,7 @@ class BlacklistButton extends Component {
 		const blacklisted = !!_.find(blacklistedSnippets, ['src', snippet_src]);
 
 		this.setState({
-			blacklisted: blacklisted,
+			blacklisted,
 		});
 	};
 
@@ -96,7 +96,7 @@ class BlacklistButton extends Component {
 				<div className={`${CLASS} ${disabledClass}`}>
 					<Button
 						className={`${CLASS}-button`}
-						icon={SOK_ICONS.eye_hide}
+						icon={SOK_ICONS.dislike}
 						onClick={this.blacklistSnippet}
 					/>
 				</div>

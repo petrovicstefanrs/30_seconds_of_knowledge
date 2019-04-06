@@ -8,7 +8,11 @@ import Chip from '../../components/chip';
 import Footer from '../../components/footer';
 import ControllsOverlay from '../../components/controlls-overlay';
 
-import {restoreFromStorage, restoreSnippetsFromStorage} from '../../api/storage';
+import {
+	restoreFromStorage,
+	restoreSnippetsFromStorage,
+	restoreBlacklistedSnippetFromStorage,
+} from '../../api/storage';
 import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
 import {fetchSnippet} from '../../api/snippets';
 import {scrollToTop} from '../../lib/util';
@@ -34,12 +38,18 @@ class ViewTab extends Component {
 	}
 
 	fetchSnippet = async () => {
-		const index = location.hash.split('#')[1];
+		const locationHash = location.hash.split('#');
+		const index = locationHash[1];
+		const type = locationHash[2];
+
 		if (!index) {
 			return null;
 		}
 
-		let snippets = await restoreSnippetsFromStorage();
+		let snippets =
+			type === 'blacklisted'
+				? await restoreBlacklistedSnippetFromStorage()
+				: await restoreSnippetsFromStorage();
 
 		const {src, language} = snippets[index];
 

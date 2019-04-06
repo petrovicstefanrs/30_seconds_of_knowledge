@@ -21,6 +21,10 @@
 	font-size: 16px;
 }
 
+.sok-BlacklistButton-button > .sok-SokIcon {
+	margin-bottom: -4px;
+}
+
 .sok-BlacklistButton-disabled .sok-BlacklistButton-button {
 	background: var(--color__gray--light) !important;
 	color: var(--color__white--dark);

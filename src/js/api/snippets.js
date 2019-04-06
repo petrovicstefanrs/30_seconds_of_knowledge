@@ -133,10 +133,11 @@ export const fetchRandomSnippet = async () => {
 	const enabledLibraries = Object.keys(SNIPPET_LIBRARIES).filter(val => {
 		return appOptions.libs[val];
 	});
-	const blacklistedSnippets = await fetchBlacklistedSnippets();
+	const blacklistedSnippets = await fetchBlacklistedSnippetSources();
 	const randomLibrary = randArrayItem(enabledLibraries);
-	const snippetSources = getSnippetsFromLibrary(randomLibrary)
-		.filter(src => !blacklistedSnippets.includes(src));
+	const snippetSources = getSnippetsFromLibrary(randomLibrary).filter(
+		src => !blacklistedSnippets.includes(src)
+	);
 	const randomSnippet = randArrayItem(snippetSources);
 
 	return await fetchSnippet(randomSnippet, randomLibrary);
@@ -144,13 +145,13 @@ export const fetchRandomSnippet = async () => {
 
 /**
  * Function that returnes a promisse that Fetches and returns the src of all blacklisted snippets
- * @function fetchBlacklistedSnippets
+ * @function fetchBlacklistedSnippetSources
  * @returns {Promisse} Returns a prommise that when resolved provides a list of blacklisted snippets sources.
  */
 
-export const fetchBlacklistedSnippets = async () =>
-	(await restoreBlacklistedSnippetFromStorage())
-		.map(snippet => snippet.src);
+export const fetchBlacklistedSnippetSources = async () => {
+	return (await restoreBlacklistedSnippetFromStorage()).map(snippet => snippet.src);
+};
 
 /**
  * Function that returnes a promisse that Fetches and returns a specific snippet from a specific library of snippets

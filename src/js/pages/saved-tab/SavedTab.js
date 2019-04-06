@@ -24,8 +24,20 @@ import {FONT_SIZE_CLASSNAMES, THEMES_VARIANTS} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 
 import './SavedTab.css';
+import PageTabs from '../../components/page-tabs';
 
 const CLASS = 'sok-SavedTab';
+
+const TABS = {
+	saved: {
+		key: 'saved',
+		title: 'Saved Snippets',
+	},
+	blacklisted: {
+		key: 'blacklisted',
+		title: 'Blacklisted Snippets',
+	},
+};
 
 class SavedTab extends Component {
 	constructor(props) {
@@ -35,6 +47,7 @@ class SavedTab extends Component {
 			snippets: null,
 			blacklisted: null,
 			theme: THEMES_VARIANTS.dark,
+			activeTab: TABS['saved'].key,
 		};
 	}
 
@@ -49,7 +62,7 @@ class SavedTab extends Component {
 
 		this.setState({
 			snippets,
-			blacklisted
+			blacklisted,
 		});
 	};
 
@@ -155,38 +168,54 @@ class SavedTab extends Component {
 				<div className={`${CLASS}-empty`}>
 					<img src={happyIconSrc} alt="Empty Blacklisted Snippets Library" />
 					<span>Wow, there are no blacklisted snippets here, that's great...</span>
-					<span>Come back once if you ever blacklist one and want to undo it!</span>
+					<span>If you ever blacklist some you'll find them here!</span>
 				</div>
 			);
 		}
 		return blacklisted.map((snippet, index) => {
 			return (
 				<div key={index} className={`${CLASS}-item`}>
-					<div className={`${CLASS}-item-title`} onClick={() => openView(index)}>
+					<div className={`${CLASS}-item-title`} onClick={() => openView(index, 'blacklisted')}>
 						{snippet.title}
 					</div>
 					{this.renderLangChip(snippet.language)}
-					<div className={`${CLASS}-item-delete`} onClick={() => this.handleRemoveFromBlacklist(snippet)}>
-						<img src={trashIconSrc} alt="Trash Button"/>
+					<div
+						className={`${CLASS}-item-delete`}
+						onClick={() => this.handleRemoveFromBlacklist(snippet)}
+					>
+						<img src={trashIconSrc} alt="Trash Button" />
 					</div>
 				</div>
 			);
 		});
 	};
 
+	handleTabChange = tab => {
+		this.setState({
+			activeTab: tab,
+		});
+	};
+
 	render() {
 		scrollToTop();
 
-		const {theme, font_size} = this.state;
+		const {theme, font_size, activeTab} = this.state;
 		return (
 			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>
 				<ControllsOverlay renderSaves={false} renderBack={true} />
 				<Header theme={theme} />
 				<div className={`${CLASS}-contentContainer`}>
-					<h2>Saved Snippets</h2>
-					{this.renderSnippets()}
-					<h2>Blacklisted Snippets</h2>
-					{this.renderBlacklisted()}
+					<PageTabs tabs={TABS} onTabChange={this.handleTabChange} activeTab={activeTab} />
+					{activeTab === TABS['saved'].key && (
+						<React.Fragment>
+							{this.renderSnippets()}
+						</React.Fragment>
+					)}
+					{activeTab === TABS['blacklisted'].key && (
+						<React.Fragment>
+							{this.renderBlacklisted()}
+						</React.Fragment>
+					)}
 				</div>
 				<Footer />
 			</div>

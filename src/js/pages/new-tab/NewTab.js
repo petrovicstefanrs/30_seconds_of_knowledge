@@ -6,6 +6,7 @@ import Header from '../../components/header';
 import Spinner from '../../components/spinner';
 import Chip from '../../components/chip';
 import SaveButton from '../../components/save-button';
+import BlacklistButton from "../../components/blacklist-button";
 import Footer from '../../components/footer';
 import DonationBeggar from '../../components/donation-beggar';
 import ControllsOverlay from '../../components/controlls-overlay';
@@ -17,7 +18,6 @@ import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 
 import './NewTab.css';
-import BlacklistButton from "../../components/blacklist-button";
 
 const CLASS = 'sok-NewTab';
 

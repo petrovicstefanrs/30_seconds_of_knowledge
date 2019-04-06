@@ -94,6 +94,10 @@
 
 	--content__width--max: 1024px;
 	--content__width: calc(100vw - 80px);
+
+	/* Tabs */
+
+	--tab__height: 48px;
 }
 
 /* Global */
