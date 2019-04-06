@@ -10,14 +10,17 @@ import ControllsOverlay from '../../components/controlls-overlay';
 
 import trashIconSrc from '../../../assets/images/icons/trash.svg';
 import emptyIconSrc from '../../../assets/images/icons/empty.svg';
+import happyIconSrc from '../../../assets/images/icons/happy.svg';
 
 import {
+	blacklistSnippetsToStorage,
+	openView,
+	restoreBlacklistedSnippetFromStorage,
 	restoreFromStorage,
 	restoreSnippetsFromStorage,
 	saveSnippetsToStorage,
-	openView,
 } from '../../api/storage';
-import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
+import {FONT_SIZE_CLASSNAMES, THEMES_VARIANTS} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 
 import './SavedTab.css';
@@ -30,6 +33,7 @@ class SavedTab extends Component {
 
 		this.state = {
 			snippets: null,
+			blacklisted: null,
 			theme: THEMES_VARIANTS.dark,
 		};
 	}
@@ -41,9 +45,11 @@ class SavedTab extends Component {
 
 	initSnippetsFromStorage = async () => {
 		let snippets = await restoreSnippetsFromStorage();
+		let blacklisted = await restoreBlacklistedSnippetFromStorage();
 
 		this.setState({
 			snippets,
+			blacklisted
 		});
 	};
 
@@ -92,6 +98,17 @@ class SavedTab extends Component {
 		this.setState({snippets});
 	};
 
+	handleRemoveFromBlacklist = async snippet => {
+		const {blacklisted} = this.state;
+		_.remove(blacklisted, item => {
+			return item.src === snippet.src;
+		});
+
+		await blacklistSnippetsToStorage(blacklisted);
+
+		this.setState({blacklisted});
+	};
+
 	renderSnippets = () => {
 		const {snippets} = this.state;
 
@@ -126,6 +143,37 @@ class SavedTab extends Component {
 		return snippetsItems;
 	};
 
+	renderBlacklisted = () => {
+		const {blacklisted} = this.state;
+
+		if (!blacklisted) {
+			return this.renderSpinner();
+		}
+
+		if (!blacklisted.length) {
+			return (
+				<div className={`${CLASS}-empty`}>
+					<img src={happyIconSrc} alt="Empty Blacklisted Snippets Library" />
+					<span>Wow, there are no blacklisted snippets here, that's great...</span>
+					<span>Come back once if you ever blacklist one and want to undo it!</span>
+				</div>
+			);
+		}
+		return blacklisted.map((snippet, index) => {
+			return (
+				<div key={index} className={`${CLASS}-item`}>
+					<div className={`${CLASS}-item-title`} onClick={() => openView(index)}>
+						{snippet.title}
+					</div>
+					{this.renderLangChip(snippet.language)}
+					<div className={`${CLASS}-item-delete`} onClick={() => this.handleRemoveFromBlacklist(snippet)}>
+						<img src={trashIconSrc} alt="Trash Button"/>
+					</div>
+				</div>
+			);
+		});
+	};
+
 	render() {
 		scrollToTop();
 
@@ -137,6 +185,8 @@ class SavedTab extends Component {
 				<div className={`${CLASS}-contentContainer`}>
 					<h2>Saved Snippets</h2>
 					{this.renderSnippets()}
+					<h2>Blacklisted Snippets</h2>
+					{this.renderBlacklisted()}
 				</div>
 				<Footer />
 			</div>
