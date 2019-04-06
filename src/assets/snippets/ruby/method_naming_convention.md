@@ -1,4 +1,4 @@
-### Mehtod Naming Conventions "!" vs. "?"
+### Method Naming Conventions "!" vs. "?"
 
 In Ruby there are two common naming conventions for methods. Either you end a method name with a **!** or **?**.
 Methods ended by a **!** are called bang methods and often modifies the original object.
