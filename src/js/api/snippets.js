@@ -16,8 +16,8 @@ export const SNIPPET_LIBRARIES = {
 	interview: 'interview',
 	php: 'php',
 	css: 'css',
-  ruby: 'ruby',
-  ramda: 'ramda',
+	ruby: 'ruby',
+	ramda: 'ramda',
 };
 
 /**
@@ -34,8 +34,8 @@ export const SNIPPET_LIBRARY_LABELS = {
 	[SNIPPET_LIBRARIES.interview]: 'Interview Questions',
 	[SNIPPET_LIBRARIES.php]: 'PHP',
 	[SNIPPET_LIBRARIES.css]: 'CSS',
-  [SNIPPET_LIBRARIES.ruby]: 'Ruby',
-  [SNIPPET_LIBRARIES.ramda]: 'Ramda',
+	[SNIPPET_LIBRARIES.ruby]: 'Ruby',
+	[SNIPPET_LIBRARIES.ramda]: 'Ramda',
 };
 
 /**
@@ -90,10 +90,10 @@ const getLibratyContext = library => {
 			return require.context('../../assets/snippets/css', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.ruby:
-      return require.context('../../assets/snippets/ruby', false, /\.md$/);
+			return require.context('../../assets/snippets/ruby', false, /\.md$/);
 
-    case SNIPPET_LIBRARIES.ramda:
-      return require.context('../../assets/snippets/ramda', false, /\.md$/);
+		case SNIPPET_LIBRARIES.ramda:
+			return require.context('../../assets/snippets/ramda', false, /\.md$/);
 
 		default:
 			return require.context('../../assets/snippets/javascript', false, /\.md$/);
@@ -113,8 +113,8 @@ export const SNIPPET_LIBRARY_CONTEXTS = {
 	[SNIPPET_LIBRARIES.interview]: getLibratyContext(SNIPPET_LIBRARIES.interview),
 	[SNIPPET_LIBRARIES.php]: getLibratyContext(SNIPPET_LIBRARIES.php),
 	[SNIPPET_LIBRARIES.css]: getLibratyContext(SNIPPET_LIBRARIES.css),
-  [SNIPPET_LIBRARIES.ruby]: getLibratyContext(SNIPPET_LIBRARIES.ruby),
-  [SNIPPET_LIBRARIES.ramda]: getLibratyContext(SNIPPET_LIBRARIES.ramda),
+	[SNIPPET_LIBRARIES.ruby]: getLibratyContext(SNIPPET_LIBRARIES.ruby),
+	[SNIPPET_LIBRARIES.ramda]: getLibratyContext(SNIPPET_LIBRARIES.ramda),
 };
 
 /**
