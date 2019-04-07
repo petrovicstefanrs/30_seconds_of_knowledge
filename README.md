@@ -55,6 +55,8 @@ Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30
 - PHP
 - Python
 - Ruby
+- Ramda
+- C++
 
 ------
 
@@ -95,7 +97,7 @@ Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30
 - [x] **Blacklist Snippets - Feature**
 - [x] **More Snippet Languages - Added Ramda**
 - [x] **More Snippet Languages - Added C++**
-- [ ] Release v1.2.0
+- [x] Release v1.2.0
 
 **Constant Work:**
 
