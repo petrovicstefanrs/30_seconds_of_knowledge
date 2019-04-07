@@ -124,6 +124,9 @@ A big THANK YOU to these wonderfull people!
 | <img src="https://avatars2.githubusercontent.com/u/25749162?s=460&v=4" width="50px" height="50px"/> | Stefan Fejes | [Github Profile](https://github.com/fejes713)  | [Website](stefanfejes.com/) |
 | <img src="https://avatars0.githubusercontent.com/u/522352?s=460&v=4" width="50px" height="50px"/>   | Ahmad Santarissy   | [Github Profile](https://github.com/asantarissy) | [Website](https://ahmadsantarissy.com)  |
 | <img src="https://avatars2.githubusercontent.com/u/16981711?s=460&v=4" width="50px" height="50px"/>   | Florian Josef Reheis | [Github Profile](https://github.com/florianjosefreheis) | [Website](https://www.florianjosefreheis.com/)  |
+| <img src="https://avatars1.githubusercontent.com/u/19594428?s=460&v=4" width="50px" height="50px"/>   | Matheus Dutra Lima | [Github Profile](https://github.com/Kutomore) | -------- |
+| <img src="https://avatars2.githubusercontent.com/u/26866310?s=460&v=4" width="50px" height="50px"/>   | Donavan Lawson | [Github Profile](https://github.com/SyntaxZA) | --------  |
+| <img src="https://avatars1.githubusercontent.com/u/34342551?s=460&v=4" width="50px" height="50px"/>   | Bhupesh Varshney | [Github Profile](https://github.com/Bhupesh-V) | [Website](http://bhupeshv.me/) |
 
 ------
 
