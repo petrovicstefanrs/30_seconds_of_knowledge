@@ -5,13 +5,31 @@ export default [
         jobTitle: 'React Developer',
         company: 'Swissborg',
         // This will have defined consts for every tech skill
-        skills: ['Javascript', 'React', 'Redux', 'MobX']
+        skills: ['Javascript', 'React', 'Redux', 'MobX'],
+        type: 1
     },
     {
         logo: 'https://i.postimg.cc/8zhMgHp3/logo2.png',
         jobTitle: 'Front-end Software Engineer',
         company: 'Portchain',
         // This will have defined consts for every tech skill
-        skills: ['Javascript', 'React', 'Redux']
+        skills: ['Javascript', 'React', 'Redux'],
+        type: 2
+    },
+    {
+        logo: 'https://i.postimg.cc/8zhMgHp3/logo2.png',
+        jobTitle: 'Front-end Software Engineer',
+        company: 'Portchain',
+        // This will have defined consts for every tech skill
+        skills: ['Javascript', 'React', 'Redux'],
+        type: 2
+    },
+    {
+        logo: 'https://i.postimg.cc/8zhMgHp3/logo2.png',
+        jobTitle: 'Front-end Software Engineer',
+        company: 'Portchain',
+        // This will have defined consts for every tech skill
+        skills: ['Javascript', 'React', 'Redux'],
+        type: 2
     }
 ];

@@ -127,3 +127,8 @@
     background: var(--color__jobs_button);
     cursor: pointer;
 }
+
+.sok-jobsBoard .jobDescription {
+	margin-top: 25px; 
+	max-width: 800px;
+}

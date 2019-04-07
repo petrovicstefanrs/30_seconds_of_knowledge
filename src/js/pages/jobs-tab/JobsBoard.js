@@ -16,6 +16,7 @@ import './JobsBoard.css';
 
 const CLASS = 'sok-jobsBoard';
 
+// Move this outside of component
 const Job = ({ 
 	logo, 
 	jobTitle, 
@@ -46,13 +47,16 @@ const Job = ({
 				</div>
 			</div>
 		</div>
-		{ active && <div style={{ marginTop: 25 }}>
+		{ active && <div className="jobDescription">
 			<MarkdownRenderer 
 				lang={language} 
 				source={snippet}
 			/>
 			{/* And then to have apply button here? */}
-			<div className="testApplyButton">
+			<div 
+				className="testApplyButton"
+				onClick={() => console.log('This will be link tag actually')}
+			>
 				<span>Apply for a job</span>
 			</div>
 		</div>
@@ -99,11 +103,8 @@ class JobsBoard extends Component {
 	};
 
 	toggleJobDescription = (active_job) => {
-		if (active_job === this.state.active_job) {
-			this.setState({ active_job: null });
-		} else {
-			this.setState({ active_job });
-		}
+		const already_active = active_job === this.state.active_job;
+		this.setState({ active_job: already_active ? null : active_job });
 	}
 
 	render() {
