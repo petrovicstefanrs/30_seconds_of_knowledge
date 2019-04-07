@@ -14,7 +14,7 @@ const WEBSITE_URL = env.extension_website_url;
 
 const Header = ({className = '', theme, ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
-		<a href={WEBSITE_URL} target="_blank">
+		<a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer">
 			<img
 				className={CLASS + '-logo'}
 				src={theme === THEMES_VARIANTS.dark ? logoSrc : logoSrcDark}

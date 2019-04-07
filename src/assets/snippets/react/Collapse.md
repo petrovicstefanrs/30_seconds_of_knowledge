@@ -2,7 +2,7 @@
 
 Renders a component with collapsible content.
 
-Use the `React.setState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.
+Use the `React.useState()` hook to create the `isCollapsed` state variable with an initial value of `props.collapsed`.
 Use an object, `style`, to hold the styles for individual components and their states.
 Use a `<div>` to wrap both the `<button>` that alters the component's `isCollapsed` state and the content of the component, passed down via `props.children`.
 Determine the appearance of the content, based on `isCollapsed` and apply the appropriate CSS rules from the `style` object.

@@ -26,6 +26,7 @@ You can download the ***Chrome & Firefox Extensions*** [here](https://30secondso
 
 ###### Description
 
+
 Gain **new developer skills** every time you open a **New Tab**! Choose which programming languages you want to get better at, in extension options, and **get smarter every time** you open a **New Tab**. All you need is **30 seconds** to read and understand **snippets** of code and **improve your knowledge**. Saw something useful? Just **copy/paste** it into your code and **you're golden**!
 
 This Chrome Extension is built with **React** and Web Extensions API.
@@ -75,22 +76,25 @@ Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30
 
 **V1.1.0 Phase:**
 
+- [x] **Update Existing Snippets - Maintenance**
+- [x] **Customizable Font Size - Feature**
+- [x] **More Snippet Languages - Added Ruby**
 - [x] **Release Official Website**
 - [x] **Mailing/Newsletter List**
 - [x] **Social Media Coverage | Facebook, LinkedIn, Instagram, Twitter**
 - [x] **Merch Shop**
 - [x] **Privacy Policy & TOS**
-- [x] **Update Existing Snippets**
-- [x] **More Snippet Languages - Added Ruby**
 - [x] **Redesign and UX polishing**
-- [x] **Customizable Font Size**
 - [x] **Write Documentation for Contributors (Wiki)**
 - [x] **Port to Firefox**
-- [ ] Release v1.1.0
+- [x] **Release v1.1.0**
 
 **V1.2.0 Phase:**
 
-- [ ] Port to Safari
+- [x] **Update Existing Snippets - Maintenance**
+- [x] **Blacklist Snippets - Feature**
+- [x] **More Snippet Languages - Added Ramda**
+- [x] **More Snippet Languages - Added C++**
 - [ ] Release v1.2.0
 
 **Constant Work:**
@@ -120,6 +124,9 @@ A big THANK YOU to these wonderfull people!
 | <img src="https://avatars2.githubusercontent.com/u/25749162?s=460&v=4" width="50px" height="50px"/> | Stefan Fejes | [Github Profile](https://github.com/fejes713)  | [Website](stefanfejes.com/) |
 | <img src="https://avatars0.githubusercontent.com/u/522352?s=460&v=4" width="50px" height="50px"/>   | Ahmad Santarissy   | [Github Profile](https://github.com/asantarissy) | [Website](https://ahmadsantarissy.com)  |
 | <img src="https://avatars2.githubusercontent.com/u/16981711?s=460&v=4" width="50px" height="50px"/>   | Florian Josef Reheis | [Github Profile](https://github.com/florianjosefreheis) | [Website](https://www.florianjosefreheis.com/)  |
+| <img src="https://avatars1.githubusercontent.com/u/19594428?s=460&v=4" width="50px" height="50px"/>   | Matheus Dutra Lima | [Github Profile](https://github.com/Kutomore) | -------- |
+| <img src="https://avatars2.githubusercontent.com/u/26866310?s=460&v=4" width="50px" height="50px"/>   | Donavan Lawson | [Github Profile](https://github.com/SyntaxZA) | --------  |
+| <img src="https://avatars1.githubusercontent.com/u/34342551?s=460&v=4" width="50px" height="50px"/>   | Bhupesh Varshney | [Github Profile](https://github.com/Bhupesh-V) | [Website](http://bhupeshv.me/) |
 
 ------
 
@@ -133,3 +140,4 @@ A big THANK YOU to these wonderfull people!
 - PHP Snippets [30 seconds of php](https://github.com/appzcoder/30-seconds-of-php-code)
 - Python Snippets [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
 - Ruby Snippets [30 seconds of ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby)
+- C++ Snippets [30 seconds of cpp](https://github.com/Bhupesh-V/30-seconds-of-cpp)

@@ -20,6 +20,8 @@ const createDefaultOptions = () => {
 			php: true,
 			css: true,
 			ruby: true,
+			ramda: true,
+			cpp: true,
 		},
 		theme: 'dark',
 		font_size: 1,
@@ -45,6 +47,14 @@ export const DEFAULT_EXTENSION_OPTIONS = createDefaultOptions();
  */
 
 export const DEFAULT_SAVED_SNIPPETS = ['snippets'];
+
+/**
+ * Default blacklisted snippets
+ * @const DEFAULT_BLACKLISTED_SNIPPETS
+ * @readonly
+ */
+
+export const DEFAULT_BLACKLISTED_SNIPPETS = ['blacklisted_snippets'];
 
 /**
  * Function that saves extension options to browserObject storage and syncs them over devices
@@ -79,7 +89,7 @@ export const restoreFromStorage = () => {
 };
 
 /**
- * Function that saves snippets to chrome storage and syncs them over devices
+ * Function that saves snippets to browserObject sync storage
  * @function saveSnippetToStorage
  * @return {Promise} saveSnippet - Promise that will save snippet to storage and return true once resolved
  */
@@ -111,6 +121,35 @@ export const restoreSnippetsFromStorage = () => {
 };
 
 /**
+ * Function that saves snippets blacklist to browserObject sync storage
+ * @function blacklistSnippetsToStorage
+ * @return {Promise} blacklistSnippetsToStorage - Promise that will save a blacklisted snippet to storage and return
+ * true once resolved
+ */
+
+export const blacklistSnippetsToStorage = blacklisted_snippets => {
+	return new Promise(resolve => {
+		browserObject.storage.local.set({blacklisted_snippets}, () => {
+			resolve(true);
+		});
+	});
+};
+
+/**
+ * Function that gets blacklisted snippets from browserObject sync storage
+ * @function restoreBlacklistedSnippetFromStorage
+ * @return {Promise} getSnippets - Promise that will return a list of blacklisted snippets from storage when resolved
+ */
+
+export const restoreBlacklistedSnippetFromStorage = () => {
+	return new Promise(resolve => {
+		browserObject.storage.local.get(DEFAULT_BLACKLISTED_SNIPPETS, ({blacklisted_snippets}) => {
+			resolve(blacklisted_snippets || []);
+		});
+	});
+};
+
+/**
  * Function that opens browserObject extension options page.
  * @function openExtensionOptions
  */
@@ -137,10 +176,10 @@ export const openSaved = () => {
  * @function openView
  */
 
-export const openView = index => {
+export const openView = (index, type = 'saved') => {
 	const {getURL} = browserObject.runtime;
 
-	window.open(getURL('view.html#' + index), '_self');
+	window.open(getURL('view.html#' + index + '#' + type), '_self');
 };
 
 /**

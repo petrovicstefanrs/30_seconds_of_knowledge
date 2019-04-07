@@ -3,9 +3,16 @@
 Returns `true` if the provided function returns `true` for at least one element of an array, `false` otherwise.
 
 ```php
-function any($items, $func)
+function any(array $items, callable $func)
 {
-    return count(array_filter($items, $func)) > 0;
+    foreach ($items as $item)
+    {
+        if ($func($item))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 ```
 

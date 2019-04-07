@@ -1,0 +1,33 @@
+.sok-BlacklistButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 900;
+	transition: all 0.3s ease-in-out;
+	color: var(--color__gray--dark);
+	position: relative;
+}
+
+.sok-BlacklistButton-button {
+	cursor: pointer;
+	position: absolute;
+	bottom: -15px;
+	right: -15px;
+	width: 40px;
+	height: 40px;
+	min-width: unset;
+	min-height: unset;
+	border-radius: 100%;
+	font-size: 16px;
+}
+
+.sok-BlacklistButton-button > .sok-SokIcon {
+	margin-bottom: -4px;
+}
+
+.sok-BlacklistButton-disabled .sok-BlacklistButton-button {
+	background: var(--color__gray--light) !important;
+	color: var(--color__white--dark);
+	cursor: not-allowed;
+	transform: none;
+}

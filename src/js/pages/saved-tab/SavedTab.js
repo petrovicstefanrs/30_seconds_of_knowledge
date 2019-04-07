@@ -10,19 +10,34 @@ import ControllsOverlay from '../../components/controlls-overlay';
 
 import trashIconSrc from '../../../assets/images/icons/trash.svg';
 import emptyIconSrc from '../../../assets/images/icons/empty.svg';
+import happyIconSrc from '../../../assets/images/icons/happy.svg';
 
 import {
+	blacklistSnippetsToStorage,
+	openView,
+	restoreBlacklistedSnippetFromStorage,
 	restoreFromStorage,
 	restoreSnippetsFromStorage,
 	saveSnippetsToStorage,
-	openView,
 } from '../../api/storage';
-import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
+import {FONT_SIZE_CLASSNAMES, THEMES_VARIANTS} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 
 import './SavedTab.css';
+import PageTabs from '../../components/page-tabs';
 
 const CLASS = 'sok-SavedTab';
+
+const TABS = {
+	saved: {
+		key: 'saved',
+		title: 'Saved Snippets',
+	},
+	blacklisted: {
+		key: 'blacklisted',
+		title: 'Blacklisted Snippets',
+	},
+};
 
 class SavedTab extends Component {
 	constructor(props) {
@@ -30,7 +45,9 @@ class SavedTab extends Component {
 
 		this.state = {
 			snippets: null,
+			blacklisted: null,
 			theme: THEMES_VARIANTS.dark,
+			activeTab: TABS['saved'].key,
 		};
 	}
 
@@ -41,9 +58,11 @@ class SavedTab extends Component {
 
 	initSnippetsFromStorage = async () => {
 		let snippets = await restoreSnippetsFromStorage();
+		let blacklisted = await restoreBlacklistedSnippetFromStorage();
 
 		this.setState({
 			snippets,
+			blacklisted,
 		});
 	};
 
@@ -92,6 +111,17 @@ class SavedTab extends Component {
 		this.setState({snippets});
 	};
 
+	handleRemoveFromBlacklist = async snippet => {
+		const {blacklisted} = this.state;
+		_.remove(blacklisted, item => {
+			return item.src === snippet.src;
+		});
+
+		await blacklistSnippetsToStorage(blacklisted);
+
+		this.setState({blacklisted});
+	};
+
 	renderSnippets = () => {
 		const {snippets} = this.state;
 
@@ -126,17 +156,66 @@ class SavedTab extends Component {
 		return snippetsItems;
 	};
 
+	renderBlacklisted = () => {
+		const {blacklisted} = this.state;
+
+		if (!blacklisted) {
+			return this.renderSpinner();
+		}
+
+		if (!blacklisted.length) {
+			return (
+				<div className={`${CLASS}-empty`}>
+					<img src={happyIconSrc} alt="Empty Blacklisted Snippets Library" />
+					<span>Wow, there are no blacklisted snippets here, that's great...</span>
+					<span>If you ever blacklist some you'll find them here!</span>
+				</div>
+			);
+		}
+		return blacklisted.map((snippet, index) => {
+			return (
+				<div key={index} className={`${CLASS}-item`}>
+					<div className={`${CLASS}-item-title`} onClick={() => openView(index, 'blacklisted')}>
+						{snippet.title}
+					</div>
+					{this.renderLangChip(snippet.language)}
+					<div
+						className={`${CLASS}-item-delete`}
+						onClick={() => this.handleRemoveFromBlacklist(snippet)}
+					>
+						<img src={trashIconSrc} alt="Trash Button" />
+					</div>
+				</div>
+			);
+		});
+	};
+
+	handleTabChange = tab => {
+		this.setState({
+			activeTab: tab,
+		});
+	};
+
 	render() {
 		scrollToTop();
 
-		const {theme, font_size} = this.state;
+		const {theme, font_size, activeTab} = this.state;
 		return (
 			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>
 				<ControllsOverlay renderSaves={false} renderBack={true} />
 				<Header theme={theme} />
 				<div className={`${CLASS}-contentContainer`}>
-					<h2>Saved Snippets</h2>
-					{this.renderSnippets()}
+					<PageTabs tabs={TABS} onTabChange={this.handleTabChange} activeTab={activeTab} />
+					{activeTab === TABS['saved'].key && (
+						<React.Fragment>
+							{this.renderSnippets()}
+						</React.Fragment>
+					)}
+					{activeTab === TABS['blacklisted'].key && (
+						<React.Fragment>
+							{this.renderBlacklisted()}
+						</React.Fragment>
+					)}
 				</div>
 				<Footer />
 			</div>

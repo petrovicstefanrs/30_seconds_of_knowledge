@@ -178,7 +178,7 @@ class OptionsPicker extends Component {
 			toastActive &&
 			!noToast && (
 				<Toaster
-					toast="Options Saved!Changes will be visible next time you open a new tab..."
+					toast="Options Saved! Changes will be visible next time you open a new tab..."
 					onDismiss={() => this.toogleSaveToast(TOAST_ACTIONS.hide)}
 					noButton={true}
 					duration={5000}
@@ -243,7 +243,6 @@ class OptionsPicker extends Component {
 
 	render() {
 		const {options} = this.state;
-		const {withOpenRandom} = this.props;
 
 		if (!options) {
 			return this.renderSpinner();
@@ -252,11 +251,19 @@ class OptionsPicker extends Component {
 		return (
 			<div className={CLASS}>
 				<div className={`${CLASS}-itemsContainer`}>
-					{withOpenRandom && this.renderOpenRandom()}
-					{this.renderLangOptions()}
-					{this.renderThemeOptions()}
-					{this.renderFontOptions()}
-					<Button icon={SOK_ICONS.save} text="Save" onClick={this.saveOptionsToStorage} />
+					{this.renderOpenRandom()}
+					<div className={`${CLASS}-itemsContainer-horizontal`}>
+						<div className={`${CLASS}-itemsContainer-horizontal-left`}>
+							{this.renderLangOptions()}
+						</div>
+						<Separator orientation="vertical" />
+						<div className={`${CLASS}-itemsContainer-horizontal-right`}>
+							{this.renderThemeOptions()}
+							{this.renderFontOptions()}
+						</div>
+					</div>
+					<Separator />
+					<Button className={`${CLASS}-saveButton`} icon={SOK_ICONS.save} text="Save" onClick={this.saveOptionsToStorage} />
 				</div>
 				{this.renderToaster()}
 			</div>

@@ -43,3 +43,13 @@
 	color: #ffffff;
 	background: var(--color__lang__ruby);
 }
+
+.sok-Chip.sok-Chip-ramda {
+	color: #ffffff;
+	background: var(--color__lang__ramda);
+}
+
+.sok-Chip.sok-Chip-cpp {
+	color: #ffffff;
+	background: var(--color__lang__cpp);
+}

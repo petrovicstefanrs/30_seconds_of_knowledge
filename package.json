@@ -1,6 +1,6 @@
 {
   "name": "30_seconds_of_knowledge",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Web Extension that lets you gain new developer skills, every time you open a New Tab",
   "scripts": {
     "build:chromium": "TARGET=chromium NODE_ENV=production node utils/build.js",

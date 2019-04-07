@@ -1,5 +1,5 @@
 import {randArrayItem} from '../lib/random';
-import {restoreFromStorage} from './storage';
+import {restoreFromStorage, restoreBlacklistedSnippetFromStorage} from './storage';
 
 /**
  * Available snippet library types
@@ -17,6 +17,8 @@ export const SNIPPET_LIBRARIES = {
 	php: 'php',
 	css: 'css',
 	ruby: 'ruby',
+	ramda: 'ramda',
+	cpp: 'cpp',
 };
 
 /**
@@ -34,6 +36,8 @@ export const SNIPPET_LIBRARY_LABELS = {
 	[SNIPPET_LIBRARIES.php]: 'PHP',
 	[SNIPPET_LIBRARIES.css]: 'CSS',
 	[SNIPPET_LIBRARIES.ruby]: 'Ruby',
+	[SNIPPET_LIBRARIES.ramda]: 'Ramda',
+	[SNIPPET_LIBRARIES.cpp]: 'C++',
 };
 
 /**
@@ -90,6 +94,12 @@ const getLibratyContext = library => {
 		case SNIPPET_LIBRARIES.ruby:
 			return require.context('../../assets/snippets/ruby', false, /\.md$/);
 
+		case SNIPPET_LIBRARIES.ramda:
+			return require.context('../../assets/snippets/ramda', false, /\.md$/);
+
+		case SNIPPET_LIBRARIES.cpp:
+			return require.context('../../assets/snippets/cpp', false, /\.md$/);
+
 		default:
 			return require.context('../../assets/snippets/javascript', false, /\.md$/);
 	}
@@ -109,6 +119,8 @@ export const SNIPPET_LIBRARY_CONTEXTS = {
 	[SNIPPET_LIBRARIES.php]: getLibratyContext(SNIPPET_LIBRARIES.php),
 	[SNIPPET_LIBRARIES.css]: getLibratyContext(SNIPPET_LIBRARIES.css),
 	[SNIPPET_LIBRARIES.ruby]: getLibratyContext(SNIPPET_LIBRARIES.ruby),
+	[SNIPPET_LIBRARIES.ramda]: getLibratyContext(SNIPPET_LIBRARIES.ramda),
+	[SNIPPET_LIBRARIES.cpp]: getLibratyContext(SNIPPET_LIBRARIES.cpp),
 };
 
 /**
@@ -133,12 +145,24 @@ export const fetchRandomSnippet = async () => {
 	const enabledLibraries = Object.keys(SNIPPET_LIBRARIES).filter(val => {
 		return appOptions.libs[val];
 	});
-
+	const blacklistedSnippets = await fetchBlacklistedSnippetSources();
 	const randomLibrary = randArrayItem(enabledLibraries);
-	const snippetSources = getSnippetsFromLibrary(randomLibrary);
+	const snippetSources = getSnippetsFromLibrary(randomLibrary).filter(
+		src => !blacklistedSnippets.includes(src)
+	);
 	const randomSnippet = randArrayItem(snippetSources);
 
 	return await fetchSnippet(randomSnippet, randomLibrary);
+};
+
+/**
+ * Function that returnes a promisse that Fetches and returns the src of all blacklisted snippets
+ * @function fetchBlacklistedSnippetSources
+ * @returns {Promisse} Returns a prommise that when resolved provides a list of blacklisted snippets sources.
+ */
+
+export const fetchBlacklistedSnippetSources = async () => {
+	return (await restoreBlacklistedSnippetFromStorage()).map(snippet => snippet.src);
 };
 
 /**
