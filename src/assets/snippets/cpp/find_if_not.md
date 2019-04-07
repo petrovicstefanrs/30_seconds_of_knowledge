@@ -13,7 +13,7 @@
     }
 
     int main(){
-        vector<int> v{ 1, 2, 3, 4, 4, 3, 7, 8, 9, 10 };
+        std::vector<int> v{ 1, 2, 3, 4, 4, 3, 7, 8, 9, 10 };
         if(find_if_not(std::begin(v), std::end(v),IsOdd) != end(v)){
             std::cout <<"\n First Even Value";
         }
@@ -21,4 +21,4 @@
             std::cout<<"No match !!";
         return 0;
     }
- ```
+```

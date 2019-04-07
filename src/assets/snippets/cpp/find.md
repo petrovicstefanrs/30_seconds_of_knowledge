@@ -9,7 +9,7 @@
     #include<iostream>
     
     int main(){
-        vector<int> v{ 1, 2, 3, 4, 4, 3, 7, 8, 9, 10 };
+        std::vector<int> v{ 1, 2, 3, 4, 4, 3, 7, 8, 9, 10 };
         int searchme = 4;
         
         if(find(std::begin(v), std::end(v), searchme) != end(v)){

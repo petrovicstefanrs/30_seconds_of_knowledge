@@ -8,7 +8,7 @@
     #include<iostream>
     
     int main(){
-        stack<int> mystack; 
+        std::stack<int> mystack; 
                         
         mystack.push(0);    //pushing elements using push()
         mystack.push(1); 

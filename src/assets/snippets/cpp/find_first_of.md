@@ -9,8 +9,8 @@
     #include<iostream>
     
     int main(){
-        vector<int> v{0, 2, 3, 25, 5};
-        vector<int> t{3, 19, 10, 2};
+        std::vector<int> v{0, 2, 3, 25, 5};
+        std::vector<int> t{3, 19, 10, 2};
  
         auto result = std::find_first_of(v.begin(), v.end(), t.begin(), t.end());
  
@@ -23,4 +23,4 @@
         
         return 0;
     }
- ```
+```
