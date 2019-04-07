@@ -1,13 +1,16 @@
-# count_if
+### count_if
 
-**Description** : Returns the number of elements in the range `[first, last)` satisfying specific criteria(counts the elements that are equal to *value*).
+#### Description
 
-**Example** : 
+Returns the number of elements in the range `[first, last)` satisfying specific criteria(counts the elements that are equal to *value*).
+
+#### Example
+
 ```cpp
     #include<vector>
-    #include<algorithm> 
+    #include<algorithm>
     #include<iostream>
-    
+
     int main(){
         vector<int> v{ 1, 2, 3, 4, 4, 3, 7, 8, 9, 10 };
         // use a lambda expression to count elements divisible by 3.

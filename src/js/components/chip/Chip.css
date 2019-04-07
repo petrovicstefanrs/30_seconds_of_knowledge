@@ -48,3 +48,8 @@
 	color: #ffffff;
 	background: var(--color__lang__ramda);
 }
+
+.sok-Chip.sok-Chip-cpp {
+	color: #ffffff;
+	background: var(--color__lang__cpp);
+}

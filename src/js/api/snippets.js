@@ -18,6 +18,7 @@ export const SNIPPET_LIBRARIES = {
 	css: 'css',
 	ruby: 'ruby',
 	ramda: 'ramda',
+	cpp: 'cpp',
 };
 
 /**
@@ -36,6 +37,7 @@ export const SNIPPET_LIBRARY_LABELS = {
 	[SNIPPET_LIBRARIES.css]: 'CSS',
 	[SNIPPET_LIBRARIES.ruby]: 'Ruby',
 	[SNIPPET_LIBRARIES.ramda]: 'Ramda',
+	[SNIPPET_LIBRARIES.cpp]: 'C++',
 };
 
 /**
@@ -95,6 +97,9 @@ const getLibratyContext = library => {
 		case SNIPPET_LIBRARIES.ramda:
 			return require.context('../../assets/snippets/ramda', false, /\.md$/);
 
+		case SNIPPET_LIBRARIES.cpp:
+			return require.context('../../assets/snippets/cpp', false, /\.md$/);
+
 		default:
 			return require.context('../../assets/snippets/javascript', false, /\.md$/);
 	}
@@ -115,6 +120,7 @@ export const SNIPPET_LIBRARY_CONTEXTS = {
 	[SNIPPET_LIBRARIES.css]: getLibratyContext(SNIPPET_LIBRARIES.css),
 	[SNIPPET_LIBRARIES.ruby]: getLibratyContext(SNIPPET_LIBRARIES.ruby),
 	[SNIPPET_LIBRARIES.ramda]: getLibratyContext(SNIPPET_LIBRARIES.ramda),
+	[SNIPPET_LIBRARIES.cpp]: getLibratyContext(SNIPPET_LIBRARIES.cpp),
 };
 
 /**
