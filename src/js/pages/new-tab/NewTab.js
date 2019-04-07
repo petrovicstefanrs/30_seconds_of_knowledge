@@ -88,7 +88,6 @@ class NewTab extends Component {
 		if (!snippet) {
 			return null;
 		}
-
 		return <MarkdownRenderer lang={language} source={snippet} />;
 	};
 
