@@ -127,3 +127,57 @@
     background: var(--color__jobs_button);
     cursor: pointer;
 }
+
+.sok-jobsBoard .jobDescription {
+	margin-top: 25px; 
+	max-width: 800px;
+}
+
+.sok-jobsBoard .filtersContainer {
+	display: flex;
+    min-width: 800px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.sok-jobsBoard .filtersContainer input {
+	font-family: "Roboto Mono";
+	width: calc(100% / 3 * 2);
+	outline: none;
+	border: none;
+	padding: 20px;
+	font-size: 14px;
+	border-radius: 3px;
+	box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
+    background: #353740;
+    color: white;
+}
+
+.sok-jobsBoard .filtersContainer div {
+	width: calc(100% / 3 * 1);
+}
+
+.sok-jobsBoard .jobType {
+	display: flex;
+}
+
+.sok-jobsBoard .jobType .skill {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: var(--bg__code--block);
+	/* margin-left: 10px; */
+	cursor: pointer;
+	transition: all;
+    transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
+}
+
+.sok-jobsBoard .jobType .skill:hover {
+	transform: scale(1.1);
+}
+
+.sok-jobsBoard .jobType .skill.active {
+	background: #63656d;
+}
