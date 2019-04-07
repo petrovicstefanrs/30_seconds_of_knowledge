@@ -29,7 +29,7 @@ class PopupTab extends Component {
 	render() {
 		return (
 			<div className={CLASS}>
-				<OptionsPicker withOpenRandom={true} />
+				<OptionsPicker />
 			</div>
 		);
 	}

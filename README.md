@@ -140,3 +140,4 @@ A big THANK YOU to these wonderfull people!
 - PHP Snippets [30 seconds of php](https://github.com/appzcoder/30-seconds-of-php-code)
 - Python Snippets [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
 - Ruby Snippets [30 seconds of ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby)
+- C++ Snippets [30 seconds of cpp](https://github.com/Bhupesh-V/30-seconds-of-cpp)

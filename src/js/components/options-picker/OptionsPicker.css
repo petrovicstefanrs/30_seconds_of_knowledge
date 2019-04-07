@@ -8,6 +8,15 @@
 
 /* Other */
 
+.sok-OptionsPicker .sok-OptionsPicker-itemsContainer-horizontal {
+	display: flex;
+}
+
+.sok-OptionsPicker .sok-OptionsPicker-itemsContainer-horizontal-left,
+.sok-OptionsPicker .sok-OptionsPicker-itemsContainer-horizontal-right, {
+	flex-grow: 1;
+}
+
 .sok-OptionsPicker .sok-OptionsPicker-itemsContainer > h2 {
 	color: var(--color__orange--light);
 	text-transform: uppercase;
@@ -54,6 +63,7 @@
 	display: flex;
 	align-items: center;
 	font-weight: 900;
+	width: 300px;
 }
 
 .sok-OptionsPicker .sok-OptionsPicker-themeSwitch {
@@ -100,6 +110,7 @@
 	align-items: center;
 	font-weight: 900;
 	height: 25px;
+	width: 300px;
 }
 
 .sok-OptionsPicker-fontScale {
@@ -129,4 +140,12 @@
 	background: transparent;
 	border-color: transparent;
 	color: transparent;
+}
+
+.sok-OptionsPicker .sok-Separator-vertical {
+	margin: 0 16px;
+}
+
+.sok-OptionsPicker-saveButton {
+	margin-left: auto;
 }
