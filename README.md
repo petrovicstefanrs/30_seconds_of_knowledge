@@ -75,22 +75,25 @@ Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30
 
 **V1.1.0 Phase:**
 
+- [x] **Update Existing Snippets - Maintenance**
+- [x] **Customizable Font Size - Feature**
+- [x] **More Snippet Languages - Added Ruby**
 - [x] **Release Official Website**
 - [x] **Mailing/Newsletter List**
 - [x] **Social Media Coverage | Facebook, LinkedIn, Instagram, Twitter**
 - [x] **Merch Shop**
 - [x] **Privacy Policy & TOS**
-- [x] **Update Existing Snippets**
-- [x] **More Snippet Languages - Added Ruby**
 - [x] **Redesign and UX polishing**
-- [x] **Customizable Font Size**
 - [x] **Write Documentation for Contributors (Wiki)**
 - [x] **Port to Firefox**
-- [ ] Release v1.1.0
+- [x] **Release v1.1.0**
 
 **V1.2.0 Phase:**
 
-- [ ] Port to Safari
+- [x] **Update Existing Snippets - Maintenance**
+- [x] **Blacklist Snippets - Feature**
+- [x] **More Snippet Languages - Added Ramda**
+- [x] **More Snippet Languages - Added C++**
 - [ ] Release v1.2.0
 
 **Constant Work:**
