@@ -1,0 +1,47 @@
+.sok-SearchFilters {
+	display: flex;
+    min-width: 800px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.sok-SearchFilters input {
+	font-family: "Roboto Mono";
+	width: calc(100% / 3 * 2);
+	outline: none;
+	border: none;
+	padding: 20px;
+	font-size: 14px;
+	border-radius: 3px;
+	box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
+    background: var(--color__gray);
+    color: white;
+}
+
+.sok-SearchFilters div {
+	width: calc(100% / 3 * 1);
+}
+
+.sok-SearchFilters .optionType {
+	display: flex;
+}
+
+.sok-SearchFilters .optionType .option {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: var(--bg__code--block);
+	cursor: pointer;
+	transition: all;
+    transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
+}
+
+.sok-SearchFilters .optionType .option:hover {
+	transform: scale(1.1);
+}
+
+.sok-SearchFilters .optionType .option.active {
+	background: var(--color--active_element);
+}

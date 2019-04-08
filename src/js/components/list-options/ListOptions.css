@@ -1,0 +1,71 @@
+.sok-ListOptions {
+	padding: 24px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: var(--bg__code--block);
+	border-radius: 3px;
+	min-width: 800px;
+	min-height: 120px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition: all;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	-webkit-box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
+	-moz-box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
+	box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
+}
+
+.sok-ListOptions:hover {
+	transform: scale(1.05);
+}
+
+.sok-ListOptions .logo {
+	width: 100px;
+	height: 100px;
+	background: var(--color__gray);
+	border-radius: 3px;
+	min-width: 100px;
+	margin-right: 20px;
+	background-size: cover;
+}
+
+.sok-ListOptions .data {
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sok-ListOptions .title {
+	font-size: 20px;
+}
+
+.sok-ListOptions .description {
+	font-size: 15px;
+}
+
+.sok-ListOptions .testApplyButton {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.sok-ListOptions .testApplyButton span {
+	right: 100px;
+	padding: 10px;
+	font-size: 14px;
+	color: #21212a;
+	background: var(--color__jobs_button);
+	cursor: pointer;
+}
+
+.sok-ListOptions .jobDescription {
+	margin-top: 25px; 
+	max-width: 800px;
+}

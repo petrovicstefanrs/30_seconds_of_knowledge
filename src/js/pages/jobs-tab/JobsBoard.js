@@ -5,7 +5,9 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import ControllsOverlay from '../../components/controlls-overlay';
 import MarkdownRenderer from '../../components/markdown-renderer';
-// import Job from '../../components/job';
+import Skills from '../../components/skills-options';
+import SearchFilters from '../../components/search-filters';
+import ListOptions from '../../components/list-options';
 
 import {restoreFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
@@ -21,92 +23,17 @@ const JOB_TYPES = {
 	fr: 'Frontend',
 	bk: 'Backend',
 	all: 'All'
-}
+};
 
-// Move this outside of component
-// Skills
-const Skills = ({ skills }) => (
-	<div className="skills">
-	{
-		skills.map((skill, index) => 
-			<div key={index} className="skill">{skill}</div>
-		)
-	}
-	</div>
-);
-
-// Move this outside of component
-// JobDescription
 const JobDescription = ({ language, snippet }) => (
 	<div className="jobDescription">
 		<MarkdownRenderer 
 			lang={language} 
 			source={snippet}
 		/>
-		{/* And then to have apply button here? */}
-		<div 
-			className="testApplyButton"
+		<div className="testApplyButton"
 			onClick={() => console.log('This will be link tag actually')}
-		>
-			<span>Apply for a job</span>
-		</div>
-	</div>
-);
-
-// Move this outside of component
-// Job
-const Job = ({ 
-	logo, 
-	jobTitle, 
-	company, 
-	skills, 
-	toggleJobDescription,
-	active,
-	language,
-	snippet
-	}) => (
-	<div className="job" onClick={toggleJobDescription}>
-		<div style={{ display: 'flex' }}>
-			<div 
-				className="companyLogo" 
-				style={{ backgroundImage: `url(${logo})` }}
-			/>
-			<div className="jobData">
-				<div>
-					<div className="jobTitle">{jobTitle}</div>
-					<div className="company">{company}</div>
-				</div>
-				<div className="skills">
-					<Skills skills={skills}/>
-				</div>
-			</div>
-		</div>
-		{/* This is just for testing */}
-		{ active && <JobDescription languag={language} snippet={snippet} />}
-	</div>
-);
-
-// Move this outside of component
-// Filters
-const Filters = ({ onSearchChange, activeKey, onTypeChange }) => (
-	<div className="filtersContainer">
-		<input 
-			onChange={(e) => onSearchChange(e.target.value)}
-			placeholder="Search by Job Name" 
-		/>
-		<div className="jobType">
-			{
-				Object.keys(JOB_TYPES).map(jobKey => {
-					const active = jobKey === activeKey;
-					return (<div 
-						key={jobKey} 
-						onClick={() => onTypeChange(jobKey)}
-						className={`skill ${active && 'active'}`}
-					>
-						{JOB_TYPES[jobKey]}
-					</div>)
-				})
-			}
+		> <span>Apply for a job</span>
 		</div>
 	</div>
 );
@@ -175,11 +102,12 @@ class JobsBoard extends Component {
 				<ControllsOverlay />
 				<Header theme={theme} />
 				<div className={`${CLASS}-contentContainer`}>
-					<div className="reach">Reach more then 20k+ developers worldwide!</div>
-					{/* Playing with design, so this will use your already created Button component */}
+					<div className="reachLabel">Reach more then 20k+ developers worldwide!</div>
 					<div className="postJobButton">Post a job for $50</div>
-					<Filters 
+					<SearchFilters 
+						options={JOB_TYPES}
 						activeKey={activeKey}
+						placeholder="Search by Job Name"
 						onTypeChange={activeKey => this.setState({ activeKey })}
 						onSearchChange={searchValue => this.setState({ searchValue })}
 					/>
@@ -190,15 +118,21 @@ class JobsBoard extends Component {
 							( isAll ? job : job.type === activeKey )
 						)
 						.map((job, index) => 
-							<Job 
+							<ListOptions
 								key={index}
-								active={ active_job === index } 
-								// passing this two just for UI test
+								img={job.logo}
+								title={job.jobTitle}
+								description={job.company}
+								active={ active_job === index }
+								toggleDescription={() => this.toggleJobDescription(index)}
+								// this is just for developing
+								// only snippet will stay
 								language={language}
 								snippet={snippet}
-								//////////
-								toggleJobDescription={() => this.toggleJobDescription(index)}
-								{...job}
+								OptionAttributes={<Skills options={job.skills}/>}
+								OptionDescription={<JobDescription 
+									languag={language} snippet={snippet}
+								/>} 
 							/>
 						)
 					}

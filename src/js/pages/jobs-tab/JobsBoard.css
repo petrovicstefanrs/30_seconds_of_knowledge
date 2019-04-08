@@ -31,37 +31,6 @@
 	justify-content: space-between;
 }
 
-.sok-jobsBoard .job {
-	padding: 24px;
-    overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: var(--bg__code--block);
-	border-radius: 3px;
-	min-width: 800px;
-	min-height: 120px;
-	margin-bottom: 20px;
-	display: flex;
-	flex-direction: column;
-	cursor: pointer;
-	transition: all;
-    transition-duration: 0.2s;
-	transition-timing-function: ease-in-out;
-	-webkit-box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
-	-moz-box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
-	box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
-}
-
-.sok-jobsBoard .job:hover {
-	transform: scale(1.05);
-}
-
-.sok-jobsBoard .label {
-	min-width: 800px;
-    margin-bottom: 30px;
-    font-size: 15px;
-}
-
 .sok-jobsBoard .reach {
 	font-size: 20px;
 }
@@ -70,114 +39,27 @@
 	right: 100px;
 	padding: 10px;
 	margin: 40px;
-    color: #21212a;
-    background: var(--color__jobs_button);
+	color: var(--color__gray);
+	background: var(--color__jobs_button);
 	cursor: pointer;
 }
 
-.sok-jobsBoard .job .companyLogo {
-	width: 100px;
-    height: 100px;
-    background: #63656d;
-    border-radius: 3px;
-    min-width: 100px;
-	margin-right: 20px;
-	background-size: cover;
-}
-
-.sok-jobsBoard .job .jobData {
-	width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.sok-jobsBoard .job .jobTitle {
-	font-size: 20px;
-}
-
-.sok-jobsBoard .job .company {
-	font-size: 15px;
-}
-
-.sok-jobsBoard .job .skills {
-	display: flex;
-	margin-left: 20px;
-}
-
-.sok-jobsBoard .job .skills .skill {
-	padding: 10px;
-	background: #63656d;
-	margin-left: 10px;
-}
-
-.sok-jobsBoard .testApplyButton {
+.sok-jobsBoard .jobDescription .testApplyButton {
 	display: flex;
 	justify-content: center;
 	margin-top: 30px;
 }
 
-.sok-jobsBoard .testApplyButton span {
+.sok-jobsBoard .jobDescription .testApplyButton span {
 	right: 100px;
 	padding: 10px;
 	font-size: 14px;
-    color: #21212a;
-    background: var(--color__jobs_button);
-    cursor: pointer;
+	color: var(--color__gray);
+	background: var(--color__jobs_button);
+	cursor: pointer;
 }
 
-.sok-jobsBoard .jobDescription {
+.sok-jobsBoard .jobDescription .jobDescription {
 	margin-top: 25px; 
 	max-width: 800px;
-}
-
-.sok-jobsBoard .filtersContainer {
-	display: flex;
-    min-width: 800px;
-    height: 40px;
-    margin-bottom: 20px;
-}
-
-.sok-jobsBoard .filtersContainer input {
-	font-family: "Roboto Mono";
-	width: calc(100% / 3 * 2);
-	outline: none;
-	border: none;
-	padding: 20px;
-	font-size: 14px;
-	border-radius: 3px;
-	box-shadow: -1px 2px 42px 0px rgba(0,0,0,0.33);
-    background: #353740;
-    color: white;
-}
-
-.sok-jobsBoard .filtersContainer div {
-	width: calc(100% / 3 * 1);
-}
-
-.sok-jobsBoard .jobType {
-	display: flex;
-}
-
-.sok-jobsBoard .jobType .skill {
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background: var(--bg__code--block);
-	/* margin-left: 10px; */
-	cursor: pointer;
-	transition: all;
-    transition-duration: 0.1s;
-	transition-timing-function: ease-in-out;
-}
-
-.sok-jobsBoard .jobType .skill:hover {
-	transform: scale(1.1);
-}
-
-.sok-jobsBoard .jobType .skill.active {
-	background: #63656d;
 }
