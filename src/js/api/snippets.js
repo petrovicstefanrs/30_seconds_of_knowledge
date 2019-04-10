@@ -2,6 +2,13 @@ import {randArrayItem} from '../lib/random';
 import {restoreFromStorage, restoreBlacklistedSnippetFromStorage} from './storage';
 
 /**
+ * Self-explanatory
+ * TODO I'd move this to a config file of some sort
+ * @type {string}
+ */
+const DEFAULT_SNIPPETS_DIRECTORY = '../../snippets';
+
+/**
  * Available snippet library types
  * @const SNIPPET_LIBRARIES
  * @readonly
@@ -19,6 +26,7 @@ export const SNIPPET_LIBRARIES = {
 	ruby: 'ruby',
 	ramda: 'ramda',
 	cpp: 'cpp',
+	scala: 'scala'
 };
 
 /**
@@ -38,6 +46,7 @@ export const SNIPPET_LIBRARY_LABELS = {
 	[SNIPPET_LIBRARIES.ruby]: 'Ruby',
 	[SNIPPET_LIBRARIES.ramda]: 'Ramda',
 	[SNIPPET_LIBRARIES.cpp]: 'C++',
+	[SNIPPET_LIBRARIES.scala]: 'Scala'
 };
 
 /**
@@ -67,41 +76,44 @@ const SNIPPET_CODE_REGEX = {
 
 /**
  * Returns a context for a specific snippet library
- * @function getLibratyContext
+ * @function getLibraryContext
  * @param {SNIPPET_LIBRARIES} library - Name of the library to fetch context for
  */
 
-const getLibratyContext = library => {
+const getLibraryContext = library => {
 	switch (library) {
 		case SNIPPET_LIBRARIES.javascript:
-			return require.context('../../assets/snippets/javascript', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/javascript`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.react:
-			return require.context('../../assets/snippets/react', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/react`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.python:
-			return require.context('../../assets/snippets/python', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/python`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.interview:
-			return require.context('../../assets/snippets/interview', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/interview`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.php:
-			return require.context('../../assets/snippets/php', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/php`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.css:
-			return require.context('../../assets/snippets/css', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/css`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.ruby:
-			return require.context('../../assets/snippets/ruby', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/ruby`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.ramda:
-			return require.context('../../assets/snippets/ramda', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/ramda`, false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.cpp:
-			return require.context('../../assets/snippets/cpp', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/cpp`, false, /\.md$/);
+
+		case SNIPPET_LIBRARIES.scala:
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/scala`, false,  /\.md$/);
 
 		default:
-			return require.context('../../assets/snippets/javascript', false, /\.md$/);
+			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/javascript`, false, /\.md$/);
 	}
 };
 
@@ -112,15 +124,16 @@ const getLibratyContext = library => {
  */
 
 export const SNIPPET_LIBRARY_CONTEXTS = {
-	[SNIPPET_LIBRARIES.javascript]: getLibratyContext(SNIPPET_LIBRARIES.javascript),
-	[SNIPPET_LIBRARIES.react]: getLibratyContext(SNIPPET_LIBRARIES.react),
-	[SNIPPET_LIBRARIES.python]: getLibratyContext(SNIPPET_LIBRARIES.python),
-	[SNIPPET_LIBRARIES.interview]: getLibratyContext(SNIPPET_LIBRARIES.interview),
-	[SNIPPET_LIBRARIES.php]: getLibratyContext(SNIPPET_LIBRARIES.php),
-	[SNIPPET_LIBRARIES.css]: getLibratyContext(SNIPPET_LIBRARIES.css),
-	[SNIPPET_LIBRARIES.ruby]: getLibratyContext(SNIPPET_LIBRARIES.ruby),
-	[SNIPPET_LIBRARIES.ramda]: getLibratyContext(SNIPPET_LIBRARIES.ramda),
-	[SNIPPET_LIBRARIES.cpp]: getLibratyContext(SNIPPET_LIBRARIES.cpp),
+	[SNIPPET_LIBRARIES.javascript]: getLibraryContext(SNIPPET_LIBRARIES.javascript),
+	[SNIPPET_LIBRARIES.react]: getLibraryContext(SNIPPET_LIBRARIES.react),
+	[SNIPPET_LIBRARIES.python]: getLibraryContext(SNIPPET_LIBRARIES.python),
+	[SNIPPET_LIBRARIES.interview]: getLibraryContext(SNIPPET_LIBRARIES.interview),
+	[SNIPPET_LIBRARIES.php]: getLibraryContext(SNIPPET_LIBRARIES.php),
+	[SNIPPET_LIBRARIES.css]: getLibraryContext(SNIPPET_LIBRARIES.css),
+	[SNIPPET_LIBRARIES.ruby]: getLibraryContext(SNIPPET_LIBRARIES.ruby),
+	[SNIPPET_LIBRARIES.ramda]: getLibraryContext(SNIPPET_LIBRARIES.ramda),
+	[SNIPPET_LIBRARIES.cpp]: getLibraryContext(SNIPPET_LIBRARIES.cpp),
+	[SNIPPET_LIBRARIES.scala]: getLibraryContext(SNIPPET_LIBRARIES.scala)
 };
 
 /**
@@ -135,9 +148,9 @@ export const getSnippetsFromLibrary = library => {
 };
 
 /**
- * Function that returnes a promisse that Fetches and returns a random snippet from a random library of snippets
+ * Function that returns a promise that fetches and returns a random snippet from a random library of snippets
  * @function fetchRandomSnippet
- * @returns {Promisse} Returns a prommise that when resolved provides snippet, language & language label
+ * @returns {Promise} Returns a promise that, when resolved, provides a snippet, language & language label
  */
 
 export const fetchRandomSnippet = async () => {
@@ -156,9 +169,9 @@ export const fetchRandomSnippet = async () => {
 };
 
 /**
- * Function that returnes a promisse that Fetches and returns the src of all blacklisted snippets
+ * Function that returns a promise that fetches and returns the src of all blacklisted snippets
  * @function fetchBlacklistedSnippetSources
- * @returns {Promisse} Returns a prommise that when resolved provides a list of blacklisted snippets sources.
+ * @returns {Promise} Returns a promise that when resolved provides a list of blacklisted snippets sources.
  */
 
 export const fetchBlacklistedSnippetSources = async () => {
@@ -166,9 +179,9 @@ export const fetchBlacklistedSnippetSources = async () => {
 };
 
 /**
- * Function that returnes a promisse that Fetches and returns a specific snippet from a specific library of snippets
+ * Function that returns a promise that fetches and returns a specific snippet from a specific library of snippets
  * @function fetchSnippet
- * @returns {Promisse} Returns a prommise that when resolved provides snippet, language, language label, snippet_src & snippet_title
+ * @returns {Promise} Returns a promise that when resolved provides a snippet, language, language label, snippet_src & snippet_title
  */
 
 export const fetchSnippet = async (snippetSrc, language) => {
@@ -202,7 +215,7 @@ export const fetchSnippet = async (snippetSrc, language) => {
 };
 
 /**
- * Function that returnes a promisse that Fetches and returns a random snippet from a random library of snippets
+ * Function that returns a promise that fetches and returns a random snippet from a random library of snippets
  * @function extractCodeFromSnippet
  * @param {string} source - Snippet source to extract code from
  * @param {SNIPPET_LIBRARIES} lang - Name of the library/language to get code for

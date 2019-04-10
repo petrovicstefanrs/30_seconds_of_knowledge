@@ -22,6 +22,7 @@ const createDefaultOptions = () => {
 			ruby: true,
 			ramda: true,
 			cpp: true,
+			scala: true
 		},
 		theme: 'dark',
 		font_size: 1,
