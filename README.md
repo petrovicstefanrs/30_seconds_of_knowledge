@@ -135,7 +135,7 @@ If you are just looking for **snippet templates**, you can find them [here](/tem
 
 ###### Contributors
 
-A big THANK YOU to these wonderfull people!
+A big THANK YOU to these wonderful people!
 
 | Avatar                                                                                              | Name               | Github Profile                                   | Website                                 |
 | --------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------ | --------------------------------------- |
