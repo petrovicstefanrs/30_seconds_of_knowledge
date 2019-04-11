@@ -1,12 +1,6 @@
 import {randArrayItem} from '../lib/random';
 import {restoreFromStorage, restoreBlacklistedSnippetFromStorage} from './storage';
 
-/**
- * Self-explanatory
- * TODO I'd move this to a config file of some sort
- * @type {string}
- */
-const DEFAULT_SNIPPETS_DIRECTORY = '../../snippets';
 
 /**
  * Available snippet library types
@@ -83,37 +77,37 @@ const SNIPPET_CODE_REGEX = {
 const getLibraryContext = library => {
 	switch (library) {
 		case SNIPPET_LIBRARIES.javascript:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/javascript`, false, /\.md$/);
+			return require.context('../../assets/snippets/javascript', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.react:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/react`, false, /\.md$/);
+			return require.context('../../assets/snippets/react', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.python:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/python`, false, /\.md$/);
+			return require.context('../../assets/snippets/python', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.interview:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/interview`, false, /\.md$/);
+			return require.context('../../assets/snippets/interview', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.php:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/php`, false, /\.md$/);
+			return require.context('../../assets/snippets/php', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.css:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/css`, false, /\.md$/);
+			return require.context('../../assets/snippets/css', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.ruby:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/ruby`, false, /\.md$/);
+			return require.context('../../assets/snippets/ruby', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.ramda:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/ramda`, false, /\.md$/);
+			return require.context('../../assets/snippets/ramda', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.cpp:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/cpp`, false, /\.md$/);
+			return require.context('../../assets/snippets/cpp', false, /\.md$/);
 
 		case SNIPPET_LIBRARIES.scala:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/scala`, false,  /\.md$/);
+			return require.context('../../assets/snippets/scala', false,  /\.md$/);
 
 		default:
-			return require.context(`${DEFAULT_SNIPPETS_DIRECTORY}/javascript`, false, /\.md$/);
+			return require.context('../../assets/snippets/javascript', false, /\.md$/);
 	}
 };
 
