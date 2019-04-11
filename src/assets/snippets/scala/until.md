@@ -6,7 +6,7 @@ The `until` method is useful in cases where one wants to traverse through a comm
 of, say, `0` to `n-1`. The method returns a range which doesn't include the upper set bound. 
 It's commonly used while traversing strings or other traversable objects. 
 
-#####Example:
+##### Example:
 
 ```scala
 val myList = List(1,2,3,4,5)
@@ -15,7 +15,7 @@ for (i ← 0 until myList.length)
 
 ```
 
-#####Output:
+##### Output:
 ```
 1
 2

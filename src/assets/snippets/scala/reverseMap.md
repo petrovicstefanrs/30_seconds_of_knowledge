@@ -2,7 +2,7 @@
 
 Switches the keys and values of a given `Map`. 
 
-#####Example:
+##### Example:
 ```scala
 
 val beASimpleMap = Map(
@@ -15,7 +15,7 @@ val thatMapReversed = for ((k, v) ← beASimpleMap) yield (v, k)
 println(thatMapReversed)
 ```
 
-#####Output:
+##### Output:
 ```
 Map(Nibiru -> me, Earth -> you, Sag A* -> aliens)
 ```
