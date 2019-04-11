@@ -5,14 +5,14 @@
 
 Description:
 
-#####Example:
+##### Example:
 ```scala
 val someValue = 1
 def yourFunction(param) = ...
 ```
 
 
-#####Output:
+##### Output:
 ```
 output
 ```
