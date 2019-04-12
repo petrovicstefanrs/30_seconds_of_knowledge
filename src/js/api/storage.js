@@ -26,6 +26,7 @@ const createDefaultOptions = () => {
 		theme: 'dark',
 		font_size: 1,
 		beggar_counter: 0,
+		screen_saver: "0"
 	};
 
 	return {options};

@@ -30,6 +30,7 @@ class NewTab extends Component {
 			language: null,
 			theme: THEMES_VARIANTS.dark,
 			beggar_counter: 0,
+			options: null
 		};
 	}
 
@@ -37,6 +38,7 @@ class NewTab extends Component {
 		this.setColorSchemeAndFont();
 		this.setBeggarCounter();
 		this.fetchSnippet();
+		this.showcaseMode();
 	}
 
 	setBeggarCounter = async () => {
@@ -81,6 +83,20 @@ class NewTab extends Component {
 			snippet_src,
 			snippet_title,
 		});
+	};
+
+	showcaseMode = async () =>{
+		const options = await restoreFromStorage();
+		const {screen_saver} = options;
+		const is_inactive = screen_saver === "0";
+
+		if (is_inactive){
+			return null;
+		}
+
+		this.fetchSnippet();
+
+		setTimeout(this.showcaseMode, screen_saver * 1000);
 	};
 
 	renderSnippet = () => {
