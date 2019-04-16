@@ -51,18 +51,18 @@ class JobsTab extends Component {
 
 	componentDidMount() {
 		scrollToTop();
-		this.getJobsData();
+		// this.getJobsData();
 		this.fetchSnippet();
 		this.setColorSchemeAndFont();
 	}
 
-	getJobsData = () => {
-		Tabletop.init({ 
-			key: SHEET_DOCUMENT,
-			callback: (jobsData, tabletop) => this.setState({ jobsData }),
-			simpleSheet: true 
-		})
-	}
+	// getJobsData = () => {
+	// 	Tabletop.init({ 
+	// 		key: SHEET_DOCUMENT,
+	// 		callback: (jobsData, tabletop) => this.setState({ jobsData }),
+	// 		simpleSheet: true 
+	// 	})
+	// }
 
 	// Using this for Job description as an example for markdown desc
 	fetchSnippet = async () => {
@@ -107,7 +107,7 @@ class JobsTab extends Component {
 
 		const isAll = activeKey === 'all';
 		
-		if (!jobsData) return  <Spinner />
+		// if (!jobsData) return  <Spinner />
 
 		return (
 			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>
