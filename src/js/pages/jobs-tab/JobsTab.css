@@ -1,0 +1,55 @@
+.sok-jobsTab .sok-Header-jobsButton {
+	display: none;
+}
+
+.sok-jobsTab .sok-Header {
+	z-index: 9999;
+}
+
+.sok-jobsTab .sok-jobsTab-contentContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: var(--content__width);
+	max-width: var(--content__width--max);
+	min-height: calc(100vh - 200px);
+}
+
+.sok-jobsTab .sok-jobsTab-contentContainer .sok-jobsTab-contentHeader {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.sok-jobsTab .reach {
+	font-size: 20px;
+}
+
+.sok-jobsTab .postJobButton {
+	right: 100px;
+	padding: 10px;
+	margin: 40px;
+	color: var(--color__gray);
+	background: var(--button__jobs);
+	cursor: pointer;
+}
+
+.sok-jobsTab .jobDescription .testApplyButton {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.sok-jobsTab .jobDescription .testApplyButton span {
+	right: 100px;
+	padding: 10px;
+	font-size: 14px;
+	color: var(--color__gray);
+	background: var(--button__jobs);
+	cursor: pointer;
+}
+
+.sok-jobsTab .jobDescription .jobDescription {
+	margin-top: 25px; 
+	max-width: 800px;
+}

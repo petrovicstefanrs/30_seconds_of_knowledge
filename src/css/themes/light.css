@@ -15,8 +15,14 @@
 	--color__footer__gradient: linear-gradient(to bottom, var(--color__gray--dark) 0%,var(--color__gray--light) 100%);
 
 	--filter__button--icon: invert(100%);
+	--button__jobs: #1DD500;
 
 	--bg__code--block: var(--color__gray--light);
 
 	--color__border: var(--color__gray);
+
+	/* Search Filters */
+	--color--active_element: #d8d8d8;
+	--color__search_input: #ffffff;
+	--color__search_input_text: #111;
 }

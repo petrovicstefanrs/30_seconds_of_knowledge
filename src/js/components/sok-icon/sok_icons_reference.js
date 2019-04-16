@@ -72,8 +72,7 @@ export const SOK_ICONS = {
 	open: 'sok-icon-open',
 	settings_3: 'sok-icon-settings-3',
 	user: 'sok-icon-user',
-	linkedin: 'sok-icon-linkedin',
-	jobsButton: 'sok-Header-jobsButton'
+	linkedin: 'sok-icon-linkedin'
 };
 
 export const SOK_ICONS_LIST = [

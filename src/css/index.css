@@ -23,8 +23,6 @@
 	--color__lang__ruby: #B60D01;
 	--color__lang__ramda: #884499;
 	--color__lang__cpp: #1F6AA4;
-	--color__jobs_button: #F0DB4E;
-	--color--active_element: #63656d;
 
 	--color__primary: var(--color__gray);
 	--color__secondary: var(--color__orange);
@@ -58,6 +56,7 @@
 	--button__width--min: 144px;
 	--button__width--max: calc(var(--button__width--min)*2);
 	--button__drop-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
+	--button__jobs: #F0DB4E;
 	--filter__button--icon: none;
 
 	/* Toaster */
@@ -102,6 +101,11 @@
 	/* Tabs */
 
 	--tab__height: 48px;
+
+	/* Search Filter */
+	--color__search_input: #353740;
+	--color--active_element: #63656d;
+	--color__search_input_text: #fff;
 }
 
 /* Global */

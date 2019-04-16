@@ -1,11 +1,12 @@
 import React from 'react';
 
+import {openJobsTab} from '../../api/storage';
+
 import {THEMES_VARIANTS} from '../../lib/consts';
 import env from '../../../env';
 
 import logoSrc from '../../../assets/images/logo.png';
 import logoSrcDark from '../../../assets/images/logo_dark.png';
-import {openJobsBoard} from '../../api/storage';
 
 import './Header.css';
 
@@ -17,7 +18,7 @@ const Header = ({className = '', theme, ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
 		<div 
 			className={`${CLASS}-jobsButton`}
-			onClick={openJobsBoard}
+			onClick={openJobsTab}
 		>
 			See Jobs Board
 		</div>

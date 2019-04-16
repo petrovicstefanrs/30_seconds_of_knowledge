@@ -1,1 +1,1 @@
-export {default} from './JobsBoard';
+export {default} from './JobsTab';

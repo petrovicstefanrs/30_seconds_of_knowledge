@@ -13,17 +13,12 @@ import {restoreFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
 import {scrollToTop} from '../../lib/util';
 import JobsMock from '../../mock/jobs';
+import JOB_TYPES from '../../mappers/jobTypes';
 import {fetchRandomSnippet} from '../../api/snippets';
 
-import './JobsBoard.css';
+import './JobsTab.css';
 
-const CLASS = 'sok-jobsBoard';
-
-const JOB_TYPES = {
-	fr: 'Frontend',
-	bk: 'Backend',
-	all: 'All'
-};
+const CLASS = 'sok-jobsTab';
 
 const JobDescription = ({ language, snippet }) => (
 	<div className="jobDescription">
@@ -38,7 +33,7 @@ const JobDescription = ({ language, snippet }) => (
 	</div>
 );
 
-class JobsBoard extends Component {
+class JobsTab extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -143,4 +138,4 @@ class JobsBoard extends Component {
 	}
 }
 
-export default hot(module)(JobsBoard);
+export default hot(module)(JobsTab);

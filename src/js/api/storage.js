@@ -197,11 +197,11 @@ export const openRandomSnippet = (newTab = false) => {
 
 /**
  * Function that opens Jobs Board section.
- * @function openJobsBoard
+ * @function openJobsTab
  */
 
-export const openJobsBoard = () => {
+export const openJobsTab = () => {
 	const {getURL} = browserObject.runtime;
 
-	window.open(getURL('jobsBoard.html'), '_self');
+	window.open(getURL('jobsTab.html'), '_self');
 };

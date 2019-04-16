@@ -61,7 +61,7 @@
 	padding: 10px;
 	font-size: 14px;
 	color: #21212a;
-	background: var(--color__jobs_button);
+	background: var(--button__jobs);
 	cursor: pointer;
 }
 
