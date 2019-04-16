@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {hot} from 'react-hot-loader';
+// import Tabletop from 'tabletop';
 
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -8,6 +9,7 @@ import MarkdownRenderer from '../../components/markdown-renderer';
 import Skills from '../../components/skills-options';
 import SearchFilters from '../../components/search-filters';
 import ListOptions from '../../components/list-options';
+import Spinner from '../../components/spinner';
 
 import {restoreFromStorage} from '../../api/storage';
 import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
@@ -19,6 +21,8 @@ import {fetchRandomSnippet} from '../../api/snippets';
 import './JobsTab.css';
 
 const CLASS = 'sok-jobsTab';
+
+const SHEET_DOCUMENT = 'https://docs.google.com/spreadsheets/d/1KSoC9FW8td6-QzNL8eGfWDkIKOO9KZ-j--YKGXsq-hc/pubhtml'
 
 const JobDescription = ({ language, snippet }) => (
 	<div className="jobDescription">
@@ -40,14 +44,24 @@ class JobsTab extends Component {
 			theme: THEMES_VARIANTS.dark,
 			active_job: null,
 			searchValue: '',
-			activeKey: 'all'
+			activeKey: 'all',
+			jobsData: null
 		};
 	}
 
 	componentDidMount() {
 		scrollToTop();
+		this.getJobsData();
 		this.fetchSnippet();
 		this.setColorSchemeAndFont();
+	}
+
+	getJobsData = () => {
+		Tabletop.init({ 
+			key: SHEET_DOCUMENT,
+			callback: (jobsData, tabletop) => this.setState({ jobsData }),
+			simpleSheet: true 
+		})
 	}
 
 	// Using this for Job description as an example for markdown desc
@@ -87,10 +101,13 @@ class JobsTab extends Component {
 			language,
 			snippet,
 			searchValue,
-			activeKey
+			activeKey,
+			jobsData
 		} = this.state;
 
 		const isAll = activeKey === 'all';
+		
+		if (!jobsData) return  <Spinner />
 
 		return (
 			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>

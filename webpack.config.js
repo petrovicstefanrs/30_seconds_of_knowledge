@@ -151,6 +151,7 @@ let options = {
 		}),
 		new WriteFilePlugin(),
 	],
+	externals: ['tls', 'net', 'fs']
 };
 
 if (env.NODE_ENV === 'development') {
