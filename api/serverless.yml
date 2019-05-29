@@ -1,0 +1,77 @@
+service: knowlage-api-first-idea
+
+provider:
+  name: aws
+  runtime: python2.7
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+
+functions:
+  create:
+    handler: jobs/create.create
+    events:
+      - http:
+          path: jobs
+          method: post
+          cors: true
+
+  list:
+    handler: jobs/list.list
+    events:
+      - http:
+          path: jobs
+          method: get
+          cors: true
+
+  get:
+    handler: jobs/get.get
+    events:
+      - http:
+          path: jobs/{id}
+          method: get
+          cors: true
+
+  update:
+    handler: jobs/update.update
+    events:
+      - http:
+          path: jobs/{id}
+          method: put
+          cors: true
+
+  delete:
+    handler: jobs/delete.delete
+    events:
+      - http:
+          path: jobs/{id}
+          method: delete
+          cors: true
+
+resources:
+  Resources:
+    KnowlageAPIDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
