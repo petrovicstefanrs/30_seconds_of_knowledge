@@ -150,7 +150,7 @@ A big THANK YOU to these wonderful people!
 
 ###### Attributions
 
-- Icons/Graphic Elements [www.flaticon.com](www.flaticon.com)
+- Icons/Graphic Elements [www.flaticon.com](https://www.flaticon.com)
 - Javascript Snippets [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code)
 - CSS Snippets [30 seconds of css](https://github.com/30-seconds/30-seconds-of-css)
 - interview Snippets [30 seconds of interviews](https://github.com/30-seconds/30-seconds-of-interviews)
