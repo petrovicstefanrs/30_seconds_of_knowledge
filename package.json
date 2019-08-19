@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "highlight.js": "^9.13.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "react": "^16.7.0",
     "react-codepen-prefill": "^0.1.1",
     "react-copy-to-clipboard": "^5.0.1",
