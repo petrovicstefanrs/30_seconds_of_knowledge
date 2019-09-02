@@ -1,5 +1,10 @@
 import {randArrayItem} from '../lib/random';
-import {restoreFromStorage, restoreBlacklistedSnippetFromStorage} from './storage';
+import {
+        lastSeenSnippetsToStorage,
+        restoreBlacklistedSnippetFromStorage,
+        restoreLastSeenSnippetFromStorage,
+	    restoreFromStorage,
+} from './storage';
 
 /**
  * Available snippet library types
@@ -151,8 +156,16 @@ export const fetchRandomSnippet = async () => {
 		src => !blacklistedSnippets.includes(src)
 	);
 	const randomSnippet = randArrayItem(snippetSources);
+	let snippet = await fetchSnippet(randomSnippet, randomLibrary);
 
-	return await fetchSnippet(randomSnippet, randomLibrary);
+	// Log loaded snippet into history
+	const {snp, language, language_label, src, title} = snippet;
+	const loggedSnippet = await restoreLastSeenSnippetFromStorage();
+	loggedSnippet.splice(0, 0, {src, title, language}); //push front
+	loggedSnippet.splice(5); //leave the first 5
+	await lastSeenSnippetsToStorage(loggedSnippet);
+
+	return snippet;
 };
 
 /**

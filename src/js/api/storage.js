@@ -57,6 +57,15 @@ export const DEFAULT_SAVED_SNIPPETS = ['snippets'];
 export const DEFAULT_BLACKLISTED_SNIPPETS = ['blacklisted_snippets'];
 
 /**
+ * Default last seen snippets
+ * @const DEFAULT_LAST_SEEN_SNIPPETS
+ * @readonly
+ */
+
+export const DEFAULT_LAST_SEEN_SNIPPETS = ['last_seen_snippets'];
+
+
+/**
  * Function that saves extension options to browserObject storage and syncs them over devices
  * @function saveToStorage
  * @return {Promise} setOptions - Promise that will set options to storage and return true once resolved
@@ -118,6 +127,33 @@ export const restoreSnippetsFromStorage = () => {
 	});
 
 	return getSnippets;
+};
+
+/**
+ * Function that logs Snippets to browserObject sync storage
+ * @function lastSeenSnippetsToStorage
+ * @return {Promise} lastSeenSnippetsToStorage - Promise that will log a snippet to storage and return
+ * true once resolved
+ */
+export const lastSeenSnippetsToStorage = last_seen_snippets => {
+	return new Promise(resolve => {
+		browserObject.storage.local.set({last_seen_snippets}, () => {
+			resolve(true);
+		});
+	});
+};
+
+/**
+ * Function that gets logged snippets from browserObject sync storage
+ * @function restoreLastSeenSnippetFromStorage
+ * @return {Promise} getSnippets - Promise that will return a list of logged snippets from storage when resolved
+ */
+export const restoreLastSeenSnippetFromStorage = () => {
+	return new Promise(resolve => {
+		browserObject.storage.local.get(DEFAULT_LAST_SEEN_SNIPPETS, ({last_seen_snippets}) => {
+			resolve(last_seen_snippets || []);
+		});
+	});
 };
 
 /**

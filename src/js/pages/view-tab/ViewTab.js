@@ -9,9 +9,10 @@ import Footer from '../../components/footer';
 import ControllsOverlay from '../../components/controlls-overlay';
 
 import {
-	restoreFromStorage,
-	restoreSnippetsFromStorage,
 	restoreBlacklistedSnippetFromStorage,
+	restoreFromStorage,
+	restoreLastSeenSnippetFromStorage,
+	restoreSnippetsFromStorage,
 } from '../../api/storage';
 import {THEMES_VARIANTS, FONT_SIZE_CLASSNAMES} from '../../lib/consts';
 import {fetchSnippet} from '../../api/snippets';
@@ -47,9 +48,9 @@ class ViewTab extends Component {
 		}
 
 		let snippets =
-			type === 'blacklisted'
-				? await restoreBlacklistedSnippetFromStorage()
-				: await restoreSnippetsFromStorage();
+			type === 'blacklisted' ? await restoreBlacklistedSnippetFromStorage() :
+			type === 'lastSeen' ?    await restoreLastSeenSnippetFromStorage() :
+					                 await restoreSnippetsFromStorage();
 
 		const {src, language} = snippets[index];
 
