@@ -23,9 +23,8 @@ The generator function has to be defined by the user, and it is called successiv
 
         std::generate(v1.begin(), v1.end(), gen);
 
-        vector<int>::iterator i1;
-        for (i1 = v1.begin(); i1 != v1.end(); ++i1) {
-            std::cout << *i1 << " ";
+        for (auto i: v1) {
+            std::cout << i << " ";
         }
         return 0;
     }
