@@ -159,9 +159,14 @@ export const fetchRandomSnippet = async () => {
 	let snippet = await fetchSnippet(randomSnippet, randomLibrary);
 
 	// Log loaded snippet into history
-	const {snp, language, language_label, src, title} = snippet;
+	const {language, snippet_src, snippet_title} = snippet;
+	const snippetToLog = {
+		src: snippet_src,
+		title: snippet_title,
+		language,
+	};
 	const loggedSnippet = await restoreLastSeenSnippetFromStorage();
-	loggedSnippet.splice(0, 0, {src, title, language}); //push front
+	loggedSnippet.splice(0, 0, snippetToLog); //push front
 	loggedSnippet.splice(5); //leave the first 5
 	await lastSeenSnippetsToStorage(loggedSnippet);
 
