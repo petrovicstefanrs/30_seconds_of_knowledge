@@ -28,3 +28,7 @@ irb> user = { 'first_name' => 'Bob', 'last_name' => 'Carlton' }
 irb> user.has_key?('first_name')
  => true
 ```
+
+##### Additional links
+
+* [Awesome post about Ruby's conventions](https://blog.codeminer42.com/and-understanding-one-of-rubys-coolest-naming-conventions-5a9300b75605)
