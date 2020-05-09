@@ -53,3 +53,8 @@
 	color: #ffffff;
 	background: var(--color__lang__cpp);
 }
+
+.sok-Chip.sok-Chip-csharp {
+	color: #ffffff;
+	background: var(--color__lang__csharp);
+}
