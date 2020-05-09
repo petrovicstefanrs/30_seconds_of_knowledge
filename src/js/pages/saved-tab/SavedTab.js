@@ -17,6 +17,7 @@ import {
 	openView,
 	restoreBlacklistedSnippetFromStorage,
 	restoreFromStorage,
+	restoreLastSeenSnippetFromStorage,
 	restoreSnippetsFromStorage,
 	saveSnippetsToStorage,
 } from '../../api/storage';
@@ -37,6 +38,10 @@ const TABS = {
 		key: 'blacklisted',
 		title: 'Blacklisted Snippets',
 	},
+	lastSeen: {
+		key: 'lastSeen',
+		title: 'Last Seen Snippets',
+	},
 };
 
 class SavedTab extends Component {
@@ -46,6 +51,7 @@ class SavedTab extends Component {
 		this.state = {
 			snippets: null,
 			blacklisted: null,
+			lastSeen: null,
 			theme: THEMES_VARIANTS.dark,
 			activeTab: TABS['saved'].key,
 		};
@@ -59,10 +65,12 @@ class SavedTab extends Component {
 	initSnippetsFromStorage = async () => {
 		let snippets = await restoreSnippetsFromStorage();
 		let blacklisted = await restoreBlacklistedSnippetFromStorage();
+		let lastSeen = await restoreLastSeenSnippetFromStorage();
 
 		this.setState({
 			snippets,
 			blacklisted,
+			lastSeen,
 		});
 	};
 
@@ -190,6 +198,36 @@ class SavedTab extends Component {
 		});
 	};
 
+	renderLastSeen = () => {
+		const {lastSeen} = this.state;
+
+		if (!lastSeen) {
+			return this.renderSpinner();
+		}
+
+		if (!lastSeen.length) {
+			return (
+				<div className={`${CLASS}-empty`}>
+					<img src={happyIconSrc} alt="Empty Last Seen Snippets Library" />
+					<span>Wow, there are no last seen snippets here.</span>
+					<span>Start browsing and soon this will be full :)</span>
+				</div>
+			);
+		}
+		return lastSeen.map((snippet, index) => {
+			return (
+				<div key={index} className={`${CLASS}-item`}>
+					<div className={`${CLASS}-item-title`} onClick={() => openView(index, 'lastSeen')}>
+						{snippet.title}
+					</div>
+					{this.renderLangChip(snippet.language)}
+				</div>
+			);
+		});
+
+		return snippetsItems;
+	};
+
 	handleTabChange = tab => {
 		this.setState({
 			activeTab: tab,
@@ -214,6 +252,11 @@ class SavedTab extends Component {
 					{activeTab === TABS['blacklisted'].key && (
 						<React.Fragment>
 							{this.renderBlacklisted()}
+						</React.Fragment>
+					)}
+					{activeTab === TABS['lastSeen'].key && (
+						<React.Fragment>
+							{this.renderLastSeen()}
 						</React.Fragment>
 					)}
 				</div>
