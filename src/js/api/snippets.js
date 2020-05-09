@@ -19,6 +19,7 @@ export const SNIPPET_LIBRARIES = {
 	ruby: 'ruby',
 	ramda: 'ramda',
 	cpp: 'cpp',
+	csharp: 'csharp',
 };
 
 /**
@@ -38,6 +39,7 @@ export const SNIPPET_LIBRARY_LABELS = {
 	[SNIPPET_LIBRARIES.ruby]: 'Ruby',
 	[SNIPPET_LIBRARIES.ramda]: 'Ramda',
 	[SNIPPET_LIBRARIES.cpp]: 'C++',
+	[SNIPPET_LIBRARIES.csharp]: 'C#',
 };
 
 /**
@@ -67,11 +69,11 @@ const SNIPPET_CODE_REGEX = {
 
 /**
  * Returns a context for a specific snippet library
- * @function getLibratyContext
+ * @function getLibraryContext
  * @param {SNIPPET_LIBRARIES} library - Name of the library to fetch context for
  */
 
-const getLibratyContext = library => {
+const getLibraryContext = library => {
 	switch (library) {
 		case SNIPPET_LIBRARIES.javascript:
 			return require.context('../../assets/snippets/javascript', false, /\.md$/);
@@ -100,6 +102,9 @@ const getLibratyContext = library => {
 		case SNIPPET_LIBRARIES.cpp:
 			return require.context('../../assets/snippets/cpp', false, /\.md$/);
 
+		case SNIPPET_LIBRARIES.csharp:
+			return require.context('../../assets/snippets/csharp', false, /\.md$/);
+
 		default:
 			return require.context('../../assets/snippets/javascript', false, /\.md$/);
 	}
@@ -112,15 +117,16 @@ const getLibratyContext = library => {
  */
 
 export const SNIPPET_LIBRARY_CONTEXTS = {
-	[SNIPPET_LIBRARIES.javascript]: getLibratyContext(SNIPPET_LIBRARIES.javascript),
-	[SNIPPET_LIBRARIES.react]: getLibratyContext(SNIPPET_LIBRARIES.react),
-	[SNIPPET_LIBRARIES.python]: getLibratyContext(SNIPPET_LIBRARIES.python),
-	[SNIPPET_LIBRARIES.interview]: getLibratyContext(SNIPPET_LIBRARIES.interview),
-	[SNIPPET_LIBRARIES.php]: getLibratyContext(SNIPPET_LIBRARIES.php),
-	[SNIPPET_LIBRARIES.css]: getLibratyContext(SNIPPET_LIBRARIES.css),
-	[SNIPPET_LIBRARIES.ruby]: getLibratyContext(SNIPPET_LIBRARIES.ruby),
-	[SNIPPET_LIBRARIES.ramda]: getLibratyContext(SNIPPET_LIBRARIES.ramda),
-	[SNIPPET_LIBRARIES.cpp]: getLibratyContext(SNIPPET_LIBRARIES.cpp),
+	[SNIPPET_LIBRARIES.javascript]: getLibraryContext(SNIPPET_LIBRARIES.javascript),
+	[SNIPPET_LIBRARIES.react]: getLibraryContext(SNIPPET_LIBRARIES.react),
+	[SNIPPET_LIBRARIES.python]: getLibraryContext(SNIPPET_LIBRARIES.python),
+	[SNIPPET_LIBRARIES.interview]: getLibraryContext(SNIPPET_LIBRARIES.interview),
+	[SNIPPET_LIBRARIES.php]: getLibraryContext(SNIPPET_LIBRARIES.php),
+	[SNIPPET_LIBRARIES.css]: getLibraryContext(SNIPPET_LIBRARIES.css),
+	[SNIPPET_LIBRARIES.ruby]: getLibraryContext(SNIPPET_LIBRARIES.ruby),
+	[SNIPPET_LIBRARIES.ramda]: getLibraryContext(SNIPPET_LIBRARIES.ramda),
+	[SNIPPET_LIBRARIES.cpp]: getLibraryContext(SNIPPET_LIBRARIES.cpp),
+	[SNIPPET_LIBRARIES.csharp]: getLibraryContext(SNIPPET_LIBRARIES.csharp),
 };
 
 /**

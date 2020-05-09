@@ -141,3 +141,4 @@ A big THANK YOU to these wonderfull people!
 - Python Snippets [30 seconds of python](https://github.com/kriadmin/30-seconds-of-python-code)
 - Ruby Snippets [30 seconds of ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby)
 - C++ Snippets [30 seconds of cpp](https://github.com/Bhupesh-V/30-seconds-of-cpp)
+- C# Snippets [30 seconds of C#](https://github.com/30-seconds/30-seconds-of-csharp)
