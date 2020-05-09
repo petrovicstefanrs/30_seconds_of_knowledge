@@ -241,6 +241,49 @@ class OptionsPicker extends Component {
 		);
 	};
 
+	handleScreensaverChange = e => {
+		const {options} = this.state;
+
+		const newOptions = Object.assign({}, options, {screen_saver: e.target.value});
+
+		this.setState({
+			options: newOptions,
+		});
+	};
+
+	renderScreensaverOptions = () => {
+		const {options} = this.state;
+
+		if (!options) {
+			return null;
+		}
+
+		const {screen_saver} = options;
+		const is_active = screen_saver !== "0";
+		let message = 'Time span: inactive';
+
+		if (is_active) {
+			message = `Time span: ${screen_saver} s`;
+		}
+
+		return (
+			<React.Fragment>
+				<h2>Screensaver mode</h2>
+				<span className={`${CLASS}-screenSaver-holder`}>
+					<input
+						className={`${CLASS}-screenSaver`}
+						type="range"
+						value={screen_saver}
+						min={0}
+						max={300}
+						onChange={this.handleScreensaverChange}
+					/>
+					{message}
+				</span>
+			</React.Fragment>
+		);
+	};
+
 	render() {
 		const {options} = this.state;
 
@@ -260,6 +303,7 @@ class OptionsPicker extends Component {
 						<div className={`${CLASS}-itemsContainer-horizontal-right`}>
 							{this.renderThemeOptions()}
 							{this.renderFontOptions()}
+							{this.renderScreensaverOptions()}
 						</div>
 					</div>
 					<Separator />
