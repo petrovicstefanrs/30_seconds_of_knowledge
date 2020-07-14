@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {openJobsTab} from '../../api/storage';
+
 import {THEMES_VARIANTS} from '../../lib/consts';
 import env from '../../../env';
 
@@ -14,6 +16,12 @@ const WEBSITE_URL = env.extension_website_url;
 
 const Header = ({className = '', theme, ...props}) => (
 	<div className={CLASS + ' ' + className} {...props}>
+		<div 
+			className={`${CLASS}-jobsButton`}
+			onClick={openJobsTab}
+		>
+			See Jobs Board
+		</div>
 		<a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer">
 			<img
 				className={CLASS + '-logo'}

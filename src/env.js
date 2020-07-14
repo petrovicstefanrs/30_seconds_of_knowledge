@@ -4,6 +4,7 @@ const env = {
 	donation_url: 'https://www.paypal.me/petrovicstefan/1',
 	merch_url: 'https://teespring.com/stores/30-seconds-of-knowledge',
 	newsletter_url: 'http://eepurl.com/giRHzP',
+	jobs_api: `https://d3mwlnldi1.execute-api.us-east-1.amazonaws.com/dev`,
 	donation_beggar: {
 		trigger_count: 1000, // Donation popup will appear every N times the New Tab was oppened
 		beggar_message:

@@ -11,6 +11,7 @@
 /gecko_build
 /chromium_build.zip
 /gecko_build.zip
+/api/.serverless
 
 # misc
 .DS_Store

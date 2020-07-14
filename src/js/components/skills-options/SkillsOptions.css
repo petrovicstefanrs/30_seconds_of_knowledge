@@ -1,0 +1,10 @@
+.sok-Options {
+    display: flex;
+	margin-left: 20px;
+}
+
+.sok-Options .option {
+    padding: 10px;
+	background: var(--color--active_element);
+	margin-left: 10px;
+}
