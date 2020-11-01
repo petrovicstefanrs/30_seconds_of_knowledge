@@ -17,7 +17,7 @@
 	flex-direction: column;
 	width: var(--content__width);
 	max-width: var(--content__width--max);
-	min-height: calc(100vh - 200px);
+	min-height: calc(100vh - 256px);
 }
 
 .sok-NewTab .sok-NewTab-contentContainer .sok-NewTab-contentHeader {
