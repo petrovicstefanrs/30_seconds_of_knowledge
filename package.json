@@ -11,7 +11,7 @@
     "test": "eslint src/"
   },
   "dependencies": {
-    "highlight.js": "^9.13.1",
+    "highlight.js": "^10.1.2",
     "lodash": "^4.17.13",
     "react": "^16.7.0",
     "react-codepen-prefill": "^0.1.1",
