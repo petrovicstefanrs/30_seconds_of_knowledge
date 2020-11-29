@@ -15,5 +15,5 @@ def bubble_sort(lst):
 ```python
 lst = [54,26,93,17,77,31,44,55,20]
 bubble_sort(lst)
-print("sorted %s" %lst) # [17,20,26,31,44,54,55,77,91]
+print("sorted %s" %lst) # [17,20,26,31,44,54,55,77,93]
 ```
