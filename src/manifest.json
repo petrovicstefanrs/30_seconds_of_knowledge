@@ -11,14 +11,14 @@
   },
   "permissions": [
     "storage",
-	"clipboardWrite"
+    "clipboardWrite"
   ],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "icon_32.png"
   },
   "options_ui": {
-	"page": "options.html"
+    "page": "options.html"
   },
   "background": {
     "page": "background.html"
