@@ -33,3 +33,26 @@
 	height: 36px;
 	background: transparent;
 }
+
+.sok-Header-jobsButton {
+	padding: 10px;
+	color: #21212a;
+	background: var(--button__jobs);
+	transition: all;
+    transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+.sok-Header-jobsButton:hover {
+	transform: scale(1.2);
+}
+
+.sok-Header-jobsAction {
+	display: flex;
+	position: absolute;
+    right: 100px;
+	font-size: 12px;
+	font-weight: bold;
+}
