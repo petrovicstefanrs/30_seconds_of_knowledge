@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Button.css';
 import SokIcon from '../sok-icon/SokIcon';
+
+import './Button.css';
 
 const CLASS = 'sok-Button';
 
@@ -25,7 +26,7 @@ const Button = ({
 	target = '_blank',
 	disabled,
 	className = '',
-	...props,
+	...props
 }) => {
 	const handleClick = () => {
 		onClick && !disabled && onClick();

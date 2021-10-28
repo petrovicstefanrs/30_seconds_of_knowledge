@@ -1,5 +1,5 @@
 import NewTab from './pages/new-tab';
-import React, {Lazy} from 'react';
+import React from 'react';
 import {render} from 'react-dom';
 
 import '../css/index.css';

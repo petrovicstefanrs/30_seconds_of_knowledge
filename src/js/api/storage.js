@@ -199,7 +199,7 @@ export const openRandomSnippet = (newTab = false) => {
  * @function openJobsTab
  */
 
- export const openJobsTab = () => {
+export const openJobsTab = () => {
 	const {getURL} = browserObject.runtime;
 
 	window.open(getURL('jobsTab.html'), '_self');

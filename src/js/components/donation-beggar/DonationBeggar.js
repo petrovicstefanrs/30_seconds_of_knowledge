@@ -53,6 +53,7 @@ class DonationBeggar extends Component {
 						<a
 							href={env.merch_url}
 							target="_blank"
+							rel="noreferrer"
 							className={CLASS + '-button ' + CLASS + '-button-primary'}
 							onClick={this.hideBeggar}
 						>
@@ -61,6 +62,7 @@ class DonationBeggar extends Component {
 						<a
 							href={env.donation_url}
 							target="_blank"
+							rel="noreferrer"
 							className={CLASS + '-button ' + CLASS + '-button-secondary'}
 							onClick={this.hideBeggar}
 						>

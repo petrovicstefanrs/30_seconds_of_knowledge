@@ -57,7 +57,6 @@
 	--button__width--max: calc(var(--button__width--min)*2);
 	--button__drop-shadow: 0 10px 20px 2px rgba(0,0,0,0.1);
 	--filter__button--icon: none;
-	--button__jobs: #F0DB4E;
 
 	/* Toaster */
 

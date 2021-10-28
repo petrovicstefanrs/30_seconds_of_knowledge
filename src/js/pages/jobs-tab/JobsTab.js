@@ -20,14 +20,15 @@ import './JobsTab.css';
 
 const CLASS = 'sok-jobsTab';
 
-const JobDescription = ({ job: { description, jobUrl }}) => (
+const JobDescription = ({job: {description, jobUrl}}) => (
 	<div className="jobDescription">
-		<MarkdownRenderer 
-			source={description}
-		/>
-		<div className="testApplyButton"
+		<MarkdownRenderer source={description} />
+		<div
+			className="testApplyButton"
 			onClick={() => console.log(jobUrl, 'This will be link tag actually')}
-		> <span>Apply for a job</span>
+		>
+			{' '}
+			<span>Apply for a job</span>
 		</div>
 	</div>
 );
@@ -40,12 +41,12 @@ class JobsTab extends Component {
 			active_job: null,
 			searchValue: '',
 			activeKey: 'all',
-			jobsData: mockedJobs
+			jobsData: mockedJobs,
 		};
 	}
 
 	async componentDidMount() {
-        console.log(mockedJobs, 'mockedJobsmockedJobs');
+		console.log(mockedJobs, 'mockedJobsmockedJobs');
 		scrollToTop();
 		// await this.getJobsData();
 		this.setColorSchemeAndFont();
@@ -74,25 +75,17 @@ class JobsTab extends Component {
 		});
 	};
 
-	toggleJobDescription = (active_job) => {
+	toggleJobDescription = active_job => {
 		const already_active = active_job === this.state.active_job;
-		this.setState({ active_job: already_active ? null : active_job });
-	}
+		this.setState({active_job: already_active ? null : active_job});
+	};
 
 	render() {
-
-		const {
-			theme, 
-			font_size, 
-			active_job,
-			searchValue,
-			activeKey,
-			jobsData
-		} = this.state;
+		const {theme, font_size, active_job, searchValue, activeKey, jobsData} = this.state;
 
 		const isAll = activeKey === 'all';
-	
-		if (!jobsData) return  <Spinner />
+
+		if (!jobsData) return <Spinner />;
 
 		return (
 			<div className={`${CLASS} ${FONT_SIZE_CLASSNAMES[font_size]}`}>
@@ -101,31 +94,30 @@ class JobsTab extends Component {
 				<div className={`${CLASS}-contentContainer`}>
 					<div className="reachLabel">Reach more then 20k+ developers worldwide!</div>
 					<div className="postJobButton">Post a job for $60</div>
-					<SearchFilters 
+					<SearchFilters
 						options={JOB_TYPES}
 						activeKey={activeKey}
 						placeholder="Search by Job Name"
-						onTypeChange={activeKey => this.setState({ activeKey })}
-						onSearchChange={searchValue => this.setState({ searchValue })}
+						onTypeChange={activeKey => this.setState({activeKey})}
+						onSearchChange={searchValue => this.setState({searchValue})}
 					/>
-					{
-						jobsData
-						.filter(job => 
-							job.title.toLowerCase().includes(searchValue.toLowerCase()) &&
-							( isAll ? job : job.type === activeKey )
+					{jobsData
+						.filter(
+							job =>
+								job.title.toLowerCase().includes(searchValue.toLowerCase()) &&
+								(isAll ? job : job.type === activeKey)
 						)
-						.map((job, index) => 
+						.map((job, index) => (
 							<ListOptions
 								key={index}
 								img={job.logo}
 								title={job.title}
 								description={job.company}
-								active={ active_job === index }
+								active={active_job === index}
 								toggleDescription={() => this.toggleJobDescription(index)}
-								OptionDescription={<JobDescription job={job} />} 
+								OptionDescription={<JobDescription job={job} />}
 							/>
-						)
-					}
+						))}
 				</div>
 				<Footer />
 			</div>

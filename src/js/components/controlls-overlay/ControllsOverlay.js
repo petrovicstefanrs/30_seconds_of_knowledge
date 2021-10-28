@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 import Button from '../button';
-import SokIcon from '../sok-icon/SokIcon';
 
 import env from '../../../env';
 import {openExtensionOptions, openSaved, openRandomSnippet} from '../../api/storage';

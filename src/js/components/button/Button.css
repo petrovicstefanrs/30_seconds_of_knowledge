@@ -1,4 +1,5 @@
 .sok-Button {
+	position: relative;
 	height: var(--button__height);
 	min-width: var(--button__width--min);
 	max-width: var(--button__width--max);
