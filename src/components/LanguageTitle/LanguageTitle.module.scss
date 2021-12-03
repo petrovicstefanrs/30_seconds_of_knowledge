@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  margin-bottom: 8px;
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    background: var(--secondary);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--primary);
+      color: var(--primary);
+    }
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+
+      h2 {
+        margin: 0;
+        font-size: 36px;
+        line-height: 36px;
+        margin-right: 16px;
+      }
+
+      .save {
+        color: var(--secondary);
+        fill: var(--secondary);
+
+        &.active {
+          color: var(--accent);
+          fill: var(--accent);
+
+          path {
+            fill: var(--accent);
+          }
+        }
+
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+}

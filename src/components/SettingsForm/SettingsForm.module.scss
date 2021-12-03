@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    display: flex;
+
+    &.vertical {
+      flex-direction: column;
+
+      .section {
+        margin-right: 0;
+      }
+
+      .details {
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .section {
+      min-width: fit-content;
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      .markdown {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .save {
+    max-width: 200px;
+  }
+}

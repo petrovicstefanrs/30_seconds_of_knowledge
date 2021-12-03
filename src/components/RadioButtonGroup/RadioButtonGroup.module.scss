@@ -1,0 +1,41 @@
+.container {
+  .wrap {
+    margin-bottom: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    &.horizontal {
+      flex-direction: row;
+
+      .radioContainer {
+        margin-right: 24px;
+      }
+    }
+
+    .radioContainer {
+      display: flex;
+      margin-bottom: 8px;
+      cursor: pointer;
+      align-items: center;
+
+      &:hover,
+      &:active {
+        border-color: var(--secondary);
+        .radio svg {
+          fill: var(--secondary);
+        }
+      }
+    }
+
+    .radioLabel {
+      color: var(--secondary);
+      margin-left: 4px;
+      font-size: 14px;
+    }
+
+    .disabled {
+      opacity: 0.7;
+    }
+  }
+}

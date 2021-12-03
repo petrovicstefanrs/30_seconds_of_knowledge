@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  cursor: pointer;
+
+  input {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon {
+    fill: var(--secondary_translucent);
+  }
+
+  input:focus ~ .icon,
+  label:focus .icon,
+  .icon:hover {
+    fill: var(--secondary);
+  }
+  .checked {
+    display: none;
+  }
+  .notChecked {
+    display: block;
+  }
+
+  input:checked ~ .checked {
+    display: block;
+    fill: var(--secondary);
+  }
+  input:checked ~ .notChecked {
+    display: none;
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.7;
+    .icon,
+    &:hover,
+    &:focus {
+      .icon {
+        cursor: default;
+        fill: var(--secondary);
+      }
+    }
+  }
+}

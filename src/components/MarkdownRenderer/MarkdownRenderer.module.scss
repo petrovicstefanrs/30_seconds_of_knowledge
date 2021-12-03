@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  font-size: 14px;
+
+  > pre {
+    font-size: 12px;
+
+    &:first-child {
+      margin-top: 32px;
+    }
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    li {
+      margin-bottom: 4px;
+    }
+  }
+
+  a {
+    padding-bottom: 2px;
+    border-bottom: 1px dotted var(--secondary);
+  }
+
+  > * {
+    margin: 0 0 16px 0;
+  }
+}

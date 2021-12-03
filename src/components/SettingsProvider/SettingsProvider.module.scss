@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--primary);
+  color: var(--secondary);
+  transition: background 0.1s linear;
+}

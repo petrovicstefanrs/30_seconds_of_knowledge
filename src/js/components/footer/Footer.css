@@ -1,8 +1,0 @@
-.sok-Footer {
-	width: 100%;
-	height: 64px;
-	display: flex;
-	position: relative;
-	margin-top: 32px;
-	background: var(--color__footer__gradient);
-}
