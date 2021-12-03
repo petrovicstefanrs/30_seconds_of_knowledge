@@ -9,6 +9,7 @@
   },
   "scripts": {
     "map_snippets": "node utils/map_snippets.mjs",
+    "update_submodules": "git submodule update --remote",
     "start": "TARGET=chromium node utils/webserver.js",
     "start:chromium": "TARGET=chromium node utils/webserver.js",
     "start:gecko": "TARGET=gecko node utils/webserver.js",
