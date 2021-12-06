@@ -18,55 +18,89 @@ module.exports = {
       value: 'light',
       label: 'Light',
     },
+    shades_of_purple: {
+      value: 'shades_of_purple',
+      label: 'Shades of Purple',
+      url: 'vscode:extension/ahmadawais.shades-of-purple',
+      suggested_highlighter: 'shades-of-purple',
+    },
+    laser_wave: {
+      value: 'laser_wave',
+      label: 'Laser Wave',
+      url: 'vscode:extension/jaredkent.laserwave',
+    },
+    hackpot: {
+      value: 'hackpot',
+      label: 'Hackpot (Under The Sea)',
+      url: 'vscode:extension/wwmyers.hackpot',
+    },
+    gruvbox_light: {
+      value: 'gruvbox_light',
+      label: 'Gruvbox Light',
+      url: 'vscode:extension/jdinhlife.gruvbox',
+      suggested_highlighter: 'gruvbox-light',
+    },
   },
   SNIPPET_LIBRARIES: {
     git: {
       value: 'git',
       label: 'Git',
+      url: 'https://github.com/30-seconds/30-seconds-of-git',
     },
     javascript: {
       value: 'javascript',
       label: 'Javascript',
+      url: 'https://github.com/30-seconds/30-seconds-of-code',
     },
     react: {
       value: 'react',
       label: 'React',
+      url: 'https://github.com/30-seconds/30-seconds-of-react',
     },
     python: {
       value: 'python',
       label: 'Python',
+      url: 'https://github.com/30-seconds/30-seconds-of-python',
     },
     css: {
       value: 'css',
       label: 'CSS',
+      url: 'https://github.com/30-seconds/30-seconds-of-css',
     },
     php: {
       value: 'php',
       label: 'PHP',
+      url: 'https://github.com/30-seconds/30-seconds-of-php',
     },
     dart: {
       value: 'dart',
       label: 'Dart',
+      url: 'https://github.com/30-seconds/30-seconds-of-dart',
     },
     golang: {
       value: 'golang',
       label: 'Go',
+      url: 'https://github.com/30-seconds/30-seconds-of-golang',
     },
     csharp: {
       value: 'csharp',
       label: 'C#',
+      url: 'https://github.com/30-seconds/30-seconds-of-csharp',
     },
     ruby: {
       value: 'ruby',
       label: 'Ruby',
+      url: 'https://github.com/florianjosefreheis/30-seconds-of-ruby',
     },
     ramda: {
       value: 'ramda',
       label: 'Ramda',
+      url: 'https://github.com/petrovicstefanrs/30_seconds_of_knowledge',
     },
     interview: {
       value: 'interview',
       label: 'Interview Questions',
+      url: 'https://github.com/30-seconds/30-seconds-of-interviews',
     },
     // cpp: {
     //   value: 'cpp',

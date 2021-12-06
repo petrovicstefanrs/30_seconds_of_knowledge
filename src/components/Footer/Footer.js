@@ -35,7 +35,7 @@ const Footer = ({ className }) => (
           href={ATTRIBUTIONS_URL}
           className={styles.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           See credits
         </a>

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import ReactTooltip from 'react-tooltip';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -13,7 +14,7 @@ const PageProvider = ({
   children,
   noHeader,
   noFooter,
-  isPopop,
+  isPopup,
   activeLink,
 }) => {
   let disabledSectionsCounter = 0;
@@ -22,10 +23,11 @@ const PageProvider = ({
 
   return (
     <SettingsProvider>
+      <ReactTooltip className={styles.tooltip} effect="solid" />
       <ToastProvider>
         <div
           className={cx(styles.container, {
-            [styles.isPopop]: isPopop,
+            [styles.isPopup]: isPopup,
           })}
         >
           {!noHeader && <Header activeLink={activeLink} />}

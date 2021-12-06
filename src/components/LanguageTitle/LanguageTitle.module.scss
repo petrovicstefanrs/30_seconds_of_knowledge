@@ -34,25 +34,6 @@
         line-height: 36px;
         margin-right: 16px;
       }
-
-      .save {
-        color: var(--secondary);
-        fill: var(--secondary);
-
-        &.active {
-          color: var(--accent);
-          fill: var(--accent);
-
-          path {
-            fill: var(--accent);
-          }
-        }
-
-        svg {
-          width: 32px;
-          height: 32px;
-        }
-      }
     }
 
     span {

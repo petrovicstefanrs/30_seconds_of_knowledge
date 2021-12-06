@@ -10,8 +10,13 @@
 /build
 /chromium_build
 /chromium_build.zip
+/opera_build
+/opera_build.zip
 /gecko_build
 /gecko_build.zip
+/safari_build
+/safari_build.zip
+/safari_build_xcode
 /src/api/data.js
 
 # misc

@@ -19,7 +19,7 @@ const Header = ({ className, activeLink, ...props }) => {
       <a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer">
         <img
           className={styles.logo}
-          src={theme === THEMES.dark.value ? logoSrc : logoSrcDark}
+          src={theme === THEMES.light.value ? logoSrcDark : logoSrc}
           alt="30 Seconds of Knowledge Logo"
         />
       </a>

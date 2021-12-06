@@ -3,7 +3,7 @@
   max-width: 1280px;
   margin: 0 auto;
 
-  &.isPopop {
+  &.isPopup {
     width: max-content;
 
     .content {
@@ -25,5 +25,18 @@
     &.twoSections {
       min-height: calc(100vh - 96px);
     }
+  }
+}
+
+.tooltip {
+  background: var(--accent) !important;
+  padding: 8px !important;
+  color: var(--accent_text) !important;
+  opacity: 1 !important;
+  text-align: center;
+
+  &::after,
+  &::before {
+    border-top-color: var(--accent) !important;
   }
 }

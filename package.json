@@ -12,11 +12,17 @@
     "update_submodules": "git submodule update --remote",
     "start": "TARGET=chromium node utils/webserver.js",
     "start:chromium": "TARGET=chromium node utils/webserver.js",
-    "start:gecko": "TARGET=gecko node utils/webserver.js",
     "prebuild:chromium": "node utils/map_snippets.mjs",
-    "prebuild:gecko": "node utils/map_snippets.mjs",
     "build:chromium": "TARGET=chromium node utils/build.js",
+    "start:opera": "TARGET=opera node utils/webserver.js",
+    "prebuild:opera": "node utils/map_snippets.mjs",
+    "build:opera": "TARGET=opera node utils/build.js",
+    "start:gecko": "TARGET=gecko node utils/webserver.js",
+    "prebuild:gecko": "node utils/map_snippets.mjs",
     "build:gecko": "TARGET=gecko node utils/build.js",
+    "start:safari": "TARGET=safari node utils/webserver.js",
+    "prebuild:safari": "node utils/map_snippets.mjs",
+    "build:safari": "TARGET=safari node utils/build.js",
     "prettier": "prettier --write '**/*.{js,jsx,json,css,scss,md}'"
   },
   "dependencies": {
@@ -39,6 +45,7 @@
     "react-hot-loader": "^4.13.0",
     "react-markdown": "^7.1.0",
     "react-syntax-highlighter": "^15.4.4",
+    "react-tooltip": "^4.2.21",
     "rehype-raw": "^6.1.0",
     "rooks": "^5.8.0"
   },

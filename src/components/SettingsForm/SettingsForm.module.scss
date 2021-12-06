@@ -28,6 +28,43 @@
       .markdown {
         margin-top: 16px;
       }
+
+      .optionLabel {
+        display: flex;
+        align-items: center;
+
+        .info {
+          height: 16px;
+          margin-left: 4px;
+          fill: var(--secondary_translucent);
+
+          @media (hover: hover) {
+            &:hover,
+            &:active {
+              fill: var(--secondary);
+            }
+          }
+        }
+
+        .btn {
+          margin-left: 8px;
+
+          @media (hover: hover) {
+            &:hover,
+            &:active {
+              svg {
+                fill: var(--secondary);
+              }
+            }
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--secondary_translucent);
+          }
+        }
+      }
     }
   }
 

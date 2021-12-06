@@ -56,6 +56,11 @@
           overflow: hidden;
           white-space: pre;
         }
+
+        .date {
+          font-weight: 500;
+          color: var(--secondary_highlight);
+        }
       }
     }
   }

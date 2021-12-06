@@ -7,7 +7,7 @@ import PageProvider from '../../components/PageProvider/PageProvider';
 import '../index.scss';
 
 render(
-  <PageProvider noHeader noFooter isPopop>
+  <PageProvider noHeader noFooter isPopup>
     <Popup />
   </PageProvider>,
   window.document.querySelector('#popup-container')

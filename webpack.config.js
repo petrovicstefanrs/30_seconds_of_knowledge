@@ -35,17 +35,54 @@ const FILE_EXTENSIONS = [
 ];
 
 // Build Target Constants
-const AVAILABLE_TARGETS = ['chromium', 'gecko'];
+const AVAILABLE_TARGETS = ['chromium', 'gecko', 'opera', 'safari'];
 const TARGET_SPECIFIC_MANIFEST = {
   chromium: {
     offline_enabled: true,
+    chrome_url_overrides: {
+      newtab: 'newtab.html',
+    },
   },
+  opera: {},
   gecko: {
     manifest_version: 2,
+    web_accessible_resources: undefined,
+    permissions: ['storage', 'clipboardWrite'],
+    action: undefined,
+    browser_action: {
+      default_popup: 'popup.html',
+      default_icon: 'icon_32.png',
+    },
+    options_page: undefined,
+    options_ui: {
+      page: 'options.html',
+    },
+    chrome_url_overrides: {
+      newtab: 'newtab.html',
+    },
+    content_security_policy:
+      "script-src 'self' 'unsafe-eval'; object-src 'self'",
     browser_specific_settings: {
       gecko: {
         id: '30secondsofknowledge@petrovicstefan.rs',
         strict_min_version: '68.0',
+      },
+    },
+  },
+  safari: {
+    manifest_version: 2,
+    chrome_url_overrides: {
+      newtab: 'newtab.html',
+    },
+    options_page: 'options.html',
+    browser_action: {
+      default_popup: 'popup.html',
+      default_icon: 'icon_32.png',
+    },
+    permissions: ['storage', 'clipboardWrite'],
+    browser_specific_settings: {
+      safari: {
+        strict_min_version: '15',
       },
     },
   },
@@ -133,7 +170,6 @@ var options = {
       'index.js'
     ),
     viewtab: path.join(__dirname, 'src', 'pages', 'ViewTab', 'index.js'),
-    background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['devtools'],

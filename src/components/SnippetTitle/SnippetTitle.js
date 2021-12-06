@@ -81,7 +81,7 @@ const SnippetTitle = ({ className, snippet }) => {
             onClick={toggleSave}
           />
         </div>
-        <span>
+        <span className={styles.updatedOn}>
           Updated On: <strong>{snippet.lastUpdated}</strong>
         </span>
       </div>

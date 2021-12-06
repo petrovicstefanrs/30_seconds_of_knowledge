@@ -33,11 +33,12 @@ const Popup = ({ className }) => {
           iconProps={{ direction: 'right' }}
           href="newtab.html"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Random Snippet
         </Button>
       </div>
-      <SettingsForm className={styles.content} />
+      <SettingsForm isPopup className={styles.content} />
     </div>
   );
 };

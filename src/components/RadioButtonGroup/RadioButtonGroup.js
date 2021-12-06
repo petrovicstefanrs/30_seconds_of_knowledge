@@ -83,7 +83,7 @@ RadioGroup.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.any,
-      label: PropTypes.string,
+      label: PropTypes.node,
     })
   ).isRequired,
   label: PropTypes.node,

@@ -169,7 +169,8 @@ A big THANK YOU to these wonderful people!
 
 ###### Attributions
 
-- Icons | [www.devicon.com](https://devicon.dev/) / [MIT](https://github.com/devicons/devicon/blob/master/LICENSE)
+- Programming Langauges Icons | [www.devicon.com](https://devicon.dev/) / [MIT](https://github.com/devicons/devicon/blob/master/LICENSE)
+- UI Icons | [www.ionicons.com](https://ionicons.com/) / [MIT](https://github.com/ionic-team/ionicons/blob/main/LICENSE)
 - Ruby Snippets | [30 seconds of Ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby) / [MIT](https://github.com/florianjosefreheis/30-seconds-of-ruby/blob/master/LICENSE)
 - Interview Snippets | [30 seconds of Interviews](https://github.com/30-seconds/30-seconds-of-interviews) / [MIT](https://github.com/30-seconds/30-seconds-of-interviews/blob/master/LICENSE)
 - PHP Snippets | [30 seconds of PHP](https://github.com/30-seconds/30-seconds-of-php) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-php/blob/master/LICENSE)
