@@ -51,7 +51,7 @@ const TARGET_SPECIFIC_MANIFEST = {
     action: undefined,
     browser_action: {
       default_popup: 'popup.html',
-      default_icon: 'icon_32.png',
+      default_icon: 'toolbar-icon-128.png',
     },
     options_page: undefined,
     options_ui: {
@@ -77,7 +77,7 @@ const TARGET_SPECIFIC_MANIFEST = {
     options_page: 'options.html',
     browser_action: {
       default_popup: 'popup.html',
-      default_icon: 'icon_32.png',
+      default_icon: 'toolbar-icon-128.png',
     },
     permissions: ['storage', 'clipboardWrite'],
     browser_specific_settings: {
@@ -270,7 +270,7 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/assets/public',
+          from: 'src/assets/icons',
           to: path.join(__dirname, `${TARGET}_build`),
           force: true,
         },
