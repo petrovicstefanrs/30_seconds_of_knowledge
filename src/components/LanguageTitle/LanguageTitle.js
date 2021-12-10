@@ -14,6 +14,7 @@ import DartIcon from '../../icons/Dart';
 import GoIcon from '../../icons/Go';
 import CsharpIcon from '../../icons/Csharp';
 import RamdaIcon from '../../icons/Ramda';
+import CppIcon from '../../icons/Cpp';
 
 import { SNIPPET_LIBRARIES } from '../../constants';
 
@@ -32,6 +33,7 @@ const ICONS = {
   [SNIPPET_LIBRARIES.golang.value]: GoIcon,
   [SNIPPET_LIBRARIES.csharp.value]: CsharpIcon,
   [SNIPPET_LIBRARIES.ramda.value]: RamdaIcon,
+  [SNIPPET_LIBRARIES.cpp.value]: CppIcon,
 };
 
 const LanguageTitle = ({ className, language }) => {

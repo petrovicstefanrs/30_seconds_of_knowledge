@@ -2,26 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { useGlobalSettings } from '../SettingsProvider';
+import Logo from '../Logo';
 
-import { THEMES, WEBSITE_URL } from '../../constants';
-
-import logoSrc from '../../assets/images/logo.png';
-import logoSrcDark from '../../assets/images/logo_dark.png';
+import { WEBSITE_URL } from '../../constants';
 
 import styles from './Header.module.scss';
 
 const Header = ({ className, activeLink, ...props }) => {
-  const { theme } = useGlobalSettings();
-
   return (
     <header className={cx(styles.container, className)} {...props}>
       <a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer">
-        <img
-          className={styles.logo}
-          src={theme === THEMES.light.value ? logoSrcDark : logoSrc}
-          alt="30 Seconds of Knowledge Logo"
-        />
+        <Logo className={styles.logo} />
       </a>
       <div className={styles.links}>
         <a className={styles.link} href="newtab.html">

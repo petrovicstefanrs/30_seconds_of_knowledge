@@ -17,6 +17,7 @@ const LIBRARIES = [
   'ruby',
   'ramda',
   'interview',
+  'cpp',
 ];
 
 const formatDate = (date) => {
@@ -40,7 +41,7 @@ const parseTitleFromSnippet = (snippet, level = 1) => {
   return title;
 };
 
-const parseSnippet = ({ data, filename, id, language }) => {
+const parseSnippet = ({ data, filename, id, language, tags: passedTags }) => {
   const {
     body: content,
     attributes: {
@@ -50,7 +51,7 @@ const parseSnippet = ({ data, filename, id, language }) => {
        */
       firstSeen = '2019-02-06T00:00:00Z',
       lastUpdated = firstSeen,
-      tags = '',
+      tags,
       title,
       ...restAttributes
     },
@@ -76,6 +77,14 @@ const parseSnippet = ({ data, filename, id, language }) => {
     }
   }
 
+  /**
+   * NOTE: `C++`snippets have their title
+   * as H1 (#) on the first line
+   */
+  if (language === 'cpp') {
+    parsedTitle = parseTitleFromSnippet(content, 1);
+  }
+
   return {
     id,
     filename,
@@ -83,10 +92,63 @@ const parseSnippet = ({ data, filename, id, language }) => {
     language,
     firstSeen: formatDate(firstSeen),
     lastUpdated: formatDate(lastUpdated),
-    tags: tags.split(','),
+    tags: [...(tags ? tags.split(',') : []), ...(passedTags || [])],
     title: title || parsedTitle,
     ...restAttributes,
   };
+};
+
+/**
+ * NOTE: `C++` library doesn't hold it's snippets inside a snippets folder.
+ * Instead, snippets are divided amongst a few different folders,
+ * so we need to go through those to map the actuall snippet files.
+ */
+const mapCPPLibraryFiles = () => {
+  const basePath = path.join(process.cwd(), `src/assets/snippet_sources/cpp`);
+
+  const snippetFolders = [
+    'algorithm',
+    'list',
+    'map',
+    'priority_queue',
+    'queue',
+    'set',
+    'stack',
+    'unordered_map',
+    'vector',
+  ];
+
+  let filePaths = [];
+
+  snippetFolders.forEach((folder) => {
+    const folderBasePath = path.join(basePath, `/${folder}`);
+
+    const snippetPaths = fs
+      .readdirSync(folderBasePath)
+      .filter(
+        (file) => file.slice(-3) === '.md' && file.toLowerCase() !== 'readme.md'
+      )
+      .map((file) => {
+        const snippetId = crypto
+          .createHash('sha256')
+          .update(`cpp/${folder}/${file}`)
+          .digest('hex');
+        return {
+          id: snippetId,
+          src: path.join(folderBasePath, `/${file}`),
+          filename: file,
+          /**
+           * NOTE: For `C++` library, the folder name of the folder that
+           * holds the snippets is a tag for that group of snippets
+           */
+          tags: [folder],
+        };
+      });
+
+    filePaths = [...filePaths, ...snippetPaths];
+  });
+
+  return filePaths;
 };
 
 const mapLibraryFiles = async (lib) => {
@@ -95,20 +157,26 @@ const mapLibraryFiles = async (lib) => {
     `src/assets/snippet_sources/${lib}`
   );
 
-  const filePaths = fs
-    .readdirSync(basePath)
-    .filter((file) => file.slice(-3) === '.md')
-    .map((file) => {
-      const snippetId = crypto
-        .createHash('sha256')
-        .update(`${lib}/${file}`)
-        .digest('hex');
-      return {
-        id: snippetId,
-        src: path.join(basePath, `/${file}`),
-        filename: file,
-      };
-    });
+  let filePaths;
+
+  if (lib === 'cpp') {
+    filePaths = mapCPPLibraryFiles();
+  } else {
+    filePaths = fs
+      .readdirSync(basePath)
+      .filter((file) => file.slice(-3) === '.md')
+      .map((file) => {
+        const snippetId = crypto
+          .createHash('sha256')
+          .update(`${lib}/${file}`)
+          .digest('hex');
+        return {
+          id: snippetId,
+          src: path.join(basePath, `/${file}`),
+          filename: file,
+        };
+      });
+  }
 
   const mapper = async (fp) => {
     const fileContents = await fsp.readFile(fp.src, 'utf8');
@@ -117,6 +185,12 @@ const mapLibraryFiles = async (lib) => {
       filename: fp.filename,
       id: fp.id,
       language: lib,
+      /**
+       * NOTE: Only `C++` will have tags inside the `fp` object.
+       * All other libraris contain the tags inside
+       * the snippet file itself, or don't have any tags at all.
+       */
+      ...(fp.tags ? { tags: fp.tags } : {}),
     });
     return parsedSnippet;
   };

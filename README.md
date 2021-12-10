@@ -8,19 +8,21 @@
 ---
 
 <p align="center">
-  Made with:
-  <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" height=20 />
-  for
-  <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fdtafalonso%2Fandroid-lollipop%2F512%2FChrome-icon.png&f=1" height=20/>
-  &
-  <img src="https://brave.com/wp-content/uploads/2019/03/brave-logo.png" height=20/>
+  Made with:&nbsp;
+  <img src="media/react_logo.png" height=20 />&nbsp;
+  for&nbsp;
+  <img src="media/chrome_logo.png" height=20/>&nbsp;
+  <img src="media/brave_logo.png" height=20/>&nbsp;
+  <img src="media/opera_logo.png" height=20/>&nbsp;
+  <img src="media/firefox_logo.png" height=20/>&nbsp;
+  <img src="media/safari_logo.png" height=20/>
 </p>
 
 ---
 
 # 30 Seconds of Knowledge (Web Extension)
 
-You can download the **_Chrome & Brave Extensions_** [here](https://30secondsofknowledge.com/).
+You can download the extensions [here](https://30secondsofknowledge.com/).
 
 ---
 
@@ -72,6 +74,7 @@ List of source repos:
 - PHP Snippets: [30 Seconds of PHP / Issues](https://github.com/30-seconds/30-seconds-of-php/issues)
 - Python Snippets: [30 Seconds of Python / Issues](https://github.com/30-seconds/30-seconds-of-python/issues)
 - C# Snippets: [30 Seconds of C# / Issues](https://github.com/30-seconds/30-seconds-of-csharp/issues)
+- C++ Snippets: [30 Seconds of C++ / Issues](https://github.com/Bhupesh-V/30-seconds-of-cpp/issues)
 - Git Snippets: [30 Seconds of Git / Issues](https://github.com/30-seconds/30-seconds-of-git/issues)
 - Dart Snippets: [30 Seconds of Dart / Issues](https://github.com/30-seconds/30-seconds-of-dart/issues)
 - Go Snippets: [30 Seconds of Go / Issues](https://github.com/30-seconds/30-seconds-of-golang/issues)
@@ -128,7 +131,6 @@ List of source repos:
 - [x] **Snippet Languages - Added Dart**
 - [x] **Snippet Languages - Added Git**
 - [x] **Snippet Languages - Added Go**
-- [x] **Snippet Languages - Removed C++**
 - [x] **Added All Snippets Page - Feature**
 - [x] **Removed Blacklist Snippets - Feature**
 - [x] **Renamed Saved Snippets to Favourites - Feature**
@@ -146,9 +148,7 @@ List of source repos:
 
 All contributions are welcome, but there are some rules you must follow in order for you contributions to be accepted.
 
-Read the **guides** [here](https://github.com/petrovicstefanrs/30_seconds_of_knowledge/wiki).
-
-If you are just looking for **snippet templates**, you can find them [here](/templates).
+Read the **guides** [here](https://github.com/petrovicstefanrs/30_seconds_of_knowledge/wiki). **IMPORTANT: WIKI IS OUTDATED AT THE MOMENT**
 
 ---
 
@@ -173,6 +173,7 @@ A big THANK YOU to these wonderful people!
 - UI Icons | [www.ionicons.com](https://ionicons.com/) / [MIT](https://github.com/ionic-team/ionicons/blob/main/LICENSE)
 - Ruby Snippets | [30 seconds of Ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby) / [MIT](https://github.com/florianjosefreheis/30-seconds-of-ruby/blob/master/LICENSE)
 - Interview Snippets | [30 seconds of Interviews](https://github.com/30-seconds/30-seconds-of-interviews) / [MIT](https://github.com/30-seconds/30-seconds-of-interviews/blob/master/LICENSE)
+- C++ | [30 seconds of C++](https://github.com/Bhupesh-V/30-seconds-of-cpp) / [MIT](https://github.com/Bhupesh-V/30-seconds-of-cpp/blob/master/LICENSE)
 - PHP Snippets | [30 seconds of PHP](https://github.com/30-seconds/30-seconds-of-php) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-php/blob/master/LICENSE)
 - Dart Snippets | [30 seconds of Dart](https://github.com/30-seconds/30-seconds-of-dart) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-dart/blob/master/LICENSE)
 - Go Snippets | [30 seconds of Go](https://github.com/30-seconds/30-seconds-of-golang) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-golang/blob/master/LICENSE)

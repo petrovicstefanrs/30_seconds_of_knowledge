@@ -31,3 +31,6 @@
 [submodule "submodules/30-seconds-of-interviews"]
 	path = submodules/30-seconds-of-interviews
 	url = https://github.com/30-seconds/30-seconds-of-interviews.git
+[submodule "submodules/30-seconds-of-cpp"]
+	path = submodules/30-seconds-of-cpp
+	url = https://github.com/Bhupesh-V/30-seconds-of-cpp.git

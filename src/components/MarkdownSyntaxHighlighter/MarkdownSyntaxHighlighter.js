@@ -26,7 +26,7 @@ import dart from 'react-syntax-highlighter/dist/esm/languages/hljs/dart';
 import csharp from 'react-syntax-highlighter/dist/esm/languages/hljs/csharp';
 import go from 'react-syntax-highlighter/dist/esm/languages/hljs/go';
 import shell from 'react-syntax-highlighter/dist/esm/languages/hljs/shell';
-// import cpp from 'react-syntax-highlighter/dist/esm/languages/hljs/cpp';
+import cpp from 'react-syntax-highlighter/dist/esm/languages/hljs/cpp';
 
 SyntaxHighlighter.registerLanguage('jsx', js);
 SyntaxHighlighter.registerLanguage('javascript', js);
@@ -38,7 +38,7 @@ SyntaxHighlighter.registerLanguage('dart', dart);
 SyntaxHighlighter.registerLanguage('csharp', csharp);
 SyntaxHighlighter.registerLanguage('go', go);
 SyntaxHighlighter.registerLanguage('shell', shell);
-// SyntaxHighlighter.registerLanguage('cpp', cpp);
+SyntaxHighlighter.registerLanguage('cpp', cpp);
 
 const MarkdownSyntaxHighlighter = ({
   className,

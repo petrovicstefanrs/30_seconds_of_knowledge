@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import styles from './MarkdownSnippetPreview.module.scss';
 import PlainToast from '../PlainToast';
 import CodePenPreviewButton from '../CodePenPreviewButton/CodePenPreviewButton';
+
+import { ACTIVE_PLATFORM } from '../../constants';
+
+import styles from './MarkdownSnippetPreview.module.scss';
 
 const CODE_REGEX = {
   html: new RegExp(/(?:```html)(?:\s*)([\s\S.]*?)(?=```)/, 'gm'),
@@ -43,13 +46,16 @@ const MarkdownSnippetPreview = ({ className, source, title }) => {
           <span className={styles.title}>
             Preview: <strong>{title}</strong>
           </span>
-          <CodePenPreviewButton
-            className={styles.codepen}
-            title={title}
-            css={cssCode}
-            html={htmlCode}
-            js={jsCode}
-          />
+          {/* NOTE: This feature doesn't work in Safari */}
+          {ACTIVE_PLATFORM !== 'safari' && (
+            <CodePenPreviewButton
+              className={styles.codepen}
+              title={title}
+              css={cssCode}
+              html={htmlCode}
+              js={jsCode}
+            />
+          )}
         </div>
         <iframe
           className={styles.preview}
@@ -68,8 +74,9 @@ const MarkdownSnippetPreview = ({ className, source, title }) => {
               security concerns, we are not able to run Javascript inside this
               preview.{' '}
               <strong>
-                Please open this snippet on Codepen to see the intended
-                behavior.
+                {ACTIVE_PLATFORM !== 'safari'
+                  ? 'Please open this snippet on Codepen to see the intended behavior.'
+                  : 'Please copy this snippet to Codepen or your code editor to see the intended behavior.'}
               </strong>
             </>
           }

@@ -82,6 +82,11 @@ module.exports = {
       label: 'Go',
       url: 'https://github.com/30-seconds/30-seconds-of-golang',
     },
+    cpp: {
+      value: 'cpp',
+      label: 'C++',
+      url: 'https://github.com/Bhupesh-V/30-seconds-of-cpp',
+    },
     csharp: {
       value: 'csharp',
       label: 'C#',
@@ -102,10 +107,6 @@ module.exports = {
       label: 'Interview Questions',
       url: 'https://github.com/30-seconds/30-seconds-of-interviews',
     },
-    // cpp: {
-    //   value: 'cpp',
-    //   label: 'C++',
-    // },
   },
   HIGHLIGHTER_THEMES: {
     'a11y-dark': 'a11y-dark',

@@ -9,6 +9,7 @@
   },
   "scripts": {
     "map_snippets": "node utils/map_snippets.mjs",
+    "build_safari_xcode_project": "xcrun safari-web-extension-converter --project-location safari_build_xcode --swift --app-name '30 Seconds of Knowledge' --force safari_build",
     "update_submodules": "git submodule update --remote",
     "start": "TARGET=chromium node utils/webserver.js",
     "start:chromium": "TARGET=chromium node utils/webserver.js",
@@ -22,7 +23,7 @@
     "build:gecko": "TARGET=gecko node utils/build.js",
     "start:safari": "TARGET=safari node utils/webserver.js",
     "prebuild:safari": "node utils/map_snippets.mjs",
-    "build:safari": "TARGET=safari node utils/build.js",
+    "build:safari": "TARGET=safari node utils/build.js && yarn build_safari_xcode_project",
     "prettier": "prettier --write '**/*.{js,jsx,json,css,scss,md}'"
   },
   "dependencies": {
