@@ -6,7 +6,7 @@ Use `String.prototype.split()` with a supplied pattern (defaults to non-alpha as
 Omit the second argument to use the default regexp.
 
 ```js
-const words = (str, pattern = /[ !@#$%^&*)(+=._:\[\]\-]+/) => str.split(pattern).filter(Boolean);
+const words = (str, pattern = /[ ?!|/\/@#$%^&*~+=_.,:;'"`<>{}()\[\]\-]+/) => str.split(pattern).filter(Boolean);
 ```
 
 ```js
