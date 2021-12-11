@@ -6,10 +6,10 @@ Use `String.prototype.split()` with a supplied pattern (defaults to non-alpha as
 Omit the second argument to use the default regexp.
 
 ```js
-const words = (str, pattern = /[^a-zA-Z-]+/) => str.split(pattern).filter(Boolean);
+const words = (str, pattern = /[ !@#$%^&*)(+=._:\[\]\-]+/) => str.split(pattern).filter(Boolean);
 ```
 
 ```js
-words('I love javaScript!!'); // ["I", "love", "javaScript"]
+words('I люблю  javaScript!!'); // ["I", "люблю", "javaScript"]
 words('python, javaScript & coffee'); // ["python", "javaScript", "coffee"]
 ```
