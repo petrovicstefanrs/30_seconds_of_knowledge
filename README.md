@@ -1,11 +1,11 @@
-<p align="center">
+<p align="center" style><br/><br/>
   <a href="https://30secondsofknowledge.com" target="_blank">
 	<img width=200 src="./media/logo_color.svg"/>
-	<!-- <img width=200 src="./media/Tagline_Dark.png"/> -->
-  </a>
+  </a><br/><br/>
 </p>
 
 ---
+
 <p align="center">
   Made with:&nbsp;
   <img src="media/react_logo.png" height=20 />&nbsp;
@@ -14,74 +14,43 @@
   <img src="media/brave_logo.png" height=20/>&nbsp;
   <img src="media/opera_logo.png" height=20/>&nbsp;
   <img src="media/firefox_logo.png" height=20/>&nbsp;
-  <img src="media/safari_logo.png" height=20/>
+  <img src="media/edge_logo.png" height=20/>
 </p>
 
 ---
 
-# 30 Seconds of Knowledge (Web Extension)
+## Description
 
-You can download the extensions [here](https://30secondsofknowledge.com/).
-
----
-
-###### Description
-
-Gain **new developer skills** every time you open a **New Tab**! Choose which programming languages you want to get better at, in extension options, and **get smarter every time** you open a **New Tab**. All you need is **30 seconds** to read and understand **snippets** of code and **improve your knowledge**. Saw something useful? Just **copy/paste** it into your code and **you're golden**!
-
-This Web Extension is built with **React** and Web Extensions API.
+Gain **new developer skills** every time you open a **New Tab**! You can choose from **13 snippet libraries** _(12 Programming languages and Interview Questions)_. All you need is **30 seconds** to read and understand the **snippets** and **improve your knowledge**.
 
 ---
 
-###### Stack
+## Stack
 
 - React
 - Web Extensions API
 
 ---
 
-###### Inspiration
+## Available Snippet Libraries
 
-Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code) !
-
----
-
-###### Available Snippet Libraries
-
-- JavaScript
+- Interview
+- Javascript
 - CSS
-- Interview Questions
 - React
 - PHP
 - Python
+- C#
+- C++
+- Git
+- Dart
+- Go
 - Ruby
 - Ramda
-- C++
 
 ---
 
-###### Snippet Issue Rules
-
-Most of the snippets are provided by other great open-source projects on which this extension is dependent. If you find a bug, a typo, or any other issue in the snippet please open an Issue in the source repo, or make a PR in the source repo. This way the extension snippets will be updated with the subsequent release of the extension.
-
-List of source repos:
-
-- Javascript Snippets: [30 Seconds of Code / Issues](https://github.com/30-seconds/30-seconds-of-code/issues)
-- CSS Snippets: [30 Seconds of CSS / Issues](https://github.com/30-seconds/30-seconds-of-css/issues)
-- Interview Questions: [30 Seconds of Interviews / Issues](https://github.com/30-seconds/30-seconds-of-interviews/issues)
-- React Snippets: [30 Seconds of React / Issues](https://github.com/30-seconds/30-seconds-of-react/issues)
-- PHP Snippets: [30 Seconds of PHP / Issues](https://github.com/30-seconds/30-seconds-of-php/issues)
-- Python Snippets: [30 Seconds of Python / Issues](https://github.com/30-seconds/30-seconds-of-python/issues)
-- C# Snippets: [30 Seconds of C# / Issues](https://github.com/30-seconds/30-seconds-of-csharp/issues)
-- C++ Snippets: [30 Seconds of C++ / Issues](https://github.com/Bhupesh-V/30-seconds-of-cpp/issues)
-- Git Snippets: [30 Seconds of Git / Issues](https://github.com/30-seconds/30-seconds-of-git/issues)
-- Dart Snippets: [30 Seconds of Dart / Issues](https://github.com/30-seconds/30-seconds-of-dart/issues)
-- Go Snippets: [30 Seconds of Go / Issues](https://github.com/30-seconds/30-seconds-of-golang/issues)
-- Ruby Snippets: [30 Seconds of Ruby / Issues](https://github.com/florianjosefreheis/30-seconds-of-ruby/issues)
-
----
-
-###### PLAN
+## Change Log
 
 **MVP Phase:**
 
@@ -130,6 +99,10 @@ List of source repos:
 - [x] **Snippet Languages - Added Dart**
 - [x] **Snippet Languages - Added Git**
 - [x] **Snippet Languages - Added Go**
+- [x] **Browser Support - Fixed Firefox**
+- [x] **Browser Support - Added Brave**
+- [x] **Browser Support - Added Opera**
+- [x] **Browser Support - Added Edge**
 - [x] **Added All Snippets Page - Feature**
 - [x] **Removed Blacklist Snippets - Feature**
 - [x] **Renamed Saved Snippets to Favourites - Feature**
@@ -143,30 +116,30 @@ List of source repos:
 
 ---
 
-###### Contributions
+## Snippet Issues
 
-All contributions are welcome, but there are some rules you must follow in order for you contributions to be accepted.
+Most of the snippets are provided by other great open-source projects on which this extension is dependent. If you find a bug, a typo, or any other issue in the snippet please open an Issue in the source repo, or make a PR in the source repo. This way the extension snippets will be updated with the subsequent release of the extension.
 
-Read the **guides** [here](https://github.com/petrovicstefanrs/30_seconds_of_knowledge/wiki). **IMPORTANT: WIKI IS OUTDATED AT THE MOMENT**
+List of source repos:
 
----
-
-###### Contributors
-
-A big THANK YOU to these wonderful people!
-
-| Avatar                                                                                              | Name                 | Github Profile                                          | Website                                        |
-| --------------------------------------------------------------------------------------------------- | -------------------- | ------------------------------------------------------- | ---------------------------------------------- |
-| <img src="https://avatars2.githubusercontent.com/u/25749162?s=460&v=4" width="50px" height="50px"/> | Stefan Fejes         | [Github Profile](https://github.com/fejes713)           | [Website](stefanfejes.com/)                    |
-| <img src="https://avatars0.githubusercontent.com/u/522352?s=460&v=4" width="50px" height="50px"/>   | Ahmad Santarissy     | [Github Profile](https://github.com/asantarissy)        | [Website](https://ahmadsantarissy.com)         |
-| <img src="https://avatars2.githubusercontent.com/u/16981711?s=460&v=4" width="50px" height="50px"/> | Florian Josef Reheis | [Github Profile](https://github.com/florianjosefreheis) | [Website](https://www.florianjosefreheis.com/) |
-| <img src="https://avatars1.githubusercontent.com/u/19594428?s=460&v=4" width="50px" height="50px"/> | Matheus Dutra Lima   | [Github Profile](https://github.com/Kutomore)           | --------                                       |
-| <img src="https://avatars2.githubusercontent.com/u/26866310?s=460&v=4" width="50px" height="50px"/> | Donavan Lawson       | [Github Profile](https://github.com/SyntaxZA)           | --------                                       |
-| <img src="https://avatars1.githubusercontent.com/u/34342551?s=460&v=4" width="50px" height="50px"/> | Bhupesh Varshney     | [Github Profile](https://github.com/Bhupesh-V)          | [Website](http://bhupeshv.me/)                 |
+- Javascript Snippets: [30 Seconds of Code / Issues](https://github.com/30-seconds/30-seconds-of-code/issues)
+- CSS Snippets: [30 Seconds of CSS / Issues](https://github.com/30-seconds/30-seconds-of-css/issues)
+- Interview Questions: [30 Seconds of Interviews / Issues](https://github.com/30-seconds/30-seconds-of-interviews/issues)
+- React Snippets: [30 Seconds of React / Issues](https://github.com/30-seconds/30-seconds-of-react/issues)
+- PHP Snippets: [30 Seconds of PHP / Issues](https://github.com/30-seconds/30-seconds-of-php/issues)
+- Python Snippets: [30 Seconds of Python / Issues](https://github.com/30-seconds/30-seconds-of-python/issues)
+- C# Snippets: [30 Seconds of C# / Issues](https://github.com/30-seconds/30-seconds-of-csharp/issues)
+- C++ Snippets: [30 Seconds of C++ / Issues](https://github.com/Bhupesh-V/30-seconds-of-cpp/issues)
+- Git Snippets: [30 Seconds of Git / Issues](https://github.com/30-seconds/30-seconds-of-git/issues)
+- Dart Snippets: [30 Seconds of Dart / Issues](https://github.com/30-seconds/30-seconds-of-dart/issues)
+- Go Snippets: [30 Seconds of Go / Issues](https://github.com/30-seconds/30-seconds-of-golang/issues)
+- Ruby Snippets: [30 Seconds of Ruby / Issues](https://github.com/florianjosefreheis/30-seconds-of-ruby/issues)
 
 ---
 
-###### Attributions
+## Attributions
+
+Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code)
 
 - Programming Langauges Icons | [www.devicon.com](https://devicon.dev/) / [MIT](https://github.com/devicons/devicon/blob/master/LICENSE)
 - UI Icons | [www.ionicons.com](https://ionicons.com/) / [MIT](https://github.com/ionic-team/ionicons/blob/main/LICENSE)
