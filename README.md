@@ -1,12 +1,11 @@
 <p align="center">
   <a href="https://30secondsofknowledge.com" target="_blank">
-	<img width=200 src="./media/Logo_Dark.png"/>
-	<img width=200 src="./media/Tagline_Dark.png"/>
+	<img width=200 src="./media/logo_color.svg"/>
+	<!-- <img width=200 src="./media/Tagline_Dark.png"/> -->
   </a>
 </p>
 
 ---
-
 <p align="center">
   Made with:&nbsp;
   <img src="media/react_logo.png" height=20 />&nbsp;
