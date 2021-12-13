@@ -5,7 +5,7 @@
 In HTML, the attribute name is in all lowercase and is given a string invoking a function defined somewhere:
 
 ```html
-<button onclick="handleClick()"></button>
+<button onclick="handleClick"></button>
 ```
 
 In React, the attribute name is camelCase and are passed the function reference inside curly braces:
@@ -17,7 +17,7 @@ In React, the attribute name is camelCase and are passed the function reference 
 In HTML, `false` can be returned to prevent default behavior, whereas in React `preventDefault` has to be called explicitly.
 
 ```html
-<a href="#" onclick="console.log('The link was clicked.'); return false" />
+<a href="#" onclick="function(){console.log('The link was clicked.'); return false;}" />
 ```
 
 ```js
