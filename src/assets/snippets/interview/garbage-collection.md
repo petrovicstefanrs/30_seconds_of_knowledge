@@ -1,4 +1,4 @@
-## Garbage Collection in Java
+## Garbage Collectionß
 
 # What is it?
 An automatic process of memory management. Objects are created on the heap (portion of program memory). When objects are no longer needed, the garbage collector deletes them to free up memory. 
@@ -17,9 +17,16 @@ An object that no longer contains a reference to it.
   3. Object created inside a method
   4. Island of isolation
 
-Example:s
+Examples:
   ```java
   Integer x = new Ingeger(2);
   x = null;
-  // Once integer object is reassigned to null, it is no longer reachable and will be deleted by garbage collection
+  // Once integer object is reassigned to null, it is no longer reachable and will be removed by garbage collection.
+  ```
+
+  ```java
+  Computer computerOne = new Computer();
+  Computer computerTwo = new Computer();
+  computerOne = computerTwo;
+  // First object referred to by computerOne has been reassigned and is now available for garbage collection.
   ```
