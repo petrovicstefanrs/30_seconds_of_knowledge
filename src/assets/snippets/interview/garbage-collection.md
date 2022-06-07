@@ -8,14 +8,14 @@ The garbage collector looks at heap memory, identifies which objects are used an
 
 # Important garbage collection concepts
 
-1. **Unreachable Objects**
+* **Unreachable Objects**
 An object that no longer contains a reference to it.
 
-2. **Eligibility for garbage collection**
-  1. Nullifying the reference variable
-  2. Re-assigning the reference variable
-  3. Object created inside a method
-  4. Island of isolation
+* **Eligibility for garbage collection**
+  * Nullifying the reference variable
+  * Re-assigning the reference variable
+  * Object created inside a method
+  * Island of isolation
 
 Examples:
   ```java
