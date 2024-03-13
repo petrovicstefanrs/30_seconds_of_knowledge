@@ -1,9 +1,6 @@
 [submodule "submodules/30-seconds-of-react"]
 	path = submodules/30-seconds-of-react
 	url = https://github.com/30-seconds/30-seconds-of-react.git
-[submodule "submodules/30-seconds-of-code"]
-	path = submodules/30-seconds-of-code
-	url = https://github.com/30-seconds/30-seconds-of-code.git
 [submodule "submodules/30-seconds-of-python"]
 	path = submodules/30-seconds-of-python
 	url = https://github.com/30-seconds/30-seconds-of-python.git
