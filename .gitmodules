@@ -1,0 +1,3 @@
+[submodule "submodules/30-seconds-of-code"]
+	path = submodules/30-seconds-of-code
+	url = https://github.com/Chalarangelo/30-seconds-of-code.git
