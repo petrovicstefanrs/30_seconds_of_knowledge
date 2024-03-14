@@ -18,6 +18,7 @@ const LIBRARIES = [
   'ramda',
   'interview',
   'cpp',
+  'html',
 ];
 
 const formatDate = (date) => {
@@ -85,6 +86,13 @@ const parseSnippet = ({ data, filename, id, language, tags: passedTags }) => {
     parsedTitle = parseTitleFromSnippet(content, 1);
   }
 
+  const parsedTags =
+    typeof tags === 'string'
+      ? tags.split(',')
+      : Array.isArray(tags)
+      ? tags
+      : [];
+
   return {
     id,
     filename,
@@ -92,7 +100,7 @@ const parseSnippet = ({ data, filename, id, language, tags: passedTags }) => {
     language,
     firstSeen: formatDate(firstSeen),
     lastUpdated: formatDate(lastUpdated),
-    tags: [...(tags ? tags.split(',') : []), ...(passedTags || [])],
+    tags: [...parsedTags, ...(passedTags || [])],
     title: title || parsedTitle,
     ...restAttributes,
   };

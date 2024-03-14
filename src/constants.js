@@ -107,6 +107,11 @@ module.exports = {
       label: 'Interview Questions',
       url: 'https://github.com/30-seconds/30-seconds-of-interviews',
     },
+    html: {
+      value: 'html',
+      label: 'HTML',
+      url: 'https://github.com/30-seconds/30-seconds-of-code',
+    },
   },
   HIGHLIGHTER_THEMES: {
     'a11y-dark': 'a11y-dark',
