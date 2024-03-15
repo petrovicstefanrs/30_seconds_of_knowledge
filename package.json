@@ -32,6 +32,7 @@
     "codepen-react": "^1.0.1",
     "front-matter": "^4.0.2",
     "highlight.js": "^11.3.1",
+    "lodash.debounce": "^4.0.8",
     "lodash.find": "^4.6.0",
     "lodash.groupby": "^4.6.0",
     "lodash.isempty": "^4.4.0",

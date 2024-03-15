@@ -54,6 +54,7 @@ const parseSnippet = ({ data, filename, id, language, tags: passedTags }) => {
       lastUpdated = firstSeen,
       tags,
       title,
+      shortTitle,
       ...restAttributes
     },
   } = frontmatter(data);

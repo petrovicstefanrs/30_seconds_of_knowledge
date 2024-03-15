@@ -37,4 +37,28 @@
       height: 24px;
     }
   }
+
+  .searchContainer {
+    padding-right: 16px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    background-color: var(--primary_highlight);
+    border-radius: 4px;
+    margin-bottom: 32px;
+
+    .search {
+      flex: 1;
+    }
+
+    .clearIcon {
+      color: var(--secondary);
+      fill: var(--secondary);
+
+      path {
+        fill: var(--secondary);
+      }
+    }
+  }
 }

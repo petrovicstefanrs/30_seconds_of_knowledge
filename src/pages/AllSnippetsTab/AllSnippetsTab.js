@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import debounce from 'lodash.debounce';
 
 import SaveIcon from '../../icons/Save';
+import CloseIcon from '../../icons/Close';
 
 import { useToast } from '../../components/Toast';
 import IconButton from '../../components/IconButton';
 import Loader from '../../components/Loader';
 import ScrollTopButton from '../../components/ScrollTopButton';
 import LanguageList from '../../components/LanguageList';
+import Input from '../../components/Input';
 
 import {
   removeSnippetFromStorage,
@@ -21,10 +24,16 @@ import { getSnippetsFromStorage } from '../../api/storage';
 import styles from './AllSnippetsTab.module.scss';
 
 const AllSnippetsTab = ({ className }) => {
+  const searchRef = useRef(null);
   const [allSnippets, setAllSnippets] = useState();
   const [savedSnippets, setSavedSnippets] = useState();
+  const [searchedSnippets, setSearchedSnippets] = useState();
+
   const [saving, setSaving] = useState();
   const showInfoToast = useToast();
+
+  const filteredSnippets = searchedSnippets || allSnippets;
+  const isLoading = !allSnippets || !savedSnippets;
 
   const fetchSnippets = async () => {
     const data = fetchAllSnippets();
@@ -38,14 +47,6 @@ const AllSnippetsTab = ({ className }) => {
     window.scrollTo(0, 0);
     fetchSnippets();
   }, []);
-
-  if (!allSnippets || !savedSnippets) {
-    return (
-      <div className={cx(styles.container, className)}>
-        <Loader />
-      </div>
-    );
-  }
 
   const onItemAction = async (s) => {
     setSaving(s.id);
@@ -87,10 +88,11 @@ const AllSnippetsTab = ({ className }) => {
   };
 
   const renderLanguageLists = () => {
-    return Object.keys(allSnippets).map((lang) => {
-      const snippets = Object.keys(allSnippets[lang]).map(
-        (sId) => allSnippets[lang][sId]
+    return Object.keys(filteredSnippets).map((lang) => {
+      const snippets = Object.keys(filteredSnippets[lang]).map(
+        (sId) => filteredSnippets[lang][sId]
       );
+
       return (
         <LanguageList
           key={lang}
@@ -102,9 +104,76 @@ const AllSnippetsTab = ({ className }) => {
     });
   };
 
+  const searchResources = (searchQuery) => {
+    const results = {};
+
+    for (const language in allSnippets) {
+      results[language] = {};
+
+      for (const resourceId in allSnippets[language]) {
+        const resource = allSnippets[language][resourceId];
+
+        // Search by title, content, and tags
+        const titleMatch = (resource?.title || '')
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+        const contentMatch = (resource?.content || '')
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+        const tagsMatch = (resource?.tags || []).some((tag) =>
+          tag.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        if (titleMatch || contentMatch || tagsMatch) {
+          results[language][resourceId] = resource;
+        }
+      }
+    }
+
+    // Filter out empty language collections
+    for (const language in results) {
+      if (Object.keys(results[language]).length === 0) {
+        delete results[language];
+      }
+    }
+
+    return results;
+  };
+
+  const debouncedSearch = debounce((searchQuery) => {
+    const searchResults = searchResources(searchQuery);
+    setSearchedSnippets(searchResults);
+  }, 500);
+
   return (
     <div className={cx(styles.container, className)}>
-      {renderLanguageLists()}
+      <div className={cx(styles.searchContainer)}>
+        <Input
+          ref={searchRef}
+          placeholder="Search..."
+          onChange={debouncedSearch}
+          className={cx(styles.search)}
+        />
+        {searchRef?.current?.value && (
+          <IconButton
+            className={cx(styles.clearBtn)}
+            icon={CloseIcon}
+            iconProps={{ width: 24, height: 24, className: styles.clearIcon }}
+            onClick={() => {
+              searchRef.current.value = '';
+              searchRef.current.focus();
+              setSearchedSnippets(undefined);
+            }}
+          />
+        )}
+      </div>
+      {isLoading ? (
+        <div className={cx(styles.container, className)}>
+          <Loader />
+        </div>
+      ) : (
+        renderLanguageLists()
+      )}
       <ScrollTopButton />
     </div>
   );

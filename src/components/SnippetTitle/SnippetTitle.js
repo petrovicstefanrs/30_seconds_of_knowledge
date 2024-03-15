@@ -76,7 +76,7 @@ const SnippetTitle = ({ className, snippet }) => {
       </div>
       <div className={styles.data}>
         <div className={styles.title}>
-          <h1>{snippet.title}</h1>
+          <h1>{snippet.shortTitle || snippet.title}</h1>
           <IconButton
             className={cx(styles.save, {
               [styles.active]: isSaved,
@@ -85,6 +85,9 @@ const SnippetTitle = ({ className, snippet }) => {
             onClick={toggleSave}
           />
         </div>
+        {snippet.shortTitle && (
+          <span className={styles.fullTitle}>/ {snippet.title} /</span>
+        )}
         <span className={styles.updatedOn}>
           Updated On: <strong>{snippet.lastUpdated}</strong>
         </span>
