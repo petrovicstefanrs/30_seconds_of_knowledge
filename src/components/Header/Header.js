@@ -4,14 +4,12 @@ import cx from 'classnames';
 
 import Logo from '../Logo';
 
-import { WEBSITE_URL } from '../../constants';
-
 import styles from './Header.module.scss';
 
 const Header = ({ className, activeLink, ...props }) => {
   return (
     <header className={cx(styles.container, className)} {...props}>
-      <a href={WEBSITE_URL} target="_blank" rel="noopener noreferrer">
+      <a href="newtab.html">
         <Logo className={styles.logo} />
       </a>
       <div className={styles.links}>
