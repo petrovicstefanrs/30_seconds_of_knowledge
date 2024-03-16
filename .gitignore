@@ -18,6 +18,7 @@
 /safari_build.zip
 /safari_build_xcode
 /src/api/data.js
+/src/constants.local.js
 
 # misc
 .DS_Store

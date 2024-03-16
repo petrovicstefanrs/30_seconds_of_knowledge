@@ -1,4 +1,18 @@
-module.exports = {
+let LOCAL_CONSTANTS = {};
+try {
+  LOCAL_CONSTANTS = require('./constants.local').default;
+} catch (error) {
+  console.warn('No local constants file found.');
+}
+
+const CONSTANTS = {
+  /**
+   * NOTE: Define these in a `constants.local.js` file
+   */
+  GA_MEASUREMENT_ID: '',
+  GA_API_SECRET: '',
+
+  /** NOTE: OTHER CONSTANTS */
   ACTIVE_PLATFORM: process.env.TARGET,
   DEVELOPER_WEBSITE_URL: 'https://github.com/petrovicstefanrs',
   WEBSITE_URL: 'https://30secondsofknowledge.com',
@@ -213,3 +227,8 @@ module.exports = {
     zenburn: 'zenburn',
   },
 };
+
+// NOTE: Merge local constants with global constants
+Object.assign(CONSTANTS, LOCAL_CONSTANTS);
+
+module.exports = CONSTANTS;
