@@ -18,7 +18,7 @@ import {
   saveSnippetToStorage,
 } from '../../api/storage';
 
-import { fetchAllSnippets } from '../../api/snippets';
+import { fetchAllSnippets, searchSnippets } from '../../api/snippets';
 import { getSnippetsFromStorage } from '../../api/storage';
 
 import styles from './AllSnippetsTab.module.scss';
@@ -104,44 +104,11 @@ const AllSnippetsTab = ({ className }) => {
     });
   };
 
-  const searchResources = (searchQuery) => {
-    const results = {};
-
-    for (const language in allSnippets) {
-      results[language] = {};
-
-      for (const resourceId in allSnippets[language]) {
-        const resource = allSnippets[language][resourceId];
-
-        // Search by title, content, and tags
-        const titleMatch = (resource?.title || '')
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase());
-        const contentMatch = (resource?.content || '')
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase());
-        const tagsMatch = (resource?.tags || []).some((tag) =>
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-        if (titleMatch || contentMatch || tagsMatch) {
-          results[language][resourceId] = resource;
-        }
-      }
-    }
-
-    // Filter out empty language collections
-    for (const language in results) {
-      if (Object.keys(results[language]).length === 0) {
-        delete results[language];
-      }
-    }
-
-    return results;
-  };
-
   const debouncedSearch = debounce((searchQuery) => {
-    const searchResults = searchResources(searchQuery);
+    const searchResults = searchSnippets({
+      query: searchQuery,
+      snippets: allSnippets,
+    });
     setSearchedSnippets(searchResults);
   }, 500);
 

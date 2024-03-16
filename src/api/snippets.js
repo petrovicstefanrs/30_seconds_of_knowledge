@@ -55,3 +55,42 @@ export const fetchSnippetById = async (id) => {
  * and returnes an object containing all snippets grouped by library
  */
 export const fetchAllSnippets = () => snippetsData;
+
+export const searchSnippets = ({
+  query: searchQuery,
+  snippets: allSnippets,
+}) => {
+  const results = {};
+
+  for (const language in allSnippets) {
+    results[language] = {};
+
+    for (const resourceId in allSnippets[language]) {
+      const resource = allSnippets[language][resourceId];
+
+      // Search by title, content, and tags
+      const titleMatch = (resource?.title || '')
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const contentMatch = (resource?.content || '')
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const tagsMatch = (resource?.tags || []).some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+      if (titleMatch || contentMatch || tagsMatch) {
+        results[language][resourceId] = resource;
+      }
+    }
+  }
+
+  // Filter out empty language collections
+  for (const language in results) {
+    if (Object.keys(results[language]).length === 0) {
+      delete results[language];
+    }
+  }
+
+  return results;
+};

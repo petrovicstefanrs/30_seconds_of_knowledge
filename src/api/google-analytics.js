@@ -108,7 +108,7 @@ class Analytics {
     return this.fireEvent('page_view', {
       page_title: pageTitle,
       page_location: url,
-      snippet_id,
+      ...(snippet_id && { snippet_id }),
       ...additionalParams,
     });
   }
