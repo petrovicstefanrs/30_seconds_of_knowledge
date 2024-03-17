@@ -1,0 +1,14 @@
+/* Shades Of Purple Theme */
+
+.shades_of_purple {
+  --primary: #1e1e3f;
+  --primary_highlight: #2d2b55;
+  --primary_translucent: #1e1e3f80;
+  --secondary: #f2f2f4;
+  --secondary_highlight: #c9cad2;
+  --secondary_translucent: #f2f2f480;
+  --accent: #a1f98e;
+  --accent_text: var(--primary);
+  --fallback_code_bg: #2d2b55;
+  --logo_color: var(--accent);
+}

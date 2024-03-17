@@ -1,0 +1,14 @@
+/* Laser Wave Theme */
+
+.laser_wave {
+  --primary: #27212e;
+  --primary_highlight: #1f1b24;
+  --primary_translucent: #27212e80;
+  --secondary: #f7f7f7;
+  --secondary_highlight: #6b676f;
+  --secondary_translucent: #f7f7f780;
+  --accent: #eb64b9;
+  --accent_text: var(--primary);
+  --fallback_code_bg: #2d2b55;
+  --logo_color: var(--accent);
+}

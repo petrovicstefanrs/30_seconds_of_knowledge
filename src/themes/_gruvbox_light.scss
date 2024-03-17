@@ -1,0 +1,14 @@
+/* Gruvbox Light Theme */
+
+.gruvbox_light {
+  --primary: #f2e5bc;
+  --primary_highlight: #d5c4a1;
+  --primary_translucent: #f2e5bc80;
+  --secondary: #4e4942;
+  --secondary_highlight: #837d6c;
+  --secondary_translucent: #4e494280;
+  --accent: #837d6c;
+  --accent_text: #ebdbb2;
+  --fallback_code_bg: #fbf1c7;
+  --logo_color: var(--secondary);
+}

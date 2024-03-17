@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  .wrap {
+    .cbContainer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      cursor: pointer;
+
+      .cbLabel {
+        margin-left: 4px;
+      }
+    }
+
+    &.horizontal {
+      flex-direction: row;
+
+      .cbContainer {
+        margin-right: 24px;
+
+        .checkbox {
+          &:last-of-type {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

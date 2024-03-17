@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 96px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .logo {
+    width: auto;
+    height: 32px;
+  }
+
+  .links {
+    margin-left: auto;
+
+    .link {
+      padding-bottom: 2px;
+      font-weight: 900;
+      cursor: pointer;
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover,
+      &:active,
+      &.active {
+        border-bottom: 1px dotted;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,30 +1,49 @@
 {
+  "manifest_version": 3,
+  "author": "Stefan Petrović",
   "name": "30 Seconds of Knowledge",
   "short_name": "30 SoK",
-  "manifest_version": 2,
   "homepage_url": "https://30secondsofknowledge.com",
-  "icons": {
-    "32": "icon_32.png",
-    "64": "icon_64.png",
-    "128": "icon_128.png",
-    "256": "icon_256.png"
-  },
-  "permissions": [
-    "storage",
-    "clipboardWrite"
-  ],
-  "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon_32.png"
-  },
   "options_ui": {
-    "page": "options.html"
+    "page": "settings.html"
   },
-  "background": {
-    "page": "background.html"
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "toolbar-icon-128.png"
   },
-  "chrome_url_overrides" : {
-    "newtab": "newtab.html"
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "64": "icon-64.png",
+    "128": "icon-128.png",
+    "256": "icon-256.png",
+    "512": "icon-512.png",
+    "1024": "icon-1024.png"
   },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "permissions": ["storage", "clipboardWrite"],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icon-16.png",
+        "icon-32.png",
+        "icon-64.png",
+        "icon-128.png",
+        "icon-256.png",
+        "icon-512.png",
+        "icon-1024.png",
+        "toolbar-icon-16.png",
+        "toolbar-icon-32.png",
+        "toolbar-icon-64.png",
+        "toolbar-icon-128.png",
+        "toolbar-icon-256.png",
+        "toolbar-icon-512.png",
+        "toolbar-icon-1024.png"
+      ],
+      "matches": []
+    }
+  ],
+  "content_security_policy": {
+    "script-src": "self",
+    "object-src": "self"
+  }
 }

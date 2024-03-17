@@ -1,0 +1,41 @@
+.container {
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border-radius: 4px;
+  border: 2px solid var(--secondary_translucent);
+  background: transparent;
+  color: var(--secondary);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: inherit;
+
+  .icon {
+    fill: var(--secondary);
+    margin-right: 4px;
+
+    &.iconAfter {
+      margin-right: 0;
+      margin-left: 4px;
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+
+  @media (hover: hover) {
+    &:hover,
+    &:active {
+      border-color: var(--secondary);
+    }
+  }
+}

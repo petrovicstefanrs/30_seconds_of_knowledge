@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    display: flex;
+
+    &.vertical {
+      flex-direction: column;
+
+      .section {
+        margin-right: 0;
+      }
+
+      .details {
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .section {
+      min-width: fit-content;
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      .markdown {
+        margin-top: 16px;
+      }
+
+      .optionLabel {
+        display: flex;
+        align-items: center;
+
+        .info {
+          height: 16px;
+          margin-left: 4px;
+          fill: var(--secondary_translucent);
+
+          @media (hover: hover) {
+            &:hover,
+            &:active {
+              fill: var(--secondary);
+            }
+          }
+        }
+
+        .btn {
+          margin-left: 8px;
+
+          @media (hover: hover) {
+            &:hover,
+            &:active {
+              svg {
+                fill: var(--secondary);
+              }
+            }
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--secondary_translucent);
+          }
+        }
+      }
+    }
+  }
+
+  .save {
+    max-width: 200px;
+  }
+}

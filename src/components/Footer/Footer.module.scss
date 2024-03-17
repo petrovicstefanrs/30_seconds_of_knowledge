@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  height: 96px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-top: 1px dotted var(--secondary_translucent);
+
+  .link {
+    font-weight: 900;
+    cursor: pointer;
+    padding-bottom: 2px;
+  }
+
+  .links {
+    margin-left: auto;
+
+    .link {
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover,
+      &:active {
+        border-bottom: 1px dotted;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .creds {
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .link {
+      text-decoration: underline dotted;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 256px);
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 8px;
+    }
+
+    .label {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .note {
+      max-width: 256px;
+      text-align: center;
+      color: var(--secondary_translucent);
+    }
+  }
+
+  .delete {
+    display: flex;
+    color: var(--secondary_translucent);
+    padding-left: 16px;
+    width: 48px;
+    height: 42px;
+    justify-content: flex-end;
+
+    @media (hover: hover) {
+      &:hover,
+      &:active {
+        color: var(--secondary);
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

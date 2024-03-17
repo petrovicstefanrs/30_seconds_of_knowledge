@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-width: 256px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 16px;
+
+  .heading {
+    border-bottom: 1px dotted var(--secondary_translucent);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .open {
+      border: none;
+      width: unset;
+    }
+  }
+
+  .content {
+    width: 100%;
+  }
+}

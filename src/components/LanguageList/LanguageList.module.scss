@@ -1,0 +1,67 @@
+.container {
+  .section {
+    margin-bottom: 32px;
+
+    .summary {
+      position: relative;
+      cursor: pointer;
+      list-style: none;
+
+      .chevron {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        width: 16px;
+        height: 16px;
+        color: var(--secondary);
+      }
+
+      .title {
+        border-bottom: 1px dotted var(--secondary_translucent);
+        padding-bottom: 8px;
+      }
+    }
+
+    .snippet {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 8px;
+      border-radius: 4px;
+
+      @media (hover: hover) {
+        &:hover,
+        &:active {
+          background: var(--primary_highlight);
+        }
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: var(--accent);
+        margin-right: 8px;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .name {
+          font-size: 24px;
+          max-width: 512px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: pre;
+        }
+
+        .date {
+          font-weight: 500;
+          color: var(--secondary_highlight);
+        }
+      }
+    }
+  }
+}

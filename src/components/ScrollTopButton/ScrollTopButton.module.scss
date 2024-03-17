@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  position: fixed;
+  right: 32px;
+  bottom: 72px;
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  color: var(--accent_text);
+  opacity: 1;
+  transition: all 0.2s linear;
+
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  svg {
+    fill: var(--accent_text);
+    width: 16px;
+    height: 16px;
+  }
+}
