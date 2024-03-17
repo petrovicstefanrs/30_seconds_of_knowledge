@@ -45,27 +45,16 @@ const TARGET_SPECIFIC_MANIFEST = {
   },
   opera: {},
   gecko: {
-    manifest_version: 2,
-    web_accessible_resources: undefined,
-    permissions: ['storage', 'clipboardWrite'],
-    action: undefined,
-    browser_action: {
-      default_popup: 'popup.html',
-      default_icon: 'toolbar-icon-128.png',
-    },
-    options_page: undefined,
-    options_ui: {
-      page: 'options.html',
-    },
     chrome_url_overrides: {
       newtab: 'newtab.html',
     },
-    content_security_policy:
-      "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    content_security_policy: {
+      extension_pages: "script-src 'self'",
+    },
     browser_specific_settings: {
       gecko: {
         id: '30secondsofknowledge@petrovicstefan.rs',
-        strict_min_version: '68.0',
+        strict_min_version: '115.0',
       },
     },
   },
