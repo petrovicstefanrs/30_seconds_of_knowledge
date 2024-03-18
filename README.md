@@ -21,7 +21,7 @@
 
 ## Description
 
-Gain **new developer skills** every time you open a **New Tab**! You can choose from **13 snippet libraries** _(12 Programming languages and Interview Questions)_. All you need is **30 seconds** to read and understand the **snippets** and **improve your knowledge**.
+Gain **new developer skills** every time you open a **New Tab**! You can choose from **14 snippet libraries** _(13 Programming languages and Interview Questions)_. All you need is **30 seconds** to read and understand the **snippets** and **improve your knowledge**.
 
 ---
 
@@ -106,7 +106,7 @@ Gain **new developer skills** every time you open a **New Tab**! You can choose 
 - [x] **Added All Snippets Page - Feature**
 - [x] **Removed Blacklist Snippets - Feature**
 - [x] **Renamed Saved Snippets to Favourites - Feature**
-- [ ] **Release v2.0.0**
+- [x] **Release v2.0.0**
 
 **Constant Work:**
 
@@ -122,36 +122,39 @@ Most of the snippets are provided by other great open-source projects on which t
 
 List of source repos:
 
-- Javascript Snippets: [30 Seconds of Code / Issues](https://github.com/30-seconds/30-seconds-of-code/issues)
-- CSS Snippets: [30 Seconds of CSS / Issues](https://github.com/30-seconds/30-seconds-of-css/issues)
-- Interview Questions: [30 Seconds of Interviews / Issues](https://github.com/30-seconds/30-seconds-of-interviews/issues)
-- React Snippets: [30 Seconds of React / Issues](https://github.com/30-seconds/30-seconds-of-react/issues)
-- PHP Snippets: [30 Seconds of PHP / Issues](https://github.com/30-seconds/30-seconds-of-php/issues)
-- Python Snippets: [30 Seconds of Python / Issues](https://github.com/30-seconds/30-seconds-of-python/issues)
-- C# Snippets: [30 Seconds of C# / Issues](https://github.com/30-seconds/30-seconds-of-csharp/issues)
+- Javascript Snippets: [30 Seconds of Code / Issues](https://github.com/Chalarangelo/30-seconds-of-code/issues)
+- CSS Snippets: [30 Seconds of Code / Issues](https://github.com/Chalarangelo/30-seconds-of-code/issues)
+- React Snippets: [30 Seconds of Code / Issues](https://github.com/Chalarangelo/30-seconds-of-code/issues)
+- Python Snippets: [30 Seconds of Code / Issues](https://github.com/Chalarangelo/30-seconds-of-code/issues)
+- Git Snippets: [30 Seconds of Code / Issues](https://github.com/Chalarangelo/30-seconds-of-code/issues)
+- HTML Snippets: [30 Seconds of Code / Issues](https://github.com/Chalarangelo/30-seconds-of-code/issues)
+- Interview Questions: [30 Seconds of Interviews / Issues](https://github.com/Chalarangelo/30-seconds-of-interviews/issues)
+- C# Snippets: [30 Seconds of C# / Issues](https://github.com/Chalarangelo/30-seconds-of-csharp/issues)
+- Go Snippets: [30 Seconds of Golang / Issues](https://github.com/Chalarangelo/30-seconds-of-golang/issues)
+- PHP Snippets: [30 Seconds of PHP / Issues](https://github.com/Chalarangelo/30-seconds-of-php/issues)
+- Dart Snippets: [30 Seconds of Dart / Issues](https://github.com/Chalarangelo/30-seconds-of-dart/issues)
 - C++ Snippets: [30 Seconds of C++ / Issues](https://github.com/Bhupesh-V/30-seconds-of-cpp/issues)
-- Git Snippets: [30 Seconds of Git / Issues](https://github.com/30-seconds/30-seconds-of-git/issues)
-- Dart Snippets: [30 Seconds of Dart / Issues](https://github.com/30-seconds/30-seconds-of-dart/issues)
-- Go Snippets: [30 Seconds of Go / Issues](https://github.com/30-seconds/30-seconds-of-golang/issues)
 - Ruby Snippets: [30 Seconds of Ruby / Issues](https://github.com/florianjosefreheis/30-seconds-of-ruby/issues)
+- Ramda Snippets: [30 Seconds of Knowledge / Issues](https://github.com/petrovicstefanrs/30_seconds_of_knowledge/issues)
 
 ---
 
 ## Attributions
 
-Inspired by the phenomenal [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code)
-
+Inspired by the phenomenal [30 seconds of code](https://github.com/Chalarangelo/30-seconds-of-code) made by [Angelos Chalaris](https://github.com/Chalarangelo) - Go and give the original project some love!
 - Programming Langauges Icons | [www.devicon.com](https://devicon.dev/) / [MIT](https://github.com/devicons/devicon/blob/master/LICENSE)
 - UI Icons | [www.ionicons.com](https://ionicons.com/) / [MIT](https://github.com/ionic-team/ionicons/blob/main/LICENSE)
-- Ruby Snippets | [30 seconds of Ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby) / [MIT](https://github.com/florianjosefreheis/30-seconds-of-ruby/blob/master/LICENSE)
-- Interview Snippets | [30 seconds of Interviews](https://github.com/30-seconds/30-seconds-of-interviews) / [MIT](https://github.com/30-seconds/30-seconds-of-interviews/blob/master/LICENSE)
-- C++ | [30 seconds of C++](https://github.com/Bhupesh-V/30-seconds-of-cpp) / [MIT](https://github.com/Bhupesh-V/30-seconds-of-cpp/blob/master/LICENSE)
-- PHP Snippets | [30 seconds of PHP](https://github.com/30-seconds/30-seconds-of-php) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-php/blob/master/LICENSE)
-- Dart Snippets | [30 seconds of Dart](https://github.com/30-seconds/30-seconds-of-dart) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-dart/blob/master/LICENSE)
-- Go Snippets | [30 seconds of Go](https://github.com/30-seconds/30-seconds-of-golang) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-golang/blob/master/LICENSE)
-- C# Snippets | [30 seconds of C#](https://github.com/30-seconds/30-seconds-of-csharp) / [CC0 1.0](https://github.com/30-seconds/30-seconds-of-csharp/blob/master/LICENSE)
-- Javascript Snippets | [30 seconds of Code](https://github.com/30-seconds/30-seconds-of-code) / [CC BY 4.0](https://github.com/30-seconds/30-seconds-of-code/blob/master/LICENSE)
-- CSS Snippets | [30 seconds of CSS](https://github.com/30-seconds/30-seconds-of-css) / [CC BY 4.0](https://github.com/30-seconds/30-seconds-of-css/blob/master/LICENSE)
-- React Snippets | [30 seconds of React](https://github.com/30-seconds/30-seconds-of-react) / [CC BY 4.0](https://github.com/30-seconds/30-seconds-of-react/blob/master/LICENSE)
-- Python Snippets | [30 seconds of Python](https://github.com/30-seconds/30-seconds-of-python) / [CC BY 4.0](https://github.com/30-seconds/30-seconds-of-python/blob/master/LICENSE)
-- Git Snippets | [30 seconds of Git](https://github.com/30-seconds/30-seconds-of-git) / [CC BY 4.0](https://github.com/30-seconds/30-seconds-of-git/blob/master/LICENSE)
+- Javascript Snippets: [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code) / [CC BY 4.0](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE)
+- CSS Snippets: [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code) / [CC BY 4.0](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE)
+- React Snippets: [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code) / [CC BY 4.0](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE)
+- Python Snippets: [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code) / [CC BY 4.0](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE)
+- Git Snippets: [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code) / [CC BY 4.0](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE)
+- HTML Snippets: [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code) / [CC BY 4.0](https://github.com/Chalarangelo/30-seconds-of-code/blob/master/LICENSE)
+- Interview Questions: [30 Seconds of Interviews](https://github.com/Chalarangelo/30-seconds-of-interviews) / [MIT](https://github.com/Chalarangelo/30-seconds-of-interviews/blob/master/LICENSE)
+- C# Snippets: [30 Seconds of C#](https://github.com/Chalarangelo/30-seconds-of-csharp) / [CC0 1.0](https://github.com/Chalarangelo/30-seconds-of-csharp/blob/master/LICENSE)
+- Go Snippets: [30 Seconds of Golang](https://github.com/Chalarangelo/30-seconds-of-golang) / [CC0 1.0](https://github.com/Chalarangelo/30-seconds-of-golang/blob/master/LICENSE)
+- PHP Snippets: [30 Seconds of PHP](https://github.com/Chalarangelo/30-seconds-of-php) / [CC0 1.0](https://github.com/Chalarangelo/30-seconds-of-php/blob/master/LICENSE)
+- Dart Snippets: [30 Seconds of Dart](https://github.com/Chalarangelo/30-seconds-of-dart) / [CC0 1.0](https://github.com/Chalarangelo/30-seconds-of-dart/blob/master/LICENSE)
+- C++ Snippets: [30 Seconds of C++](https://github.com/Bhupesh-V/30-seconds-of-cpp) / [MIT](https://github.com/Bhupesh-V/30-seconds-of-cpp/blob/master/LICENSE)
+- Ruby Snippets: [30 Seconds of Ruby](https://github.com/florianjosefreheis/30-seconds-of-ruby) / [MIT](https://github.com/florianjosefreheis/30-seconds-of-ruby/blob/master/LICENSE)
+- Ramda Snippets: [30 Seconds of Knowledge](https://github.com/petrovicstefanrs/30_seconds_of_knowledge) / [MIT](https://github.com/petrovicstefanrs/30_seconds_of_knowledge/blob/master/LICENSE)

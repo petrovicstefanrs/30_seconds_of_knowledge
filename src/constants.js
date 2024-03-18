@@ -59,42 +59,42 @@ const CONSTANTS = {
     git: {
       value: 'git',
       label: 'Git',
-      url: 'https://github.com/30-seconds/30-seconds-of-git',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     },
     javascript: {
       value: 'javascript',
       label: 'Javascript',
-      url: 'https://github.com/30-seconds/30-seconds-of-code',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     },
     react: {
       value: 'react',
       label: 'React',
-      url: 'https://github.com/30-seconds/30-seconds-of-react',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     },
     python: {
       value: 'python',
       label: 'Python',
-      url: 'https://github.com/30-seconds/30-seconds-of-python',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     },
     css: {
       value: 'css',
       label: 'CSS',
-      url: 'https://github.com/30-seconds/30-seconds-of-css',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     },
     php: {
       value: 'php',
       label: 'PHP',
-      url: 'https://github.com/30-seconds/30-seconds-of-php',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-php',
     },
     dart: {
       value: 'dart',
       label: 'Dart',
-      url: 'https://github.com/30-seconds/30-seconds-of-dart',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-dart',
     },
     golang: {
       value: 'golang',
       label: 'Go',
-      url: 'https://github.com/30-seconds/30-seconds-of-golang',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-golang',
     },
     cpp: {
       value: 'cpp',
@@ -104,7 +104,7 @@ const CONSTANTS = {
     csharp: {
       value: 'csharp',
       label: 'C#',
-      url: 'https://github.com/30-seconds/30-seconds-of-csharp',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-csharp',
     },
     ruby: {
       value: 'ruby',
@@ -119,12 +119,12 @@ const CONSTANTS = {
     interview: {
       value: 'interview',
       label: 'Interview Questions',
-      url: 'https://github.com/30-seconds/30-seconds-of-interviews',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-interviews',
     },
     html: {
       value: 'html',
       label: 'HTML',
-      url: 'https://github.com/30-seconds/30-seconds-of-code',
+      url: 'https://github.com/Chalarangelo/30-seconds-of-code',
     },
   },
   HIGHLIGHTER_THEMES: {
