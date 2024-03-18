@@ -41,6 +41,7 @@ Gain **new developer skills** every time you open a **New Tab**! You can choose 
 
 - Interview
 - Javascript
+- HTML
 - CSS
 - React
 - PHP
