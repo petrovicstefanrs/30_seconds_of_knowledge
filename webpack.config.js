@@ -43,7 +43,9 @@ const TARGET_SPECIFIC_MANIFEST = {
       newtab: 'newtab.html',
     },
   },
-  opera: {},
+  opera: {
+    offline_enabled: true,
+  },
   gecko: {
     chrome_url_overrides: {
       newtab: 'newtab.html',
