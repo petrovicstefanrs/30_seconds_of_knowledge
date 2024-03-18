@@ -19,6 +19,11 @@
 
 ---
 
+## Download
+<img src="media/firefox_logo.png" height=20/>&nbsp; [Firefox](https://addons.mozilla.org/en-US/firefox/addon/30-seconds-of-knowledge/)
+
+---
+
 ## Description
 
 Gain **new developer skills** every time you open a **New Tab**! You can choose from **14 snippet libraries** _(13 Programming languages and Interview Questions)_. All you need is **30 seconds** to read and understand the **snippets** and **improve your knowledge**.
