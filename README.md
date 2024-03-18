@@ -100,6 +100,7 @@ Gain **new developer skills** every time you open a **New Tab**! You can choose 
 - [x] **Rewritten to use React Hooks - Maintenance**
 - [x] **Rewritten to use Extension Manifest V3 - Maintenance**
 - [x] **Update Existing Snippets - Maintenance**
+- [x] **Snippet Languages - Added HTML**
 - [x] **Snippet Languages - Added C#**
 - [x] **Snippet Languages - Added Dart**
 - [x] **Snippet Languages - Added Git**
