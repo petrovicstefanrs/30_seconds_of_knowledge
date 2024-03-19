@@ -39,6 +39,10 @@ const MarkdownSnippetPreview = ({ className, source, title }) => {
   const cssCode = extractCodeFromSnippet(source, 'css');
   const jsCode = extractCodeFromSnippet(source, 'js');
 
+  if (!htmlCode && !cssCode && !jsCode) {
+    return null;
+  }
+
   return (
     <div className={cx(styles.container, className)}>
       <div className={styles.previewContainer}>
