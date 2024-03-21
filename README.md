@@ -24,6 +24,8 @@
 
 <img src="media/firefox_logo.png" height=20/> [Firefox](https://addons.mozilla.org/en-US/firefox/addon/30-seconds-of-knowledge/)
 
+<img src="media/brave_logo.png" height=20/> [Brave](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
+
 ---
 
 ## Description
