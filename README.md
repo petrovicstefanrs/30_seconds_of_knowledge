@@ -20,7 +20,9 @@
 ---
 
 ## Download
-<img src="media/firefox_logo.png" height=20/>&nbsp; [Firefox](https://addons.mozilla.org/en-US/firefox/addon/30-seconds-of-knowledge/)
+<img src="media/chrome_logo.png" height=20/> [Google Chrome](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
+
+<img src="media/firefox_logo.png" height=20/> [Firefox](https://addons.mozilla.org/en-US/firefox/addon/30-seconds-of-knowledge/)
 
 ---
 
