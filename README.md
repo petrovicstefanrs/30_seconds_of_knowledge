@@ -26,6 +26,8 @@
 
 <img src="media/brave_logo.png" height=20/> [Brave](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
 
+<img src="media/edge_logo.png" height=20/> [Edge](https://microsoftedge.microsoft.com/addons/detail/phcopnojoheikifimnfnknllajecemnd)
+
 ---
 
 ## Description
