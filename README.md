@@ -29,7 +29,7 @@
 
 <img src="media/edge_logo.png" height=20/> [Edge](https://microsoftedge.microsoft.com/addons/detail/phcopnojoheikifimnfnknllajecemnd)
 
-<img src="media/arc_logo.png" height=20/> [Arc Browser](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
+<img src="media/arc_logo.png" height=20/> [Arc](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
 
 ---
 
