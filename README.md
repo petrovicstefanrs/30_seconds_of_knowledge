@@ -14,7 +14,8 @@
   <img src="media/brave_logo.png" height=20/>&nbsp;
   <img src="media/opera_logo.png" height=20/>&nbsp;
   <img src="media/firefox_logo.png" height=20/>&nbsp;
-  <img src="media/edge_logo.png" height=20/>
+  <img src="media/edge_logo.png" height=20/>&nbsp;
+  <img src="media/arc_logo.png" height=20/>
 </p>
 
 ---
@@ -27,6 +28,8 @@
 <img src="media/brave_logo.png" height=20/> [Brave](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
 
 <img src="media/edge_logo.png" height=20/> [Edge](https://microsoftedge.microsoft.com/addons/detail/phcopnojoheikifimnfnknllajecemnd)
+
+<img src="media/arc_logo.png" height=20/> [Arc Browser](https://chromewebstore.google.com/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
 
 ---
 
