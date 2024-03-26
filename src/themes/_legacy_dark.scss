@@ -1,0 +1,14 @@
+/* Legacy Dark Theme (30SoK v1 - Dark theme) */
+
+.legacy_dark {
+  --primary: #21212a;
+  --primary_highlight: #353740;
+  --primary_translucent: #35374080;
+  --secondary: #b7b7cd;
+  --secondary_highlight: #f0f0f7;
+  --secondary_translucent: #f0f0f780;
+  --accent: #fea04f;
+  --accent_text: var(--primary);
+  --fallback_code_bg: #282a36;
+  --logo_color: var(--accent);
+}
