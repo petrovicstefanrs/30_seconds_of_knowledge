@@ -103,6 +103,7 @@ const parseSnippet = ({ data, filename, id, language, tags: passedTags }) => {
     lastUpdated: formatDate(lastUpdated),
     tags: [...parsedTags, ...(passedTags || [])],
     title: title || parsedTitle,
+    shortTitle,
     ...restAttributes,
   };
 };
