@@ -54,6 +54,18 @@ const CONSTANTS = {
       url: 'vscode:extension/jdinhlife.gruvbox',
       suggested_highlighter: 'gruvbox-light',
     },
+    legacy_dark: {
+      value: 'legacy_dark',
+      label: 'Legacy Dark',
+      legacy: true,
+      suggested_highlighter: 'atom-one-dark-reasonable',
+    },
+    legacy_light: {
+      value: 'legacy_light',
+      label: 'Legacy Light',
+      legacy: true,
+      suggested_highlighter: 'atom-one-light',
+    },
   },
   SNIPPET_LIBRARIES: {
     git: {

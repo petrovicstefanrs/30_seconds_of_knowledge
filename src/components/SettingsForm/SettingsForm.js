@@ -16,6 +16,7 @@ import {
 } from '../SettingsProvider';
 import { useToast } from '../Toast';
 
+import LogoGlyph from '../LogoGlyph';
 import VSCodeIcon from '../../icons/VsCode';
 import GithubIcon from '../../icons/Github';
 import InfoIcon from '../../icons/Info';
@@ -73,6 +74,17 @@ const SettingsForm = ({ className, isPopup }) => {
         />
       ) : null;
 
+      const legacyIcon = THEMES[t].legacy ? (
+        <LogoGlyph
+          className={styles.info}
+          data-html={true}
+          data-tip={`<span>
+              Legacy theme from<br/>
+              <strong>30 Seconds of Knowledge v1</strong>
+            </span>`}
+        />
+      ) : null;
+
       let label;
       if (!THEMES[t].url || isPopup) {
         label = THEMES[t].label;
@@ -93,6 +105,7 @@ const SettingsForm = ({ className, isPopup }) => {
         <span className={styles.optionLabel}>
           {label}
           {infoIcon}
+          {legacyIcon}
         </span>
       );
     };

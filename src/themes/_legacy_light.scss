@@ -1,0 +1,14 @@
+/* Legacy Light Theme (30SoK v1 - Light theme) */
+
+.legacy_light {
+  --primary: #ebebeb;
+  --primary_highlight: #ffffff;
+  --primary_translucent: #ebebeb80;
+  --secondary: #202123;
+  --secondary_highlight: #0e0f0f;
+  --secondary_translucent: #20212380;
+  --accent: #ce0e00;
+  --accent_text: var(--primary);
+  --fallback_code_bg: #282a36;
+  --logo_color: var(--accent);
+}
